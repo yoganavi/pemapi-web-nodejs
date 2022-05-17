@@ -1,0 +1,24 @@
+.navbar{
+	display: none;
+}
+.parallax-container {
+  min-height: 530px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+.a1{
+	width: 100%;
+	height: 100%;
+	background: crimson;
+}
+.seca{
+	background: chartreuse;
+	height: 50vh;
+}
+.seca.secb{
+	background: cornsilk;
+}
+.seca.secc{
+	background: cornflowerblue;
+}
