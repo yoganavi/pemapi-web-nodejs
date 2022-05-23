@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 	res.render('index' , {
 		css: 'index.css',
 		pagejs: 'index.js',
-		layout: 'layouts/main-layout'
+		layout: 'layouts/main-layout',
 	});	
 })
 app.get('/tes', (req, res) => {
@@ -26,7 +26,7 @@ app.get('/tes', (req, res) => {
 app.get('/plx', (req, res) => {
 	res.render('parallax' , {
 		css: 'style.css',
-		pagejs: 'init.js',
+		pagejs: 'index2.js',
 		layout: 'layouts/main-layout',
 		navbar: 'navbar',
 	});	
