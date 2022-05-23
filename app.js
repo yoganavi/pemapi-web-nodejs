@@ -14,6 +14,7 @@ app.get('/', (req, res) => {
 		css: 'index.css',
 		pagejs: 'index.js',
 		layout: 'layouts/main-layout',
+		navbar: 'navbar'
 	});	
 })
 app.get('/tes', (req, res) => {
@@ -28,7 +29,7 @@ app.get('/plx', (req, res) => {
 		css: 'style.css',
 		pagejs: 'index2.js',
 		layout: 'layouts/main-layout',
-		navbar: 'navbar',
+		navbar: 'navbar2',
 	});	
 })
 app.get('/contact-us', (req, res) => {
