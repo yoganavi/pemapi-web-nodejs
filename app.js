@@ -10,7 +10,7 @@ app.use(express.static('public'));
 
 app.get('/', (req, res) => {
   // res.send('Hello World! home')
-	res.render('index' , {
+	res.render('indexkosong' , {
 		css: 'index.css',
 		pagejs: 'index.js',
 		layout: 'layouts/main-layout',
