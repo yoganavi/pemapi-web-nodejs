@@ -1,0 +1,33 @@
+body{
+  background: #e3f2fd;
+}
+nav{
+  background: #B91D1A;
+}
+.nav-wrapper img{
+  width: 30px;
+}
+.nav-wrapper a{
+  font-weight: 500;
+}
+p.judul{
+  font-size: 30pt;
+  text-align: center;
+  font-weight: bolder;
+}
+.secb{
+  padding: 1% 2%;
+  border-radius: 30px;
+  margin: 0 auto 100px auto;
+}
+.secb p strong{
+  font-size: 16pt;
+  font-weight: 500;
+}
+.secb ul li{
+  margin: 0 0 0 50px;
+  list-style-type: disc;
+}
+.page-footer{
+  background: #2F97F0;
+}

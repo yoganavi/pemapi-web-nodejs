@@ -17,6 +17,16 @@ app.get('/', (req, res) => {
 		navbar: 'navbar'
 	});	
 })
+
+app.get('/privacy', (req, res) => {
+  // res.send('Hello World! home')
+	res.render('privacy' , {
+		css: 'privacy.css',
+		pagejs: 'privacy.js',
+		layout: 'layouts/main-layout',
+	});	
+})
+
 app.get('/tes', (req, res) => {
 	res.render('index2' , {
 		css: 'index2.css',
