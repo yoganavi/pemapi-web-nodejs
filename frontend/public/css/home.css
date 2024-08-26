@@ -1,0 +1,366 @@
+/* Frame 134 */
+html{
+  background: #0E3477;
+}
+body{
+  font-family: 'Poppins';
+  width: min(100%, 1600px);
+}
+
+.hero-section.container-fluid{
+  background: #0E3477;
+  height: 694px;
+}
+
+.hero-section p.judul{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 68px;
+  line-height: 72px;
+  color: #FFFFFF;
+}
+/* Karena Semua Berhak Merasa Aman */
+.hero-section p.keterangan{
+  width: 70%;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  font-size: larger;
+  color: #A59F9F;
+}
+
+.hero-section .wrapper1{
+  top: 0;
+  right: 0;
+  /* width: 710px; */
+  width: 115%;
+  height: 100%;
+}
+
+/* Rectangle 24 */
+.rectangle-24{
+  width: 53%;
+  /* height: 423px; */
+  /* height: 62%; */
+  height: 30vw;
+  max-height: 480px;
+  /* left: 778px; */
+  left: 0px;
+  bottom: 0;
+  background: #1757C6;
+}
+
+/* Rectangle 25 */
+.rectangle-25{
+  width: 46%;
+  /* height: 324px; */
+  /* height: 48%; */
+  height: 23vw;
+  max-height: 370px;
+  /* left: 1054px; */
+  left: 46%;
+  /* top: 338px; */
+  bottom: 32px;
+  background: #1757C6;
+}
+
+.hero-section img.boys{
+  bottom: 0;  
+  left: -45px;
+  width: 61%;
+}
+.hero-section img.girl{
+  bottom: 0;  
+  right: 0;
+  width: 76%;
+}
+
+@media (max-width: 991.98px) {
+  .hero-section.container-fluid{
+    height: 400px;
+  }
+  /* Karena Semua Berhak Merasa Aman */
+  .hero-section p.judul{
+    font-size: 42px;
+    line-height: 40px;
+  }
+  .hero-section p.keterangan{
+    width: 75%;
+    line-height: unset;
+    font-size: medium;
+  }
+  .hero-section .wrapper1{
+    width: 145%;
+  }
+}
+
+
+
+
+position: absolute;
+width: 603px;
+height: 603px;
+left: 627px;
+top: 131px;
+
+background: url(_70df101b-1f7a-4af9-af10-be7fc8501d94-removebg-preview.png);
+filter: drop-shadow(-88px 0px 35px rgba(0, 0, 0, 0.01)) drop-shadow(-50px 0px 30px rgba(0, 0, 0, 0.05)) drop-shadow(-22px 0px 22px rgba(0, 0, 0, 0.09)) drop-shadow(-6px 0px 12px rgba(0, 0, 0, 0.1));
+
+
+/* _3e1997d1-eca5-45ca-a023-7243254a6e8e-removebg-preview */
+
+position: absolute;
+width: 557px;
+height: 557px;
+left: 883px;
+top: 137px;
+
+background: url(_3e1997d1-eca5-45ca-a023-7243254a6e8e-removebg-preview.png);
+filter: drop-shadow(-76px -11px 31px rgba(0, 0, 0, 0.01)) drop-shadow(-43px -6px 26px rgba(0, 0, 0, 0.05)) drop-shadow(-19px -3px 19px rgba(0, 0, 0, 0.09)) drop-shadow(-5px -1px 11px rgba(0, 0, 0, 0.1));
+
+
+/* Group 8 */
+
+position: absolute;
+width: 200px;
+height: 200px;
+left: -40px;
+top: 271px;
+
+opacity: 0.5;
+
+
+/* Rectangle 16 */
+
+position: absolute;
+width: 100px;
+height: 100px;
+left: -40px;
+top: 271px;
+
+/* primary-lighter-1 */
+background: #1757C6;
+
+
+/* Rectangle 17 */
+
+position: absolute;
+width: 100px;
+height: 100px;
+left: 60px;
+top: 371px;
+
+/* primary-lighter-1 */
+background: #1757C6;
+
+
+/* Frame 125 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 50px 0px 50px 77px;
+gap: 231px;
+
+position: absolute;
+width: 1440px;
+height: 694px;
+left: 0px;
+top: 0px;
+
+
+
+/* Frame 123 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 299px;
+
+width: 766px;
+height: 576px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Frame 121 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 19px;
+
+width: 766px;
+height: 211px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Karena Semua Berhak Merasa Aman */
+
+width: 766px;
+height: 144px;
+
+/* Heading 1 - Medium */
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 68px;
+line-height: 72px;
+/* or 106% */
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Yakinkan keamanan, keselamatan, dan kecintaanmu pada sekitar dengan APAR yang tersedia setiap saat */
+
+width: 490px;
+height: 48px;
+
+/* Heading 4 - Medium */
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+/* or 150% */
+
+color: #A59F9F;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 122 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 10px;
+gap: 10px;
+
+width: 711px;
+height: 66px;
+
+background: #FFFFFF;
+box-shadow: 0px 78px 31px rgba(0, 0, 0, 0.01), 0px 44px 26px rgba(0, 0, 0, 0.05), 0px 20px 20px rgba(0, 0, 0, 0.09), 0px 5px 11px rgba(0, 0, 0, 0.1);
+border-radius: 15px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Frame 7 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+gap: 12px;
+
+width: 691px;
+height: 46px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Cari tahu APAR yang cocok dengan kebutuhanmu! */
+
+width: 415px;
+height: 24px;
+
+/* Heading 4 - Semibold */
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+
+color: #000000;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Frame 5 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 10px 20px;
+gap: 10px;
+
+width: 254px;
+height: 46px;
+
+/* red (main) */
+background: #BE2523;
+border-radius: 10px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Quiz Kebutuhan APAR-Mu! */
+
+width: 214px;
+height: 24px;
+
+/* Button */
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 24px;
+/* identical to box height, or 150% */
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;

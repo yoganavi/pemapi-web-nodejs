@@ -32,10 +32,23 @@ app.use(bodyParser.json())
 
 
 
+app.use('/', (req, res, next) => {
+  let path = req.path
+  if(path == '/favicon.ico') return
+  console.log("🚀 ~ file: app.js:36 ~ app.use ~ path:", path)
+  next()
+})
+
+app.get('/', async(req,res)=>{
+  res.render('home',{
+    layout: 'main-layout',
+  })
+})
+
 app.use('/', (req, res) => {
-  console.log(`app.use/`);
+  console.log(`app.use/ page not found`);
   res.status(404)
-  .send('<h1>server ok - Page not found</h1>');
+  .send('<h1>Page not found</h1>');
 })
 
 app.listen(PORT, () => {
