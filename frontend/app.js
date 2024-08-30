@@ -40,7 +40,13 @@ app.use('/', (req, res, next) => {
 })
 
 app.get('/', async(req,res)=>{
-  res.render('home',{
+  res.render('contact',{
+    layout: 'main-layout',
+  })
+})
+
+app.get('/contact', async(req,res)=>{
+  res.render('contact',{
     layout: 'main-layout',
   })
 })

@@ -1,0 +1,112 @@
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .contact-flex {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .contact-row {
+        display: flex;
+        gap: 20px;
+    }
+    .contact-item {
+        flex: 1;
+        background-color: #f8f8f8;
+        padding: 20px;
+        border-radius: 5px;
+    }
+    .contact-item h3 {
+        margin-top: 0;
+    }
+    .social-links {
+        display: flex;
+        gap: 10px;
+    }
+    .social-links a {
+        text-decoration: none;
+        color: #333;
+    }
+    /* @media (max-width: 768px) {
+        .contact-row {
+            flex-direction: column;
+        }
+    } */
+</style>
+
+<div class="container">
+    <div class="contact-flex">
+        <div class="d-flex flex-wrap contact-row">
+            <div class="contact-item">
+                <h3><b>Hubungi Kami</b></h3>
+                <h6 style="font-weight: 400;">masih memiliki masalah? atau ingin bertanya mengenai sesuatu? kami tersedia untukmu!</h6>
+                <div style="height: 1px; background-color: transparent; margin: 51px 0;"></div>
+                <div class="d-flex flex-row contact-row">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <p>Jalan Puspanjolo dalam 5 no. 10, RT 011, RW 001, Semarang, Jawa Tengah, 50141</p>
+                    </div>
+                </div>
+                <div class="d-flex flex-row contact-row">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <p>kontak@pemapi.com</p>
+                    </div>
+                </div>
+                <div class="d-flex flex-row contact-row">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-text">
+                        <p>0811-2899-009</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-item">
+                <h3>Email</h3>
+                <p>contact@example.com</p>
+            </div>
+        </div>
+        <div class="contact-row">
+            <div class="contact-item">
+                <h3>Address</h3>
+                <p>123 Main St, City, State 12345</p>
+            </div>
+            <div class="contact-item">
+                <h3>Business Hours</h3>
+                <p>Mon-Fri: 9am - 5pm</p>
+            </div>
+        </div>
+        <div class="contact-row">
+            <div class="contact-item">
+                <h3>Social Media</h3>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="contact-item">
+                <h3>Contact Form</h3>
+                <p>Visit our <a href="/contact-form">contact form</a> to send us a message.</p>
+            </div>
+        </div>
+    </div>
+</div>
