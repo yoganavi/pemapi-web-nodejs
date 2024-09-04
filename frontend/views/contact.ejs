@@ -1,36 +1,70 @@
 <style>
-    body {
+    /* body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-    }
+    } */
     .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 20px;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
     }
-    h1 {
+    /* h1 {
         text-align: center;
         margin-bottom: 30px;
-    }
-    .contact-flex {
+    } */
+    /* .contact-flex {
         display: flex;
         flex-direction: column;
         gap: 20px;
-    }
+    } */
     .contact-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .contact-bigbox-1 {
+        position: absolute;
+        top: 160px;
+        right: 0px;
+        width: 300px;
+        height: 265px;
+        z-index: 1;
+        background-color: #1757C6;
+    }
+    .contact-content-row{
         display: flex;
         gap: 20px;
     }
+    .contact-item > form {
+        z-index: 5;
+    }
     .contact-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         flex: 1;
-        background-color: #f8f8f8;
-        padding: 20px;
+        /* background-color: #f8f8f8; */
+        padding: 20px 20px 40px 130px;
         border-radius: 5px;
     }
     .contact-item h3 {
         margin-top: 0;
+    }
+    .contact-text{
+        max-width: 534px;
+    }
+    .row-blue h1,
+    .row-blue h2,
+    .row-blue h3,
+    .row-blue h4,
+    .row-blue h5,
+    .row-blue h6,
+    .row-blue div.contact-text,
+    .row-blue p {
+        z-index: 5;
+        color: white;
     }
     .social-links {
         display: flex;
@@ -40,39 +74,91 @@
         text-decoration: none;
         color: #333;
     }
-    /* @media (max-width: 768px) {
+    .contact-form-container {
+        max-width: 25rem;
+        display: flex;
+        flex-direction: column;
+        /* gap: 5px; */
+    }
+    .contact-smallbox-1{
+        /* background: var(--primary-color); */
+        /* border-radius: 10%; */
+        position: absolute;
+        top: 50px;
+        left: 10px;
+        width: 100px;
+        height: 100px;
+        background-color: #1757C6;
+        opacity: 0.6;
+    }
+    .contact-smallbox-2{
+        position: absolute;
+        top: 150px;
+        left: 110px;
+        width: 100px;
+        height: 100px;
+        z-index: 1;
+        background-color: #1757C6;
+        opacity: 0.6;
+    }
+    /* .contact-form-container > * {
+        min-width: fit-content;
+    } */
+    .row-white {
+        /* background-color: black; */
+    }
+    @media (max-width: 837px) {
         .contact-row {
             flex-direction: column;
         }
-    } */
+        .contact-item {
+            padding: 20px 20px 20px 8%;
+        }
+        .contact-smallbox-1, .contact-smallbox-2 {
+            display: none;
+        }
+        .contact-bigbox-1 {
+            top: 560px;
+            width: 380px;
+        }
+    }
 </style>
 
 <div class="container">
     <div class="contact-flex">
-        <div class="d-flex flex-wrap contact-row">
+        <div class="contact-row row-blue" style="background-color: #0E3476;">
+            <!-- <div class="d-flex flex-column justify-content-center contact-item"> -->
             <div class="contact-item">
-                <h3><b>Hubungi Kami</b></h3>
-                <h6 style="font-weight: 400;">masih memiliki masalah? atau ingin bertanya mengenai sesuatu? kami tersedia untukmu!</h6>
-                <div style="height: 1px; background-color: transparent; margin: 51px 0;"></div>
-                <div class="d-flex flex-row contact-row">
+                <div class="contact-smallbox-1"></div>
+                <div class="contact-smallbox-2"></div>
+                <div class="contact-bigbox-1"></div>
+                <h1 style="font-size: 68px;"><b>Hubungi Kami</b></h1>
+                <div class="contact-text">
+                    <h6 style="font-weight: 400;">masih memiliki masalah? atau ingin bertanya mengenai sesuatu? kami tersedia untukmu!</h6>
+                </div>
+                <div style="height: 1px; background-color: transparent; margin: 30px 0;"></div>
+                <div class="contact-content-row">
                     <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <!-- <i class="fas fa-map-marker-alt" style="color: white;"></i> -->
+                    <img src="img/icons/mdi_instagram.png" alt="Map Marker Icon" style="color: white;">
                     </div>
                     <div class="contact-text">
                         <p>Jalan Puspanjolo dalam 5 no. 10, RT 011, RW 001, Semarang, Jawa Tengah, 50141</p>
                     </div>
                 </div>
-                <div class="d-flex flex-row contact-row">
+                <div class="contact-content-row">
                     <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
+                        <!-- <i class="fas fa-envelope" style="color: white;"></i> -->
+                        <img src="img/icons/mdi_mail.png" alt="Map Marker Icon" style="color: white;">
                     </div>
                     <div class="contact-text">
                         <p>kontak@pemapi.com</p>
                     </div>
                 </div>
-                <div class="d-flex flex-row contact-row">
+                <div class="contact-content-row">
                     <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
+                        <!-- <i class="fas fa-phone" style="color: white;"></i> -->
+                        <img src="img/icons/mdi_phone.png" alt="Map Marker Icon" style="color: white;">
                     </div>
                     <div class="contact-text">
                         <p>0811-2899-009</p>
@@ -80,14 +166,49 @@
                 </div>
             </div>
             <div class="contact-item">
-                <h3>Email</h3>
-                <p>contact@example.com</p>
+                <h6>Kirimkan pesan kepada kami</h6>
+                <!-- <p>contact@example.com</p> -->
+                <form>
+                    <div class="contact-form-container" style="background-color: white; padding: 20px; border-radius: 15px;">
+                        <div class="mb-3">
+                            <label for="contact_name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="contact_name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contac_email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="contac_email" aria-describedby="emailHelp">
+                            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                        </div>
+                        <div class="mb-3">
+                            <label for="contact_phone" class="form-label">Phone</label>
+                            <input type="phone" class="form-control" id="contact_phone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="contact_message" class="form-label">Message</label>
+                            <textarea class="form-control" id="contact_message" rows="4"></textarea>
+                        </div>
+                        <!-- <div class="mb-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div> -->
+                        <!-- <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div> -->
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-outline-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
-        <div class="contact-row">
+        <div class="contact-row row-white">
             <div class="contact-item">
-                <h3>Address</h3>
-                <p>123 Main St, City, State 12345</p>
+                <!-- <h3>Address</h3>
+                <p>123 Main St, City, State 12345</p> -->
+                <div>
+                    <img src="" alt="">
+                </div>
             </div>
             <div class="contact-item">
                 <h3>Business Hours</h3>
