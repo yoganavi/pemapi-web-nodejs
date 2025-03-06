@@ -1,15 +1,9 @@
 /* Frame 134 */
-html{
-  background: #0E3477;
-}
-body{
-  font-family: 'Poppins';
-  width: min(100%, 1600px);
-}
+
 
 .hero-section.container-fluid{
   background: #0E3477;
-  height: 694px;
+  height: 764px;
 }
 
 .hero-section p.judul{
@@ -21,7 +15,7 @@ body{
 }
 /* Karena Semua Berhak Merasa Aman */
 .hero-section p.keterangan{
-  width: 70%;
+  width: 72%;
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
@@ -74,23 +68,178 @@ body{
   right: 0;
   width: 76%;
 }
+.wrapper-btn-quiz{
+  bottom: 50px;
+  left: 0;
+  z-index: 3;
+}
+.sec4 .a{
+  width: 100px;
+  height: 100px;
+  left: -40px;
+}
+.sec4 .b{
+  width: 100px;
+  height: 100px;
+  left: 60px;
+  top: 100px;
+}
+.container-fluid.sec2 .row.b .wrapper p{
+  font-size: larger;
+}
+.sec5 .b{
+  background: #1757C6;
+  width: 34%; 
+  height: 340px;
+}
 
+.sec6 .b .c .c1{
+  background: rgba(255, 255, 255, 0.01);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.sec7 .b .b2 .b2a{
+  background: #1757C6;
+  width: 65%;
+  height: 70%;
+}
+
+.sec9 .b{
+  height: 55%;
+}
+
+
+/* tablet */
 @media (max-width: 991.98px) {
   .hero-section.container-fluid{
-    height: 400px;
+    height: 500px;
   }
   /* Karena Semua Berhak Merasa Aman */
   .hero-section p.judul{
-    font-size: 42px;
+    font-size: 40px;
     line-height: 40px;
   }
   .hero-section p.keterangan{
     width: 75%;
     line-height: unset;
-    font-size: medium;
   }
   .hero-section .wrapper1{
     width: 145%;
+  }
+  .wrapper-btn-quiz{
+    bottom: 20px;
+  }
+  .sec4 .a{
+    width: 70px;
+    height: 70px;
+    left: -20px;
+  }
+  .sec4 .b{
+    width: 70px;
+    height: 70px;
+    left: 50px;
+    top: 70px;
+  }
+  .sec5 .b{
+    width: 64%; 
+    height: 300px;
+  }
+  .sec7 .b2{
+    height: 450px;
+  }
+  .sec9 .b{
+    height: 250px;
+  }
+  .sec9 p{
+    font-size: medium !important;
+  }
+}
+
+/* mobile */
+@media (max-width: 576px) {
+  /* Karena Semua Berhak Merasa Aman */
+  .hero-section p.judul{
+    font-size: 26px;
+    line-height: 40px;
+  }
+  /* takinkan keamanan */
+  .hero-section p.keterangan{
+    width: 100%;
+    font-size: medium;
+  }
+  .hero-section .wrapper1{
+    width: 90%;
+  }
+  .hero-section img.boys{
+    /* bottom: 0;   */
+    left: 10px;
+    width: 58%;
+  }
+  .hero-section img.girl{
+    /* bottom: 0;   */
+    /* right: 0; */
+    width: 80%;
+  }
+  .hero-section .wrapper-btn-quiz span, .hero-section .wrapper-btn-quiz span button{
+    font-size: small;
+  }
+  .hero-section .wrapper-btn-quiz span{
+    width: 100%;
+  }
+  .hero-section .wrapper-btn-quiz span button{
+    width: 100%;
+  }
+  .container-fluid.sec2 .row.b .wrapper h3{
+    font-size: large;
+  }
+  .container-fluid.sec2 .row.b .wrapper p{
+    font-size: medium;
+  }
+  /* Rectangle 24 */
+.rectangle-24{
+  width: 53%;
+  height: 52vw;
+  max-height: 480px;
+  left: 60px;
+  bottom: 0;
+}
+
+/* Rectangle 25 */
+.rectangle-25{
+  width: 46%;
+  height: 42vw;
+  max-height: 370px;
+  left: 42%;
+  bottom: 20px;
+}
+  .sec4{
+    top: 220px !important;
+  }
+  .sec4 .a{
+    width: 55px;
+    height: 55px;
+    left: -25px;
+  }
+  .sec4 .b{
+    width: 55px;
+    height: 55px;
+    left: 30px;
+    top: 55px;
+  }
+  .sec7 .b1 h2{
+    font-size: large;
+  }
+  .sec7 .b1 h3,.sec7 .b1 h4 {
+    font-size: medium;
+  }
+  .Footer .b{
+    width: 60px !important;height: 60px !important; top: 25px !important; right: 85px !important;
+  }
+  .Footer .c{
+    width: 60px !important;height: 60px !important;top: 85px !important;right: 25px !important;
   }
 }
 

@@ -6,8 +6,13 @@ import flash from 'connect-flash';
 import bodyParser from 'body-parser';
 import axios from 'axios';
 
+// import { Server } from 'socket.io';
+// import { createServer } from 'http';
+
 const app=express()
 const PORT = process.env.PORT || 3011
+// const server = createServer(app)
+// const io = new Server(server)
 
 // use ejs as view engine
 app.set('view engine', 'ejs');
@@ -30,6 +35,9 @@ app.use(flash());
  // Parses json, multi-part (file), url-encoded
 app.use(bodyParser.json())
 
+// change parameter for socket.io for once refresh client
+let change = true;
+
 app.use('/', (req, res, next) => {
   let path = req.path
   if(path == '/favicon.ico') return
@@ -38,23 +46,35 @@ app.use('/', (req, res, next) => {
 })
 
 app.get('/', async(req,res)=>{
+  // change parameter for socket.io for once refresh client
+  change = false;
+
   res.render('home',{
     layout: 'main-layout',
   })
 });
 
 app.get('/pemapi-app', async(req,res)=>{
+  // change parameter for socket.io for once refresh client
+  change = false;
+  
   res.render('pemapi-app',{
     layout: 'main-layout',
   })
 });
 
 app.get('/product', async(req,res)=>{
+  // change parameter for socket.io for once refresh client
+  change = false;
+  
   res.render('product',{
     layout: 'main-layout',
   })
 });
 app.get('/product-apar', async(req,res)=>{
+  // change parameter for socket.io for once refresh client
+  change = false;
+
   let tipe = req.query.tipe;
   
   res.render(`product-apar-${tipe}`,{
@@ -62,8 +82,10 @@ app.get('/product-apar', async(req,res)=>{
   })
 });
 app.get('/contact-us', async(req,res)=>{
+  // change parameter for socket.io for once refresh client
+  change = false;
   let alert = req.flash('alert')[0];
-
+  // directive class for alert
   res.render(`contact-us`,{
     layout: 'main-layout',
     alert,
@@ -86,6 +108,21 @@ app.use('/', (req, res) => {
   res.status(404)
   .send('<h1>Page not found</h1>');
 })
+
+// use socket.io stream refressh page
+// io.on('connection', (socket)=>{
+//   console.log(change);
+//   console.log('connected');
+//   if(change){
+//     socket.emit('refreshPage')
+//   }
+// })
+
+// server.listen(PORT, () => {
+//   console.log(`App listening on port ${PORT}`)
+// });
+// / use socket.io stream refressh page
+
 
 // using express server
 app.listen(PORT, () => {

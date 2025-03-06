@@ -1,0 +1,97 @@
+<!-- USER CSS -->
+<style>
+  body{
+    background: #0E3477;
+  }
+  .con1{
+    padding-top: 70px;
+  }
+  .con1 .row2 .col2 h1{
+    font-size: 68px;  
+  }
+  .con1 .row2 .col3 img{  
+    width: 340px; bottom: -100px; 
+    transform: rotate(-10deg) translateX(-50%);
+  }
+  .con1 .col3 .absolute1{
+    bottom: -110px;
+    width: 220px;
+    height: 350px;
+    background: #1857C6;
+    transform: rotate(10deg) translateX(-45%);
+  }
+
+  @media (max-width: 991.98px) {
+    .con1 .row2 .col2 h1{
+      font-size: xx-large;  
+    }
+    .con1 .row2 .col3 img{  
+      width: 260px; 
+      bottom: -75px; 
+    }
+    .con1 .col3 .absolute1{
+      bottom: -130px;
+      width: 150px;
+      height: 300px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .con1{
+      padding-top: 0px;
+    }
+    .con1 .col3{
+      height: 380px;
+    }
+    .con1 .row2 .col3 img{  
+      width: 80%; 
+      bottom: -85px; 
+    }
+    .con1 .col3 .absolute1{
+      bottom: -130px;
+      width: 180px;
+      height: 330px;
+    } 
+  }
+</style>
+<!-- / USER CSS -->
+<div class="con1 container-fluid text-white mt-4 overflow-hidden" style="background: #0E3477;">
+  <div class="row row1">
+    <div class="col1 col-11 col-xl-9 mx-auto">
+      <div class="row row2">
+        <div class="col2 col-12 col-md-8">
+          <h1 class="">
+            Pilihan Produk Kami Terbaik Untukmu
+          </h1>
+          <p class="mt-5">
+            Cari tahu APAR yang cocok dengan kebutuhanmu!
+          </p>
+          <a class="btn btn-danger py-2 mt-2" href="#" role="button" style="--bs-btn-bg: #BE2523">Quiz Kebutuhan APAR-Mu!</a>
+        </div>
+        <div class="col3 col-12 col-md-4 position-relative">
+          <img src="/img/apar-powder-3kg.png" class="position-absolute start-50 z-2" alt="">
+          <div class="absolute1 position-absolute rounded-4 z-1 start-50"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="con2 container-fluid py-5" style="background: white;">
+  <div class="row1 row py-4">
+    <div class="col1 col-11 col-xl-9 mx-auto">
+      <div class="row">
+        <div class="col">
+          <h1><i class="fa-solid fa-fire"></i>Level Resiko Kebakaran</h1>
+          <p>Ketahui level resiko sebelum memilih produk yang cocok untuk kebutuhanmu</p>
+        </div>
+      </div>
+      <div class="row2 row">
+        <div class="col-3"></div>
+        <div class="col-3"></div>
+        <div class="col-3"></div>
+        <div class="col-3"></div>
+      </div>
+    </div>
+  </div>
+</div>

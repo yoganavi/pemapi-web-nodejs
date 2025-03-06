@@ -1,0 +1,46 @@
+.hero-section.container-fluid{
+  background: #0E3477;
+}
+.col1 .judul{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 68px;
+}
+.col1 .keterangan{
+  width: 75%;
+}
+.col3 .a{
+  top: 0px;
+  width: 80px;
+  height: 80px;
+  left: 0px;
+}
+.col3 .b{
+  width: 80px;
+  height: 80px;
+  left: 80px;
+  top: 80px;
+}
+
+@media (max-width: 991.98px) {
+  .col1 .judul{
+    font-size: 42px;
+  }
+  .col1 .keterangan{
+    width: 100%;
+  }
+  .con4 .row2 .col3 div{
+    right: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 576px) {
+  .col2{
+    height: 470px;
+  }
+  .con4 .row2 .col3 div{
+    right: 50%;
+    transform: translateX(0%);
+  }
+}
