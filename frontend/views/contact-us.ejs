@@ -43,7 +43,7 @@
   </div>
   <div class="col-span-12 lg:col-span-5 pt-12 lg:pt-0 pe-9 md:pe-80 lg:pe-5 xl:pe-32 relative">
     <p class="mb-5">Kirimkan pesan kepada kami</p>
-    <form x-data="{ isSubmit: true }" @submit="isSubmit = !isSubmit; setTimeout(() => {$event.target.reset()}, 500);" class="bg-white rounded-lg px-6 py-8 text-black z-30" action="/contact-us-submit" method="post" name="submit-to-google-sheet">
+    <form x-data="{ isSubmit: true }" @submit="isSubmit = !isSubmit; setTimeout(() => {$event.target.reset()}, 500);" class="bg-white rounded-lg px-6 py-8 text-black z-30" action="/contact-us/submit" method="post" name="submit-to-google-sheet">
       <div class="flex flex-col mb-5">
         <label for="name" class="mb-2 font-semibold text-[#0E3477]">Name</label>
         <input type="text" class="ps-4 py-3 border-b" name="nama" placeholder="Your Name" value="" required>

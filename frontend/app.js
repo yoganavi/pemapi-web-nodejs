@@ -5,6 +5,10 @@ import cookieParser from 'cookie-parser';
 import flash from 'connect-flash';
 import bodyParser from 'body-parser';
 import axios from 'axios';
+import { routerHome } from './routes/routerHome.js';
+import { routerContactUs } from './routes/routerContactUs.js';
+import fs from 'fs';
+
 
 const app=express()
 const PORT = process.env.PORT || 3011
@@ -33,15 +37,15 @@ app.use(bodyParser.json())
 app.use('/', (req, res, next) => {
   let path = req.path
   if(path == '/favicon.ico') return
+  if(path == '/sitemap_index.xml') return res.send('./public/sitemap_index.xml')
+  if(path == '/index.html') return res.redirect('/')
+  if(req.get('host') == "www.pemapi.com") res.send(`<script>window.location.href = "https://pemapi.com"</script>`)
+
   // console.log("🚀 ~ file: app.js:36 ~ app.use ~ path:", path)
   next()
 })
 
-app.get('/', async(req,res)=>{
-  res.render('home',{
-    layout: 'main-layout',
-  })
-});
+app.use('/' , routerHome);
 
 app.get('/pemapi-app', async(req,res)=>{
   res.render('pemapi-app',{
@@ -56,30 +60,21 @@ app.get('/product', async(req,res)=>{
 });
 app.get('/product-apar', async(req,res)=>{
   let tipe = req.query.tipe;
-  
-  res.render(`product-apar-${tipe}`,{
-    layout: 'main-layout',
-  })
-});
-app.get('/contact-us', async(req,res)=>{
-  let alert = req.flash('alert')[0];
-
-  res.render(`contact-us`,{
-    layout: 'main-layout',
-    alert,
-    modalShow: alert ? '' : 'hidden',
-    alertColor: alert=='success'? 'green' : 'red'
-  })
+  // how to check file is exist in views folder using fs
+  let file = `product-apar-${tipe}.ejs`;
+  let filePath = `views/${file}`;
+  fs.access(filePath, fs.constants.F_OK, (err) => {
+    if (err) {
+      return res.status(404).send('<h1>Page not found</h1>');
+    };
+    
+    res.render(`product-apar-${tipe}`,{
+      layout: 'main-layout',
+    });
+  });
 });
 
-app.post('/contact-us-submit', async(req,res)=>{
-  let body = req.body;
-  // console.log("🚀 ~ app.post ~ body:", body)
-  let sending = await axios.post('https://script.google.com/macros/s/AKfycbw4lpVVgxYmsEOKamdTgPa38gPs76Gg-gAh8ihTCiDRvOsr-0fCD3mIbpOXfqlf9KJH/exec', body);
-  
-  req.flash('alert', sending.data.result);
-  res.redirect('/contact-us')
-})
+app.use('/contact-us', routerContactUs);
 
 app.use('/', (req, res) => {
   console.log(`app.use/ page not found`);
