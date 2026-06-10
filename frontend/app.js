@@ -76,6 +76,12 @@ app.get('/product-apar', async(req,res)=>{
 
 app.use('/contact-us', routerContactUs);
 
+app.get('/privacy-policy', async(req,res)=>{
+  res.render('privacy-policy',{
+    layout: 'main-layout2',
+  })
+});
+
 app.use('/', (req, res) => {
   console.log(`app.use/ page not found`);
   res.status(404)

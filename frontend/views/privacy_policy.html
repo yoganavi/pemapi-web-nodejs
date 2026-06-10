@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - PEMAPI Mobile App</title>
+  <meta name="description" content="Privacy Policy for PEMAPI Mobile App - Smart APAR Management System. Learn how we collect, use, protect, and handle your data.">
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ── Custom Properties & Theme System ────────────────────────────────── */
+    :root {
+      /* Color Tokens */
+      --primary-blue: #0147AD;
+      --secondary-blue: #2563EB;
+      --accent-red: #E63946;
+      --success: #10B981;
+      
+      /* Light Mode Palette */
+      --bg-color: #F4F6F8;
+      --surface-color: #FFFFFF;
+      --border-color: #D1D5DB;
+      --text-primary: #1F2937;
+      --text-secondary: #4B5563;
+      --text-muted: #6B7280;
+      --header-bg: rgba(255, 255, 255, 0.8);
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+      --active-toc-bg: rgba(37, 99, 235, 0.08);
+      
+      /* Layout & Motion */
+      --transition-speed: 0.3s;
+      --border-radius-lg: 20px;
+      --border-radius-md: 12px;
+    }
+
+    [data-theme="dark"] {
+      /* Dark Mode Palette */
+      --bg-color: #0F172A;
+      --surface-color: #1E293B;
+      --border-color: #334155;
+      --text-primary: #F8FAFC;
+      --text-secondary: #E2E8F0;
+      --text-muted: #94A3B8;
+      --header-bg: rgba(30, 41, 59, 0.8);
+      --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+      --active-toc-bg: rgba(37, 99, 235, 0.15);
+    }
+
+    /* ── Base Reset ──────────────────────────────────────────────────────── */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      line-height: 1.6;
+      transition: background-color var(--transition-speed), color var(--transition-speed);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ── Custom Scrollbars ────────────────────────────────────────────────── */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-color);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--border-color);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--text-muted);
+    }
+
+    /* ── Container Layout ────────────────────────────────────────────────── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Header & Navigation ─────────────────────────────────────────────── */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--header-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      transition: background-color var(--transition-speed), border-color var(--transition-speed);
+    }
+
+    .header-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 72px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .brand-icon {
+      background-color: var(--primary-blue);
+      color: #FFFFFF;
+      width: 40px;
+      height: 40px;
+      border-radius: var(--border-radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 20px;
+      box-shadow: 0 4px 12px rgba(1, 71, 173, 0.3);
+    }
+
+    .brand-name {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      color: var(--primary-blue);
+    }
+
+    .theme-toggle-btn {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color var(--transition-speed), background-color var(--transition-speed);
+    }
+
+    .theme-toggle-btn:hover {
+      background-color: var(--active-toc-bg);
+      border-color: var(--secondary-blue);
+    }
+
+    .theme-toggle-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* ── Hero Banner ─────────────────────────────────────────────────────── */
+    .hero {
+      padding: 60px 0 40px;
+      text-align: center;
+      border-bottom: 1px solid var(--border-color);
+      background: linear-gradient(135deg, rgba(1, 71, 173, 0.03) 0%, rgba(37, 99, 235, 0.03) 100%);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      text-wrap: balance;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      text-wrap: pretty;
+    }
+
+    .meta-info {
+      margin-top: 16px;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Content Grid ────────────────────────────────────────────────────── */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 48px;
+      padding: 48px 0;
+    }
+
+    /* ── Sticky Sidebar ──────────────────────────────────────────────────── */
+    .sidebar {
+      position: sticky;
+      top: 120px;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .toc-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .toc-link {
+      display: block;
+      padding: 8px 16px;
+      border-left: 2px solid transparent;
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-weight: 500;
+      font-size: 0.95rem;
+      border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+      transition: all var(--transition-speed) ease;
+    }
+
+    .toc-link:hover, .toc-link.active {
+      color: var(--secondary-blue);
+      background-color: var(--active-toc-bg);
+      border-left-color: var(--secondary-blue);
+    }
+
+    /* ── Policy Main Article ─────────────────────────────────────────────── */
+    .policy-content {
+      background-color: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: 40px;
+      box-shadow: var(--card-shadow);
+      transition: background-color var(--transition-speed), border-color var(--transition-speed), box-shadow var(--transition-speed);
+    }
+
+    .policy-section {
+      scroll-margin-top: 100px;
+      margin-bottom: 48px;
+    }
+
+    .policy-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .policy-section h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 8px;
+      text-wrap: balance;
+    }
+
+    .policy-section h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-top: 24px;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+      text-wrap: balance;
+    }
+
+    .policy-content p {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      text-wrap: pretty;
+    }
+
+    .policy-content ul, .policy-content ol {
+      margin-bottom: 20px;
+      padding-left: 24px;
+      color: var(--text-secondary);
+    }
+
+    .policy-content li {
+      margin-bottom: 8px;
+      text-wrap: pretty;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(1, 71, 173, 0.04) 0%, rgba(37, 99, 235, 0.04) 100%);
+      border-left: 4px solid var(--primary-blue);
+      padding: 20px;
+      border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+      margin: 24px 0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 4px;
+      background-color: var(--active-toc-bg);
+      color: var(--secondary-blue);
+      margin-right: 6px;
+    }
+
+    /* ── Footer ──────────────────────────────────────────────────────────── */
+    .footer {
+      background-color: var(--surface-color);
+      border-top: 1px solid var(--border-color);
+      padding: 32px 0;
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      transition: background-color var(--transition-speed), border-color var(--transition-speed);
+    }
+
+    /* ── Responsive Styling ──────────────────────────────────────────────── */
+    @media (max-width: 991px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .sidebar {
+        display: none; /* Hide TOC on smaller screens */
+      }
+      .policy-content {
+        padding: 24px;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header class="header" id="main-header">
+    <div class="container header-nav">
+      <a href="#" class="brand" id="brand-link">
+        <span class="brand-icon" aria-hidden="true">P</span>
+        <span class="brand-name">PEMAPI</span>
+      </a>
+      <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle dark mode">
+        <!-- Sun/Moon Icon will be injected or toggled via JavaScript -->
+        <svg id="theme-icon" viewBox="0 0 24 24">
+          <!-- Moon Icon Path (Default Light Mode Icon) -->
+          <path d="M12 3c.132 0 .263 0 .393.007a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 3zm0 2a7 7 0 1 0 5.002 11.875 9.5 9.5 0 0 1-5.787-8.7A9.458 9.458 0 0 1 12 5z"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ── Hero Banner ── -->
+  <section class="hero" id="policy-hero">
+    <div class="container">
+      <h1 id="policy-main-heading">Privacy Policy</h1>
+      <p>This privacy policy outlines how we handle and protect your information within the PEMAPI Mobile App ecosystem.</p>
+      <div class="meta-info" id="last-updated-text">Last Updated: June 9, 2026</div>
+    </div>
+  </section>
+
+  <!-- ── Main Grid Content ── -->
+  <div class="container">
+    <main class="content-grid" id="main-grid">
+      
+      <!-- Sticky Sidebar (Table of Contents) -->
+      <aside class="sidebar" id="toc-sidebar">
+        <nav aria-label="Table of Contents">
+          <h2 class="toc-title">On this page</h2>
+          <ul class="toc-list" id="toc-container">
+            <li><a href="#intro" class="toc-link active" id="toc-intro">1. Introduction</a></li>
+            <li><a href="#collection" class="toc-link" id="toc-collection">2. Information We Collect</a></li>
+            <li><a href="#camera" class="toc-link" id="toc-camera">3. Device Permissions</a></li>
+            <li><a href="#usage" class="toc-link" id="toc-usage">4. How We Use Data</a></li>
+            <li><a href="#sharing" class="toc-link" id="toc-sharing">5. Data Sharing & Security</a></li>
+            <li><a href="#deletion" class="toc-link" id="toc-deletion">6. Data Retention & Deletion</a></li>
+            <li><a href="#contact" class="toc-link" id="toc-contact">7. Contact Us</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Document -->
+      <article class="policy-content" id="policy-article">
+        
+        <!-- Section 1: Intro -->
+        <section id="intro" class="policy-section">
+          <h2>1. Introduction</h2>
+          <p>Welcome to <strong>PEMAPI</strong> (the "App"), a Smart APAR (fire extinguisher) Management System developed by <strong>Coco Profile</strong> ("we", "us", or "our"). We are committed to protecting your personal data and respecting your privacy.</p>
+          <p>This Privacy Policy explains how we collect, store, process, and protect your information when you use our mobile application. By logging in or using the App, you agree to the terms described in this policy.</p>
+          
+          <div class="highlight-box" id="scope-box">
+            <p><strong>Note:</strong> This App is designed specifically for enterprise and facility management technicians to track inspections, maintenance, and compliance of safety equipment. It is not intended for the general consumer public.</p>
+          </div>
+        </section>
+
+        <!-- Section 2: Collection -->
+        <section id="collection" class="policy-section">
+          <h2>2. Information We Collect</h2>
+          <p>We collect only the essential information required to deliver the core services of our Smart APAR Management System:</p>
+          
+          <h3>A. Account and Profile Data</h3>
+          <p>When your company registers your technician account, or when you log in, we utilize details stored in our backend (PocketBase / Firebase Auth):</p>
+          <ul>
+            <li><span class="badge">Required</span> <strong>Account Details:</strong> Full Name, Email Address, User ID.</li>
+            <li><span class="badge">Required</span> <strong>Organization Context:</strong> Company Name, assigned facilities, and technician role.</li>
+          </ul>
+
+          <h3>B. Operational Records</h3>
+          <p>To establish compliance audit trails, we log actions taken within the App:</p>
+          <ul>
+            <li>Inspection checklists completed by you.</li>
+            <li>Photos taken of fire extinguishers during inspection.</li>
+            <li>Date, time, and technician signature linked to inspection logs.</li>
+          </ul>
+
+          <h3>C. Technical Identifiers</h3>
+          <p>We collect standard connection and device telemetry, including operating system version, device model, and unique identifiers, to maintain app performance, prevent fraud, and deliver notifications.</p>
+        </section>
+
+        <!-- Section 3: Camera -->
+        <section id="camera" class="policy-section">
+          <h2>3. Device Permissions</h2>
+          <p>To support key functionality, the App requires specific system permissions on your Android device. You can grant or revoke these permissions in your system settings at any time:</p>
+          
+          <h3>Camera Permission</h3>
+          <p><strong>Purpose:</strong> The camera is used solely to scan QR codes attached to fire safety equipment (APAR) for identification, and to take compliance photos showing equipment status during inspections. The video feed is processed locally and is not recorded, streamed, or stored unless you submit a checklist containing a status photo.</p>
+
+          <h3>Notifications Permission</h3>
+          <p><strong>Purpose:</strong> Used to receive push notifications via Firebase Cloud Messaging (FCM). These notifications keep you informed about upcoming scheduled inspections, system alerts, and supervisor comments on inspection tasks. You may opt out of these in your system notification settings.</p>
+
+          <h3>Local Storage</h3>
+          <p><strong>Purpose:</strong> The App stores your authentication credentials securely in local SharedPreferences. This keeps you logged in between sessions so you do not have to re-enter your password each time you open the App. These credentials can be cleared by clicking "Sign Out" in the profile tab or uninstalling the app.</p>
+        </section>
+
+        <!-- Section 4: Usage -->
+        <section id="usage" class="policy-section">
+          <h2>4. How We Use Your Data</h2>
+          <p>We process your data strictly for the following operational purposes:</p>
+          <ol>
+            <li><strong>Authentication & Security:</strong> To verify your identity and authorize your access to your organization's private inventory database.</li>
+            <li><strong>Compliance Auditing:</strong> To log inspections, certifying that your organization's fire safety equipment is checked regularly and remains functional.</li>
+            <li><strong>Task Management:</strong> To notify you of scheduled inspections, tasks, and system changes.</li>
+            <li><strong>App Performance:</strong> To detect crashes, improve responsiveness, and troubleshoot bugs.</li>
+          </ol>
+        </section>
+
+        <!-- Section 5: Sharing -->
+        <section id="sharing" class="policy-section">
+          <h2>5. Data Sharing & Security</h2>
+          <p>We value your trust and do not monetize or sell your data. Your information is shared only under these conditions:</p>
+          <ul>
+            <li><strong>Your Organization:</strong> Your inspection reports, name, and timestamps are shared with your organization's administrators.</li>
+            <li><strong>BaaS Infrastructure:</strong> Data is synchronized securely with our backend platforms (PocketBase and Firebase Auth/Messaging) which use industry-standard encryption.</li>
+            <li><strong>Legal Requirements:</strong> If required by law to protect safety, prevent fraud, or comply with legal processes.</li>
+          </ul>
+          
+          <h3>Security Measures</h3>
+          <p>All data in transit is encrypted using Secure Socket Layer (SSL/TLS) connections. Data stored on our servers is protected using role-based access control, ensuring that only authorized administrators from your company can view safety records.</p>
+        </section>
+
+        <!-- Section 6: Deletion -->
+        <section id="deletion" class="policy-section">
+          <h2>6. Data Retention & Deletion</h2>
+          <p>We retain your profile data and inspection logs for as long as your technician account remains active within your organization, or as required by industry fire safety compliance policies.</p>
+          <p>If you or your company administrator wish to terminate your account and request complete deletion of your personal profile data, you may submit a request by contacting us via the details below. Please note that historical inspection reports may be retained as archive records to preserve the safety audit logs of the facility.</p>
+        </section>
+
+        <!-- Section 7: Contact -->
+        <section id="contact" class="policy-section">
+          <h2>7. Contact Us</h2>
+          <p>If you have any questions or concerns regarding this Privacy Policy, or if you wish to exercise your data access or deletion rights, please contact our support team:</p>
+          <p style="margin-top: 12px;">
+            <strong>Email:</strong> <a href="mailto:support@pemapi.com" style="color: var(--secondary-blue); text-decoration: none;" id="support-email">support@pemapi.com</a><br>
+            <strong>Company:</strong> Coco Profile Dev Team<br>
+            <strong>Website:</strong> <a href="https://pemapi.com" target="_blank" rel="noopener noreferrer" style="color: var(--secondary-blue); text-decoration: none;" id="website-link">https://pemapi.com</a>
+          </p>
+        </section>
+
+      </article>
+    </main>
+  </div>
+
+  <!-- ── Footer ── -->
+  <footer class="footer" id="main-footer">
+    <div class="container">
+      <p>&copy; 2026 PEMAPI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ── JavaScript for Theme Toggling & Active Headers ── -->
+  <script>
+    // 1. Theme Toggle Management
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    
+    // Moon and Sun SVG Path definitions
+    const moonPath = 'M12 3c.132 0 .263 0 .393.007a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 3zm0 2a7 7 0 1 0 5.002 11.875 9.5 9.5 0 0 1-5.787-8.7A9.458 9.458 0 0 1 12 5z';
+    const sunPath = 'M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0-5a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V3a1 1 0 0 1 1-1zm0 15a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zM5.636 4.222a1 1 0 0 1 1.414 0l1.414 1.414a1 1 0 1 1-1.414 1.414L5.636 5.636a1 1 0 0 1 0-1.414zm11.314 11.314a1 1 0 0 1 1.414 0l1.414 1.414a1 1 0 0 1-1.414 1.414l-1.414-1.414a1 1 0 0 1 0-1.414zM3 11a1 1 0 0 1 1 1v0a1 1 0 0 1-2 0v0a1 1 0 0 1 1-1zm15 0a1 1 0 0 1 1 1v0a1 1 0 0 1-2 0v0a1 1 0 0 1 1-1zM5.636 19.778a1 1 0 0 1 0-1.414l1.414-1.414a1 1 0 1 1 1.414 1.414l-1.414 1.414a1 1 0 0 1-1.414 0zm11.314-11.314a1 1 0 0 1 0-1.414l1.414-1.414a1 1 0 0 1 1.414 1.414l-1.414 1.414a1 1 0 0 1-1.414 0z';
+
+    // System theme preference check
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    function setTheme(theme) {
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeIcon.innerHTML = `<path d="${sunPath}"/>`;
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+        themeIcon.innerHTML = `<path d="${moonPath}"/>`;
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    // Initialize theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setTheme(savedTheme);
+    } else if (systemPrefersDark.matches) {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+
+    // Toggle theme on button click
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      if (currentTheme === 'dark') {
+        setTheme('light');
+      } else {
+        setTheme('dark');
+      }
+    });
+
+    // Listen for system theme changes
+    systemPrefersDark.addEventListener('change', (e) => {
+      if (!localStorage.getItem('theme')) {
+        setTheme(e.matches ? 'dark' : 'light');
+      }
+    });
+
+    // 2. Active Sidebar Links during Scroll
+    const sections = document.querySelectorAll('.policy-section');
+    const tocLinks = document.querySelectorAll('.toc-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - 120)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      tocLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').slice(1) === current) {
+          link.classList.add('active');
+        }
+      });
+      
+      // Fallback to highlight first item if at top of page
+      if (pageYOffset < 150) {
+        tocLinks.forEach(link => link.classList.remove('active'));
+        document.getElementById('toc-intro').classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>
