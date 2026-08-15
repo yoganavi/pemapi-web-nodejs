@@ -1,0 +1,908 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <title>Garansi APAR - PEMAPI</title>
+
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: [
+                            'Inter',
+                            'ui-sans-serif',
+                            'system-ui',
+                            '-apple-system',
+                            'BlinkMacSystemFont',
+                            'Segoe UI',
+                            'sans-serif'
+                        ]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+            background: #eef2f6;
+        }
+
+        .app {
+            width: 100%;
+            max-width: 430px;
+            min-height: 100vh;
+            margin: auto;
+            background: #f7f8fa;
+            overflow-x: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .app {
+                box-shadow: 0 0 50px rgba(15, 23, 42, .15);
+            }
+        }
+
+        .safe-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+
+        .glass {
+            background: rgba(255,255,255,.14);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- ========================================================= -->
+    <!-- TOP HEADER -->
+    <!-- ========================================================= -->
+
+    <header class="relative overflow-hidden bg-gradient-to-br from-[#d71920] via-[#e11d27] to-[#f97316]">
+
+        <!-- Decorative -->
+        <div class="absolute -right-20 -top-24 h-64 w-64 rounded-full bg-white/10"></div>
+        <div class="absolute -left-24 top-32 h-52 w-52 rounded-full bg-white/5"></div>
+
+        <div class="relative px-5 pb-7 pt-5">
+
+            <!-- App Bar -->
+            <div class="flex items-center justify-between">
+
+                <button
+                    onclick="history.back()"
+                    class="flex h-10 w-10 items-center justify-center rounded-full glass text-white active:scale-95"
+                >
+                    <i data-lucide="arrow-left" class="h-5 w-5"></i>
+                </button>
+
+                <div class="text-center">
+                    <p class="text-[10px] font-medium uppercase tracking-widest text-white/70">
+                        PEMAPI
+                    </p>
+                    <p class="text-sm font-bold text-white">
+                        Garansi APAR
+                    </p>
+                </div>
+
+                <button
+                    class="flex h-10 w-10 items-center justify-center rounded-full glass text-white active:scale-95"
+                >
+                    <i data-lucide="circle-help" class="h-5 w-5"></i>
+                </button>
+
+            </div>
+
+
+            <!-- Main Header -->
+            <div class="mt-7">
+
+                <div class="flex items-center gap-3">
+
+                    <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white shadow-lg">
+                        <i
+                            data-lucide="shield-check"
+                            class="h-7 w-7 text-red-600"
+                        ></i>
+                    </div>
+
+                    <div>
+                        <p class="text-xs text-red-100">
+                            Ketentuan Perlindungan
+                        </p>
+
+                        <h1 class="mt-0.5 text-2xl font-extrabold tracking-tight text-white">
+                            Garansi APAR
+                        </h1>
+                    </div>
+
+                </div>
+
+                <p class="mt-4 max-w-sm text-sm leading-relaxed text-red-50">
+                    Pastikan inspeksi APAR dilakukan secara rutin agar
+                    perlindungan dan garansi tetap aktif.
+                </p>
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- ========================================================= -->
+    <!-- CONTENT -->
+    <!-- ========================================================= -->
+
+    <main class="-mt-3 relative z-10 px-4 pb-32">
+
+
+        <!-- ===================================================== -->
+        <!-- STATUS GARANSI -->
+        <!-- ===================================================== -->
+
+        <section class="rounded-3xl bg-white p-5 shadow-xl shadow-slate-200/60">
+
+            <div class="flex items-start justify-between">
+
+                <div>
+
+                    <div class="flex items-center gap-2">
+
+                        <span class="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-100">
+                            <i
+                                data-lucide="shield-check"
+                                class="h-4 w-4 text-emerald-600"
+                            ></i>
+                        </span>
+
+                        <span class="text-xs font-semibold text-slate-400">
+                            STATUS GARANSI
+                        </span>
+
+                    </div>
+
+                    <h2 class="mt-2 text-2xl font-extrabold text-slate-900">
+                        Garansi Aktif
+                    </h2>
+
+                    <p class="mt-1 text-xs text-slate-400">
+                        APAR terdaftar dan dalam masa perlindungan
+                    </p>
+
+                </div>
+
+
+                <div class="rounded-full bg-emerald-50 px-3 py-1.5">
+                    <div class="flex items-center gap-1.5">
+
+                        <span class="h-2 w-2 animate-pulse rounded-full bg-emerald-500"></span>
+
+                        <span class="text-[11px] font-bold text-emerald-600">
+                            AKTIF
+                        </span>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- APAR ID -->
+
+            <div class="mt-5 rounded-2xl bg-slate-50 p-3">
+
+                <div class="flex items-center justify-between">
+
+                    <div>
+                        <p class="text-[10px] font-medium uppercase tracking-wide text-slate-400">
+                            Nomor APAR
+                        </p>
+
+                        <p class="mt-1 font-mono text-sm font-bold text-slate-800">
+                            PM-2026-001258
+                        </p>
+                    </div>
+
+                    <button class="flex h-9 w-9 items-center justify-center rounded-xl bg-white shadow-sm">
+                        <i
+                            data-lucide="copy"
+                            class="h-4 w-4 text-slate-500"
+                        ></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================================== -->
+        <!-- BENEFIT GARANSI -->
+        <!-- ===================================================== -->
+
+        <section class="mt-5">
+
+            <div class="mb-3 flex items-center justify-between">
+
+                <div>
+                    <p class="text-[11px] font-bold uppercase tracking-wider text-red-600">
+                        Perlindungan Anda
+                    </p>
+
+                    <h3 class="mt-0.5 text-lg font-extrabold text-slate-900">
+                        Garansi APAR
+                    </h3>
+                </div>
+
+            </div>
+
+
+            <div class="grid grid-cols-2 gap-3">
+
+                <!-- PRESSURE -->
+
+                <div class="rounded-2xl bg-white p-4 shadow-sm">
+
+                    <div class="flex items-center justify-between">
+
+                        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50">
+                            <i
+                                data-lucide="gauge"
+                                class="h-5 w-5 text-blue-600"
+                            ></i>
+                        </div>
+
+                        <span class="text-[10px] font-bold text-blue-600">
+                            01
+                        </span>
+
+                    </div>
+
+                    <p class="mt-4 text-xs font-medium text-slate-400">
+                        Pressure APAR
+                    </p>
+
+                    <p class="mt-0.5 text-xl font-extrabold text-slate-900">
+                        1 Tahun
+                    </p>
+
+                    <p class="mt-1 text-[11px] leading-relaxed text-slate-400">
+                        Sejak tanggal pembelian.
+                    </p>
+
+                </div>
+
+
+                <!-- MEDIA -->
+
+                <div class="rounded-2xl bg-white p-4 shadow-sm">
+
+                    <div class="flex items-center justify-between">
+
+                        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-orange-50">
+                            <i
+                                data-lucide="calendar-clock"
+                                class="h-5 w-5 text-orange-600"
+                            ></i>
+                        </div>
+
+                        <span class="text-[10px] font-bold text-orange-600">
+                            02
+                        </span>
+
+                    </div>
+
+                    <p class="mt-4 text-xs font-medium text-slate-400">
+                        Media Pemadam
+                    </p>
+
+                    <p class="mt-0.5 text-xl font-extrabold text-slate-900">
+                        3 Tahun
+                    </p>
+
+                    <p class="mt-1 text-[11px] leading-relaxed text-slate-400">
+                        Sesuai produksi/refill terakhir.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================================== -->
+        <!-- INSPEKSI NEXT -->
+        <!-- ===================================================== -->
+
+        <section class="mt-5 overflow-hidden rounded-3xl bg-slate-900 text-white shadow-xl">
+
+            <div class="p-5">
+
+                <div class="flex items-start justify-between">
+
+                    <div>
+
+                        <div class="flex items-center gap-2">
+
+                            <div class="flex h-8 w-8 items-center justify-center rounded-xl bg-white/10">
+                                <i
+                                    data-lucide="calendar-check-2"
+                                    class="h-4 w-4"
+                                ></i>
+                            </div>
+
+                            <span class="text-xs font-semibold text-slate-400">
+                                INSPEKSI BERIKUTNYA
+                            </span>
+
+                        </div>
+
+                        <h3 class="mt-3 text-2xl font-extrabold">
+                            April 2026
+                        </h3>
+
+                        <p class="mt-1 text-xs text-slate-400">
+                            Wajib dilakukan maksimal pada bulan ini.
+                        </p>
+
+                    </div>
+
+
+                    <div class="text-right">
+
+                        <p class="text-3xl font-black">
+                            12
+                        </p>
+
+                        <p class="text-[10px] font-medium text-slate-500">
+                            HARI LAGI
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Progress -->
+
+                <div class="mt-6">
+
+                    <div class="mb-2 flex justify-between text-[10px]">
+
+                        <span class="font-semibold text-slate-400">
+                            Periode inspeksi
+                        </span>
+
+                        <span class="font-bold text-emerald-400">
+                            67%
+                        </span>
+
+                    </div>
+
+                    <div class="h-2 overflow-hidden rounded-full bg-white/10">
+
+                        <div
+                            class="h-full rounded-full bg-emerald-400"
+                            style="width:67%"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CTA -->
+
+                <button
+                    onclick="openInspection()"
+                    class="mt-5 flex w-full items-center justify-center gap-2 rounded-2xl bg-white px-4 py-3.5 text-sm font-bold text-slate-900 shadow-lg active:scale-[.98]"
+                >
+
+                    <i
+                        data-lucide="scan-line"
+                        class="h-5 w-5"
+                    ></i>
+
+                    Lakukan Inspeksi Sekarang
+
+                    <i
+                        data-lucide="arrow-right"
+                        class="ml-auto h-4 w-4"
+                    ></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================================== -->
+        <!-- TIMELINE INSPEKSI -->
+        <!-- ===================================================== -->
+
+        <section class="mt-6">
+
+            <div class="mb-3">
+
+                <p class="text-[11px] font-bold uppercase tracking-wider text-red-600">
+                    Aturan Inspeksi
+                </p>
+
+                <h3 class="mt-0.5 text-lg font-extrabold text-slate-900">
+                    Maksimal 3 Bulan Sekali
+                </h3>
+
+            </div>
+
+
+            <div class="rounded-3xl bg-white p-5 shadow-sm">
+
+                <!-- Timeline -->
+
+                <div class="relative">
+
+                    <!-- Vertical Line -->
+
+                    <div class="absolute left-[15px] top-4 bottom-4 w-0.5 bg-slate-100"></div>
+
+
+                    <!-- Step 1 -->
+
+                    <div class="relative flex gap-4 pb-6">
+
+                        <div class="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-100 ring-4 ring-white">
+
+                            <i
+                                data-lucide="check"
+                                class="h-4 w-4 text-emerald-600"
+                            ></i>
+
+                        </div>
+
+                        <div>
+
+                            <p class="text-sm font-bold text-slate-800">
+                                Inspeksi Terakhir
+                            </p>
+
+                            <p class="mt-1 text-xs text-slate-400">
+                                Januari 2026
+                            </p>
+
+                            <span class="mt-2 inline-flex rounded-full bg-emerald-50 px-2.5 py-1 text-[10px] font-bold text-emerald-600">
+                                SELESAI
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Step 2 -->
+
+                    <div class="relative flex gap-4 pb-6">
+
+                        <div class="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-blue-100 ring-4 ring-white">
+
+                            <i
+                                data-lucide="calendar"
+                                class="h-4 w-4 text-blue-600"
+                            ></i>
+
+                        </div>
+
+                        <div>
+
+                            <p class="text-sm font-bold text-slate-800">
+                                Periode Inspeksi
+                            </p>
+
+                            <p class="mt-1 text-xs text-slate-400">
+                                Februari – April 2026
+                            </p>
+
+                            <span class="mt-2 inline-flex rounded-full bg-blue-50 px-2.5 py-1 text-[10px] font-bold text-blue-600">
+                                BERJALAN
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Step 3 -->
+
+                    <div class="relative flex gap-4">
+
+                        <div class="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red-100 ring-4 ring-white">
+
+                            <i
+                                data-lucide="triangle-alert"
+                                class="h-4 w-4 text-red-600"
+                            ></i>
+
+                        </div>
+
+                        <div>
+
+                            <p class="text-sm font-bold text-red-700">
+                                Memasuki Bulan ke-4
+                            </p>
+
+                            <p class="mt-1 text-xs leading-relaxed text-slate-400">
+                                Jika belum inspeksi, garansi otomatis
+                                dinyatakan hangus.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================================== -->
+        <!-- IMPORTANT NOTICE -->
+        <!-- ===================================================== -->
+
+        <section class="mt-5 rounded-3xl border border-amber-200 bg-amber-50 p-5">
+
+            <div class="flex gap-3">
+
+                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-100">
+
+                    <i
+                        data-lucide="triangle-alert"
+                        class="h-5 w-5 text-amber-600"
+                    ></i>
+
+                </div>
+
+                <div>
+
+                    <h3 class="font-bold text-amber-900">
+                        Perhatikan batas waktunya
+                    </h3>
+
+                    <p class="mt-2 text-xs leading-relaxed text-amber-800/80">
+
+                        Perhitungan menggunakan
+                        <strong>bulan kalender</strong>, bukan jumlah hari.
+
+                        Jika sudah memasuki bulan ke-4, walaupun baru
+                        <strong>1 hari</strong>, dan inspeksi belum dilakukan,
+                        garansi dinyatakan hangus.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================================== -->
+        <!-- IF GARANSI HANGUS -->
+        <!-- ===================================================== -->
+
+        <section class="mt-5">
+
+            <div class="mb-3">
+
+                <p class="text-[11px] font-bold uppercase tracking-wider text-red-600">
+                    Jika Garansi Hangus
+                </p>
+
+                <h3 class="mt-0.5 text-lg font-extrabold text-slate-900">
+                    Garansi Bisa Aktif Kembali
+                </h3>
+
+            </div>
+
+
+            <div class="rounded-3xl bg-white p-5 shadow-sm">
+
+                <p class="text-sm leading-relaxed text-slate-500">
+                    Garansi dapat diberlakukan kembali setelah APAR menjalani
+                    <strong class="text-slate-800">
+                        maintenance atau refill
+                    </strong>
+                    oleh PT. Coco Profire Indonesia atau teknisi resmi yang
+                    ditunjuk.
+                </p>
+
+
+                <!-- Options -->
+
+                <div class="mt-5 grid grid-cols-2 gap-3">
+
+                    <div class="rounded-2xl border border-blue-100 bg-blue-50 p-4">
+
+                        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white">
+
+                            <i
+                                data-lucide="wrench"
+                                class="h-5 w-5 text-blue-600"
+                            ></i>
+
+                        </div>
+
+                        <p class="mt-3 text-sm font-bold text-blue-900">
+                            Maintenance
+                        </p>
+
+                        <p class="mt-1 text-[10px] leading-relaxed text-blue-700/60">
+                            Pemeriksaan dan perawatan APAR.
+                        </p>
+
+                    </div>
+
+
+                    <div class="rounded-2xl border border-emerald-100 bg-emerald-50 p-4">
+
+                        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-white">
+
+                            <i
+                                data-lucide="refresh-cw"
+                                class="h-5 w-5 text-emerald-600"
+                            ></i>
+
+                        </div>
+
+                        <p class="mt-3 text-sm font-bold text-emerald-900">
+                            Refill
+                        </p>
+
+                        <p class="mt-1 text-[10px] leading-relaxed text-emerald-700/60">
+                            Pengisian ulang media pemadam.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Re-activation -->
+
+                <div class="mt-4 flex gap-3 rounded-2xl bg-slate-50 p-4">
+
+                    <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-emerald-100">
+
+                        <i
+                            data-lucide="badge-check"
+                            class="h-5 w-5 text-emerald-600"
+                        ></i>
+
+                    </div>
+
+                    <div>
+
+                        <p class="text-xs font-bold text-slate-800">
+                            Garansi aktif kembali
+                        </p>
+
+                        <p class="mt-1 text-[10px] leading-relaxed text-slate-400">
+                            Setelah pekerjaan selesai dan APAR dinyatakan
+                            memenuhi standar pemeriksaan, masa garansi
+                            berlaku kembali sejak tanggal maintenance/refill.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================================== -->
+        <!-- QUICK SUMMARY -->
+        <!-- ===================================================== -->
+
+        <section class="mt-5 rounded-3xl bg-gradient-to-br from-red-600 to-orange-500 p-5 text-white shadow-xl">
+
+            <div class="flex items-center gap-3">
+
+                <div class="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/15">
+
+                    <i
+                        data-lucide="shield-check"
+                        class="h-6 w-6"
+                    ></i>
+
+                </div>
+
+                <div>
+
+                    <h3 class="font-bold">
+                        Ingat 3 hal ini
+                    </h3>
+
+                    <p class="mt-0.5 text-[11px] text-red-100">
+                        Agar APAR tetap terlindungi.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="mt-5 space-y-3">
+
+                <div class="flex items-center gap-3">
+
+                    <div class="flex h-7 w-7 items-center justify-center rounded-full bg-white/15">
+                        <span class="text-xs font-bold">01</span>
+                    </div>
+
+                    <p class="text-xs font-medium">
+                        Pressure APAR bergaransi 1 tahun.
+                    </p>
+
+                </div>
+
+
+                <div class="flex items-center gap-3">
+
+                    <div class="flex h-7 w-7 items-center justify-center rounded-full bg-white/15">
+                        <span class="text-xs font-bold">02</span>
+                    </div>
+
+                    <p class="text-xs font-medium">
+                        Media pemadam memiliki masa berlaku 3 tahun.
+                    </p>
+
+                </div>
+
+
+                <div class="flex items-center gap-3">
+
+                    <div class="flex h-7 w-7 items-center justify-center rounded-full bg-white/15">
+                        <span class="text-xs font-bold">03</span>
+                    </div>
+
+                    <p class="text-xs font-medium">
+                        Inspeksi wajib dilakukan maksimal setiap 3 bulan.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ===================================================== -->
+        <!-- FOOTER -->
+        <!-- ===================================================== -->
+
+        <footer class="pb-5 pt-7 text-center">
+
+            <div class="mx-auto flex h-10 w-10 items-center justify-center rounded-xl bg-red-50">
+
+                <i
+                    data-lucide="flame"
+                    class="h-5 w-5 text-red-600"
+                ></i>
+
+            </div>
+
+            <p class="mt-3 text-xs font-bold text-slate-700">
+                PT. Coco Profire Indonesia
+            </p>
+
+            <p class="mt-1 text-[10px] text-slate-400">
+                Powered by PEMAPI
+            </p>
+
+            <p class="mx-auto mt-3 max-w-xs text-[9px] leading-relaxed text-slate-400">
+                Dengan menggunakan layanan APAR, pembeli dianggap telah
+                membaca, memahami, dan menyetujui ketentuan garansi yang
+                berlaku.
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- ========================================================= -->
+    <!-- STICKY BOTTOM ACTION -->
+    <!-- ========================================================= -->
+
+    <div class="safe-bottom fixed bottom-0 left-1/2 z-50 w-full max-w-[430px] -translate-x-1/2 border-t border-slate-200 bg-white/95 px-4 py-3 shadow-[0_-8px_30px_rgba(15,23,42,.08)] backdrop-blur">
+
+        <button
+            onclick="openInspection()"
+            class="flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-red-600 to-orange-500 px-4 py-3.5 text-sm font-bold text-white shadow-lg shadow-red-200 active:scale-[.98]"
+        >
+
+            <i
+                data-lucide="clipboard-check"
+                class="h-5 w-5"
+            ></i>
+
+            <span>Mulai Inspeksi APAR</span>
+
+            <i
+                data-lucide="arrow-up-right"
+                class="ml-auto h-4 w-4"
+            ></i>
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ============================================================= -->
+<!-- JAVASCRIPT -->
+<!-- ============================================================= -->
+
+<script>
+
+    lucide.createIcons();
+
+
+    function openInspection() {
+
+        /*
+         * Ganti dengan route aplikasi PEMAPI.
+         *
+         * Contoh:
+         * window.location.href = "/inspection";
+         *
+         * Jika menggunakan Svelte:
+         * goto("/inspection");
+         */
+
+        alert("Menu inspeksi APAR akan dibuka.");
+
+    }
+
+</script>
+
+</body>
+</html>
+```

@@ -82,6 +82,12 @@ app.get('/privacy-policy', async(req,res)=>{
   })
 });
 
+app.get('/warranty-policy', async(req,res)=>{
+  res.render('warranty-policy',{
+    layout: 'main-layout3',
+  })
+});
+
 app.use('/', (req, res) => {
   console.log(`app.use/ page not found`);
   res.status(404)
