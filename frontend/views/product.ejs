@@ -1,239 +1,353 @@
-<div class="text-white mt-4 overflow-hidden bg-[#0E3477]">
-  <div class="grid grid-cols-12 w-11/12 lg:w-9/12 mx-auto">
-    <div class="pt-14 mb-11 col-span-full md:col-span-8">
-      <h1 class="text-4xl xl:text-[52pt]/tight font-medium mb-11">
-        Pilihan Produk Kami Terbaik Untukmu
-      </h1>
-      <p class="mb-3">
-        Cari tahu APAR yang cocok dengan kebutuhanmu!
-      </p>
-      <a class="block py-2 px-5 mt-2 rounded-md bg-[#BE2523] hover:bg-red-800 w-fit" href="#" role="button">Quiz Kebutuhan APAR-Mu!</a>
-    </div>
-    <div class="col-span-full md:col-span-4 relative overflow-hidden h-[370px] md:h-auto">
-      <img src="/img/apar-powder-3kg.webp" class="absolute start-1/2 -translate-x-1/2 -bottom-24 lg:-bottom-28 xl:-bottom-36 z-20 -rotate-12 w-[300px] md:w-[400px]" alt="">
-      <div class="absolute rounded-xl z-10 start-1/2 -translate-x-1/2 -bottom-14 h-[280px] md:h-[29vw] lg:h-[22vw] w-[64%] bg-[#1857C6] rotate-6"></div>
-    </div>
-  </div>
-</div>
+<div x-data="{ activeClass: 'A' }" class="overflow-hidden bg-slate-950 text-slate-100">
 
-<div class="py-14 md:py-20 lg:py-14 bg-white">
-    <div class="px-5 md:px-10 xl:px-40">
-      <div class="mb-10">
-        <h1 class="text-2xl md:text-4xl font-medium mb-4"><i class="fa-solid fa-fire me-4"></i>Level Resiko Kebakaran</h1>
-        <p class="">Ketahui level resiko sebelum memilih produk yang cocok untuk kebutuhanmu</p>
-      </div>
-      <div class="grid grid-cols-12 gap-5 px-5 md:px-20 lg:px-0">
-        <div class="col-span-12 md:col-span-6 lg:col-span-3 p-4 rounded-2xl shadow-lg flex flex-col">
-          <div class="pb-4 border-b-[2px] border-black">
-            <div class="flex items-center">
-              <p class="rounded-md w-[35px] h-[35px] bg-[#BE2523] me-6 text-white flex items-center justify-center font-semibold">A</p>
-              <p class="font-semibold text-[#BE2523]">Kelas A</p>
-            </div>
-          </div>
-          <p class="mt-4 mb-7 font-medium">
-            Kebakaran yang disebabkan oleh bahan-bahan padat non-logam seperti kayu, kertas, kain, karet atau sampah kering dan lain sebagainya.
+  <!-- ── 1. PRODUCT HERO ── -->
+  <section class="relative bg-mesh-dark pt-12 pb-20 lg:py-24 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-8 space-y-6 text-center lg:text-left">
+          <span class="text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full bg-red-600/20 text-red-400 border border-red-500/30 inline-block">
+            Katalog Resmi APAR
+          </span>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
+            Pilihan Produk APAR <br>
+            <span class="bg-gradient-to-r from-red-500 via-rose-400 to-amber-400 bg-clip-text text-transparent">
+              Terbaik & Bersertifikasi
+            </span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            Seluruh produk APAR PEMAPI diproduksi dengan standar kualitas ketat, bersertifikasi uji Dinas Pemadam Kebakaran, dan terintegrasi dengan aplikasi pemantauan digital.
           </p>
-          <div class="pt-3 border-t-[2px] border-black mt-auto">
-            <p class="text-[#0E3477] font-bold text-xs">
-              kayu, kertas, kain, karet 
-            </p>
+
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="https://wa.me/628112899009?text=Halo%20PEMAPI%2C%20saya%20ingin%20konsultasi%20pemilihan%20APAR%20untuk%20lokasi%20saya" 
+               target="_blank"
+               class="inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-white bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 shadow-xl shadow-red-600/30 transition-all transform hover:-translate-y-0.5 text-sm sm:text-base">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+              <span>Konsultasi Pemilihan APAR</span>
+            </a>
+
+            <a href="#level-resiko" class="inline-flex items-center gap-2 px-6 py-4 rounded-2xl font-semibold text-slate-200 glass-card-dark border border-white/10 hover:bg-white/10 transition-all text-sm sm:text-base">
+              <i class="fa-solid fa-fire text-amber-400"></i>
+              <span>Cek Level Risiko Kebakaran</span>
+            </a>
           </div>
         </div>
-        <div class="col-span-12 md:col-span-6 lg:col-span-3 p-4 rounded-2xl shadow-lg flex flex-col">
-          <div class="pb-4 border-b-[2px] border-black">
-            <div class="flex items-center">
-              <p class="rounded-md w-[35px] h-[35px] bg-[#BE2523] me-6 text-white flex items-center justify-center font-semibold">B</p>
-              <p class="font-semibold text-[#BE2523]">Kelas B</p>
+
+        <div class="lg:col-span-4 relative flex justify-center">
+          <div class="relative w-full max-w-xs">
+            <div class="absolute inset-0 bg-red-600/20 rounded-full blur-3xl"></div>
+            <img src="/img/apar-powder-3kg.webp" 
+                 class="relative z-10 w-full h-auto drop-shadow-[0_25px_50px_rgba(0,0,0,0.7)] transform hover:scale-105 transition-transform duration-500" 
+                 alt="APAR PEMAPI Powder">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 2. INTERACTIVE FIRE RISK CLASSIFICATION MATRIX ── -->
+  <section id="level-resiko" class="py-20 bg-slate-900 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-4">
+        <span class="text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30 inline-block">
+          Edukasi Keselamatan
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          Klasifikasi Tingkat Risiko Kebakaran
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Ketahui kelas kebakaran sebelum memilih media tabung pemadam api yang tepat untuk lingkungan Anda.
+        </p>
+      </div>
+
+      <!-- Class Selector Tabs -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl mx-auto mb-8">
+        <button @click="activeClass = 'A'" 
+                type="button" 
+                class="py-3 px-4 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-2 cursor-pointer border"
+                :class="activeClass === 'A' ? 'bg-red-600 border-red-500 text-white shadow-lg shadow-red-600/30' : 'glass-card-dark border-white/10 text-slate-400 hover:text-white'">
+          <span>Kelas A</span>
+          <span class="text-xs opacity-75 hidden sm:inline">(Bahan Padat)</span>
+        </button>
+
+        <button @click="activeClass = 'B'" 
+                type="button" 
+                class="py-3 px-4 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-2 cursor-pointer border"
+                :class="activeClass === 'B' ? 'bg-amber-600 border-amber-500 text-white shadow-lg shadow-amber-600/30' : 'glass-card-dark border-white/10 text-slate-400 hover:text-white'">
+          <span>Kelas B</span>
+          <span class="text-xs opacity-75 hidden sm:inline">(Cairan & Gas)</span>
+        </button>
+
+        <button @click="activeClass = 'C'" 
+                type="button" 
+                class="py-3 px-4 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-2 cursor-pointer border"
+                :class="activeClass === 'C' ? 'bg-blue-600 border-blue-500 text-white shadow-lg shadow-blue-600/30' : 'glass-card-dark border-white/10 text-slate-400 hover:text-white'">
+          <span>Kelas C</span>
+          <span class="text-xs opacity-75 hidden sm:inline">(Listrik/Panel)</span>
+        </button>
+
+        <button @click="activeClass = 'D'" 
+                type="button" 
+                class="py-3 px-4 rounded-2xl font-bold text-sm transition-all flex items-center justify-center gap-2 cursor-pointer border"
+                :class="activeClass === 'D' ? 'bg-purple-600 border-purple-500 text-white shadow-lg shadow-purple-600/30' : 'glass-card-dark border-white/10 text-slate-400 hover:text-white'">
+          <span>Kelas D</span>
+          <span class="text-xs opacity-75 hidden sm:inline">(Bahan Logam)</span>
+        </button>
+      </div>
+
+      <!-- Detail Card according to Active Tab -->
+      <div class="glass-card-dark rounded-3xl p-8 border border-white/10 max-w-4xl mx-auto">
+        
+        <!-- Kelas A Details -->
+        <div x-show="activeClass === 'A'" x-cloak class="space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="size-12 rounded-2xl bg-red-600 text-white font-extrabold text-xl flex items-center justify-center">A</span>
+            <div>
+              <h3 class="text-2xl font-bold text-white">Kebakaran Kelas A — Benda Padat Non-Logam</h3>
+              <p class="text-xs text-red-400 font-semibold">Tipe bahaya paling umum pada hunian, kantor, dan gudang</p>
             </div>
           </div>
-          <p class="mt-4 mb-7 font-medium">
-            Kebakaran yang disebabkan oleh bahan cair yang mudah terbakar seperti bensin, solar, thinner, methanol, alkohol, oli, cat, gas LPG, LNG, Dll.
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Kebakaran yang dipicu oleh bahan-bahan padat seperti <strong>kayu, kertas, kain, kardus, karet, plastik, atau sampah kering</strong>. Kebakaran jenis ini meninggalkan abu atau arang setelah terbakar.
           </p>
-          <div class="pt-3 border-t-[2px] border-black mt-auto">
-            <p class="text-[#0E3477] font-bold text-xs">
-              bensin, solar, thinner, methanol 
-            </p>
+          <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <span class="text-xs text-slate-400 block">Rekomendasi Media APAR:</span>
+              <span class="text-sm font-bold text-emerald-400">Dry Chemical Powder, Media Busa Foam (AFFF)</span>
+            </div>
+            <a href="/product-apar?tipe=powder" class="px-5 py-2.5 rounded-xl bg-red-600 hover:bg-red-500 text-white text-xs font-bold transition-colors">
+              Lihat APAR Powder
+            </a>
           </div>
         </div>
-        <div class="col-span-12 md:col-span-6 lg:col-span-3 p-4 rounded-2xl shadow-lg flex flex-col">
-          <div class="pb-4 border-b-[2px] border-black">
-            <div class="flex items-center">
-              <p class="rounded-md w-[35px] h-[35px] bg-[#BE2523] me-6 text-white flex items-center justify-center font-semibold">C</p>
-              <p class="font-semibold text-[#BE2523]">Kelas C</p>
+
+        <!-- Kelas B Details -->
+        <div x-show="activeClass === 'B'" x-cloak class="space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="size-12 rounded-2xl bg-amber-600 text-white font-extrabold text-xl flex items-center justify-center">B</span>
+            <div>
+              <h3 class="text-2xl font-bold text-white">Kebakaran Kelas B — Cairan & Gas Mudah Terbakar</h3>
+              <p class="text-xs text-amber-400 font-semibold">Tipe bahaya pada dapur restoran, bengkel, lab, pabrik kimia, dan SPBU</p>
             </div>
           </div>
-          <p class="mt-4 mb-7 font-medium">
-            Kebakaran yang disebabkan oleh elektrikal (listrik) atau Instalasi Listrik yang bertegangan.
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Kebakaran yang disebabkan oleh bahan bakar cair atau gas seperti <strong>bensin, solar, thinner, minyak goreng, alkohol, cat, oli, gas LPG, dan LNG</strong>.
           </p>
-          <div class="pt-3 border-t-[2px] border-black mt-auto">
-            <p class="text-[#0E3477] font-bold text-xs">
-              kabel listrik, komputer 
-            </p>
+          <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <span class="text-xs text-slate-400 block">Rekomendasi Media APAR:</span>
+              <span class="text-sm font-bold text-amber-400">Foam AFFF, Dry Chemical Powder, CO2</span>
+            </div>
+            <a href="/product-apar?tipe=foam" class="px-5 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold transition-colors">
+              Lihat APAR Foam
+            </a>
           </div>
         </div>
-        <div class="col-span-12 md:col-span-6 lg:col-span-3 p-4 rounded-2xl shadow-lg flex flex-col">
-          <div class="pb-4 border-b-[2px] border-black">
-            <div class="flex items-center">
-              <p class="rounded-md w-[35px] h-[35px] bg-[#BE2523] me-6 text-white flex items-center justify-center font-semibold">D
 
-              </p>
-              <p class="font-semibold text-[#BE2523]">Kelas D</p>
+        <!-- Kelas C Details -->
+        <div x-show="activeClass === 'C'" x-cloak class="space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="size-12 rounded-2xl bg-blue-600 text-white font-extrabold text-xl flex items-center justify-center">C</span>
+            <div>
+              <h3 class="text-2xl font-bold text-white">Kebakaran Kelas C — Kelistrikan & Arus Bertegangan</h3>
+              <p class="text-xs text-blue-400 font-semibold">Tipe bahaya pada ruang server, data center, instalasi listrik, panel PLN</p>
             </div>
           </div>
-          <p class="mt-4 mb-7 font-medium">
-            Kebakaran yang dikarenakan oleh bahan-bahan logam yang mudah terbakar
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Kebakaran akibat korsleting atau induksi pada <strong>kabel listrik bertegangan, stop kontak, server, komputer, transformator, dan peralatan elektronik</strong>. Wajib menggunakan media non-konduktif agar pemadam tidak tersengat listrik.
           </p>
-          <div class="pt-3 border-t-[2px] border-black item mt-auto">
-            <p class="text-[#0E3477] font-bold text-xs">
-              sodium, magnesium, aluminium 
+          <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <span class="text-xs text-slate-400 block">Rekomendasi Media APAR:</span>
+              <span class="text-sm font-bold text-blue-400">Carbon Dioxide (CO2), Clean Agent Gas (Halon Free)</span>
+            </div>
+            <a href="/product-apar?tipe=co2" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold transition-colors">
+              Lihat APAR CO2
+            </a>
+          </div>
+        </div>
+
+        <!-- Kelas D Details -->
+        <div x-show="activeClass === 'D'" x-cloak class="space-y-6">
+          <div class="flex items-center gap-3">
+            <span class="size-12 rounded-2xl bg-purple-600 text-white font-extrabold text-xl flex items-center justify-center">D</span>
+            <div>
+              <h3 class="text-2xl font-bold text-white">Kebakaran Kelas D — Bahan Logam Mudah Terbakar</h3>
+              <p class="text-xs text-purple-400 font-semibold">Tipe bahaya pada peleburan logam, industri dirgantara, pabrik metalurgi</p>
+            </div>
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Kebakaran yang terjadi pada unsur logam tertentu seperti <strong>magnesium, titanium, sodium, kalium, dan aluminium bubuk</strong> yang terbakar pada suhu sangat tinggi.
+          </p>
+          <div class="pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <span class="text-xs text-slate-400 block">Rekomendasi Media APAR:</span>
+              <span class="text-sm font-bold text-purple-400">Serbuk Khusus Metal Fire (Dry Powder Kelas D)</span>
+            </div>
+            <a href="https://wa.me/628112899009?text=Halo%20PEMAPI%2C%20saya%20butuh%20informasi%20APAR%20khusus%20logam%20Kelas%20D" target="_blank" class="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold transition-colors">
+              Konsultasi Kelas D
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 3. KATALOG LENGKAP PRODUK ── -->
+  <section class="py-20 lg:py-28 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          Daftar Lengkap Tabung APAR PEMAPI
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Tersedia berbagai pilihan ukuran kapasitas mulai dari 1 kg, 2 kg, 3 kg, 5 kg, 6 kg hingga 9 kg.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Powder -->
+        <div class="glass-card-dark rounded-3xl p-6 border border-white/10 hover:border-red-500/40 transition-all card-hover-effect flex flex-col justify-between">
+          <div>
+            <div class="relative bg-gradient-to-b from-blue-950 to-slate-900 rounded-2xl p-6 mb-5 h-60 flex items-center justify-center overflow-hidden border border-white/5">
+              <span class="absolute top-3 left-3 text-[10px] font-bold px-2 py-0.5 rounded bg-red-600 text-white uppercase">Serbaguna</span>
+              <img src="/img/apar-powder-3kg.webp" class="h-48 w-auto object-contain drop-shadow-xl" alt="APAR Dry Chemical Powder">
+            </div>
+            
+            <div class="flex items-center gap-1.5 mb-3">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-red-500/20 text-red-400 border border-red-500/30">Kelas A</span>
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">Kelas B</span>
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 border border-blue-500/30">Kelas C</span>
+            </div>
+
+            <h3 class="text-lg font-bold text-white mb-1">Dry Chemical Powder</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              Media serbuk kimia multi-fungsi berdaya padam tinggi, aman dan tidak menghantarkan arus listrik.
             </p>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
 
-<div id="produk-kami" class="relative bg-customBlue text-white py-16 lg:py-36 px-4 md:px-24 lg:px-5 xl:px-32">
-  <div class="mb-12">
-    <h3 class="font-medium text-3xl"><i class="fa-solid fa-box-open me-3"></i>Produk Kami</h3>
-    <p class="mt-2">Memberikan yang terbaik, untuk keselamatan dan keamanan</p>
-  </div>
-  <div class="grid grid-cols-12 gap-6 lg:gap-1 xl:gap-10 mt-14 lg:mt-6 z-10">
-    <div class="col-span-12 md:col-span-6 lg:col-span-3 w-full max-w-[300px] sm:max-w-full mx-auto z-20">
-      <div class="rounded-2xl bg-white text-black">
-        <div class="p-2">
-          <div class="relative rounded-2xl mb-2 h-[125px] overflow-hidden bg-[#1757C6]">
-            <!-- <img class="absolute start-1/2 bottom-[-30px] -translate-x-1/2 w-[107px]" src="img/apar-powder-3kg.webp" alt="" > -->
-            <img class="object-contain w-5/12 mx-auto" src="img/apar-powder-3kg.webp" alt="" >
-          </div>
-          <p class="font-semibold">Tabung Pemadam Api Dry Chemical Powder</p>
-          <p class="text-sm py-4">Potensi kebakaran kelas A, B, dan C.</p>
-          <a href="/product-apar?tipe=powder" class="bg-[#BE2523] hover:bg-red-800 py-2 w-full block text-white text-center rounded-2xl">Lihat Detail</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-span-12 md:col-span-6 lg:col-span-3 w-full max-w-[300px] sm:max-w-full mx-auto z-20">
-      <div class="rounded-2xl bg-white text-black h-full">
-        <div class="p-2 h-full flex flex-col">
-          <div class="relative rounded-2xl mb-2 h-[125px] overflow-hidden bg-[#417EE9]">
-            <img class="absolute start-1/2 bottom-[-30px] -translate-x-1/2 w-[107px]" src="img/apar-CO-6kg.webp" alt="" >
-          </div>
-          <p class="font-semibold">Tabung Pemadam Api Dry Carbon Dioxide</p>
-          <p class="text-sm block mb-4 mt-4 md:mt-auto">Potensi kebakaran kelas B dan C.</p>
-          <a href="/product-apar?tipe=co2" class="bg-[#BE2523] hover:bg-red-800 py-2 w-full block text-white text-center rounded-2xl">Lihat Detail</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-span-12 md:col-span-6 lg:col-span-3 w-full max-w-[300px] sm:max-w-full mx-auto z-20">
-      <div class="rounded-2xl bg-white text-black">
-        <div class="p-2">
-          <div class="relative rounded-2xl mb-2 h-[125px] overflow-hidden bg-[#D0DFF9]">
-            <img class="absolute start-1/2 bottom-[-30px] -translate-x-1/2 w-[107px]" src="img/apar-powder-5kg.webp" alt="" >
-          </div>
-          <p class="font-semibold">Tabung Pemadam Api HALON / Gas Clean Agent</p>
-          <p class="text-sm py-4">Potensi kebakaran kelas A, B, dan C.</p>
-          <a href="/product-apar?tipe=halon" class="bg-[#BE2523] hover:bg-red-800 py-2 w-full block text-white text-center rounded-2xl">Lihat Detail</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-span-12 md:col-span-6 lg:col-span-3 w-full max-w-[300px] sm:max-w-full mx-auto z-20">
-      <div class="rounded-2xl bg-white text-black h-full">
-        <div class="p-2 h-full flex flex-col">
-          <div class="relative rounded-2xl mb-2 h-[125px] overflow-hidden bg-[#ABC6F5]">
-            <img class="absolute start-1/2 bottom-[-30px] -translate-x-1/2 w-[107px]" src="img/apar-powder-6kg.webp" alt="" >
-          </div>
-          <p class="font-semibold">Tabung Pemadam Api Foam</p>
-          <p class="text-sm mt-4 md:mt-auto mb-3">Potensi kebakaran kelas A, dan B</p>
-          <a href="/product-apar?tipe=foam" class="bg-[#BE2523] hover:bg-red-800 py-2 w-full block text-white text-center rounded-2xl">Lihat Detail</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="absolute bottom-0 start-1/2 -translate-x-1/2 bg-[#1757C6] w-[65%] lg:w-[35%] h-[300px] z-0">
-  </div>
-</div>
-
-<div class="bg-white py-16">
-  <div class="w-11/12 xl:w-9/12 mx-auto">
-    <div class="mb-12">
-      <h3 class="font-medium text-3xl"><i class="fa-solid fa-check-double me-3"></i></i>Kenapa Kami?</h3>
-      <p class="mt-3">Pilihan terbaik dengan berbagai macam keuntungan untuk melayani pengguna</p>
-    </div>
-    <div class="mt-5">
-      <div class="grid grid-cols-12 gap-5 w-9/12 lg:w-full mx-auto">
-        <div class="col-span-12 md:col-span-6 lg:col-span-3 shadow-xl rounded-md">
-          <div class="p-3 text-black">
-            <h3 class="mb-3 bg-black flex items-center justify-center w-[50px] h-[50px] rounded-lg">
-              <!-- <i class="fa-solid fa-box-open me-3 text-3xl"></i> -->
-               <img src="img/ico/Vector.png" alt="">
-            </h3>
-            <div>
-              <p class="font-bold">APAR Kualitas Tinggi</p>
-              <p class="mt-2">APAR yang kami berikan untukmu merupakan APAR bersertifikasi yang terjamin kualitas, kekuatan, dan keamanannya</p>
+            <div class="text-xs text-slate-300 space-y-1.5 pt-2 border-t border-white/10 mb-4">
+              <p><strong class="text-slate-400">Pilihan Kapasitas:</strong> 1kg, 2kg, 3kg, 5kg, 6kg, 9kg</p>
+              <p><strong class="text-slate-400">Masa Kadaluarsa:</strong> 3 Tahun</p>
             </div>
           </div>
-        </div>
-        <div class="col-span-12 md:col-span-6 lg:col-span-3 shadow-xl rounded-md">
-          <div class="p-3 text-black">
-            <h3 class="mb-3 bg-black flex items-center justify-center w-[50px] h-[50px] rounded-lg">
-              <!-- <i class="fa-solid fa-box-open me-3 text-3xl"></i> -->
-              <img src="img/ico/Vector (1).png" alt="">
-            </h3>
-            <div>
-              <p class="font-bold">Layanan Konsultasi</p>
-              <p class="mt-2">Kami akan selalu tersedia untukmu apabila ingin bertanya mengenai APAR, Kebakaran, Api hingga Keselamatan dan Keamanan lingkungan</p>
-            </div>
+
+          <div class="space-y-2 pt-2">
+            <a href="/product-apar?tipe=powder" class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl text-xs font-bold text-white bg-red-600 hover:bg-red-500 transition-colors">
+              <span>Detail & Penawaran</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
           </div>
         </div>
-        <div class="col-span-12 md:col-span-6 lg:col-span-3 shadow-xl rounded-md">
-          <div class="p-3 text-black">
-            <h3 class="mb-3 bg-black flex items-center justify-center w-[50px] h-[50px] rounded-lg">
-              <img src="img/ico/Vector (2).png" alt="">
-            </h3>
-            <div>
-              <p class="font-bold">Layanan Refill</p>
-              <p class="mt-2">Kami akan tersedia untuk melayani refill APAR, tanpa harus membeli APAR lagi, cukup hubungi dan kontak kami!</p>
+
+        <!-- CO2 -->
+        <div class="glass-card-dark rounded-3xl p-6 border border-white/10 hover:border-blue-500/40 transition-all card-hover-effect flex flex-col justify-between">
+          <div>
+            <div class="relative bg-gradient-to-b from-blue-950 to-slate-900 rounded-2xl p-6 mb-5 h-60 flex items-center justify-center overflow-hidden border border-white/5">
+              <span class="absolute top-3 left-3 text-[10px] font-bold px-2 py-0.5 rounded bg-blue-600 text-white uppercase">Clean Agent</span>
+              <img src="/img/apar-CO-6kg.webp" class="h-48 w-auto object-contain drop-shadow-xl" alt="APAR CO2 Carbon Dioxide">
+            </div>
+            
+            <div class="flex items-center gap-1.5 mb-3">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">Kelas B</span>
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 border border-blue-500/30">Kelas C</span>
+            </div>
+
+            <h3 class="text-lg font-bold text-white mb-1">Carbon Dioxide (CO2)</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              Gas karbondioksida murni bersuhu sangat rendah, tanpa meninggalkan kotoran dan residu.
+            </p>
+
+            <div class="text-xs text-slate-300 space-y-1.5 pt-2 border-t border-white/10 mb-4">
+              <p><strong class="text-slate-400">Pilihan Kapasitas:</strong> 2kg, 3kg, 5kg, 6kg</p>
+              <p><strong class="text-slate-400">Masa Kadaluarsa:</strong> 5 Tahun</p>
             </div>
           </div>
-        </div>
-        <div class="col-span-12 md:col-span-6 lg:col-span-3 shadow-xl rounded-md">
-          <div class="p-3 text-black">
-            <h3 class="mb-3 bg-black flex items-center justify-center w-[50px] h-[50px] rounded-lg">
-              <img src="img/ico/Vector (3).png" alt="">
-            </h3>
-            <div>
-              <p class="font-bold">Pembelian Cepat</p>
-              <p class="mt-2">Tidak perlu banyak proses, cukup cari tahu APAR yang sesuai untukmu, dan hubungi kami untuk membelinya!</p>
-            </div>
+
+          <div class="space-y-2 pt-2">
+            <a href="/product-apar?tipe=co2" class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl text-xs font-bold text-white bg-red-600 hover:bg-red-500 transition-colors">
+              <span>Detail & Penawaran</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
           </div>
         </div>
+
+        <!-- Halon -->
+        <div class="glass-card-dark rounded-3xl p-6 border border-white/10 hover:border-purple-500/40 transition-all card-hover-effect flex flex-col justify-between">
+          <div>
+            <div class="relative bg-gradient-to-b from-blue-950 to-slate-900 rounded-2xl p-6 mb-5 h-60 flex items-center justify-center overflow-hidden border border-white/5">
+              <span class="absolute top-3 left-3 text-[10px] font-bold px-2 py-0.5 rounded bg-purple-600 text-white uppercase">Premium</span>
+              <img src="/img/apar-powder-5kg.webp" class="h-48 w-auto object-contain drop-shadow-xl" alt="APAR Halon Clean Agent">
+            </div>
+            
+            <div class="flex items-center gap-1.5 mb-3">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-red-500/20 text-red-400 border border-red-500/30">Kelas A</span>
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">Kelas B</span>
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 border border-blue-500/30">Kelas C</span>
+            </div>
+
+            <h3 class="text-lg font-bold text-white mb-1">Clean Agent (Halon Free)</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              Gas pemadam ramah lingkungan untuk laboratorium, interior pesawat, dan perangkat berharga.
+            </p>
+
+            <div class="text-xs text-slate-300 space-y-1.5 pt-2 border-t border-white/10 mb-4">
+              <p><strong class="text-slate-400">Pilihan Kapasitas:</strong> 3kg, 5kg, 6kg</p>
+              <p><strong class="text-slate-400">Masa Kadaluarsa:</strong> 5 Tahun</p>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-2">
+            <a href="/product-apar?tipe=halon" class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl text-xs font-bold text-white bg-red-600 hover:bg-red-500 transition-colors">
+              <span>Detail & Penawaran</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Foam -->
+        <div class="glass-card-dark rounded-3xl p-6 border border-white/10 hover:border-emerald-500/40 transition-all card-hover-effect flex flex-col justify-between">
+          <div>
+            <div class="relative bg-gradient-to-b from-blue-950 to-slate-900 rounded-2xl p-6 mb-5 h-60 flex items-center justify-center overflow-hidden border border-white/5">
+              <span class="absolute top-3 left-3 text-[10px] font-bold px-2 py-0.5 rounded bg-teal-600 text-white uppercase">AFFF Busa</span>
+              <img src="/img/apar-powder-6kg.webp" class="h-48 w-auto object-contain drop-shadow-xl" alt="APAR Media Busa Foam">
+            </div>
+            
+            <div class="flex items-center gap-1.5 mb-3">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-red-500/20 text-red-400 border border-red-500/30">Kelas A</span>
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">Kelas B</span>
+            </div>
+
+            <h3 class="text-lg font-bold text-white mb-1">Media Foam (AFFF)</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              Busa kimia pencegah oksigen sangat ampuh untuk memadamkan minyak dan cairan bahan bakar.
+            </p>
+
+            <div class="text-xs text-slate-300 space-y-1.5 pt-2 border-t border-white/10 mb-4">
+              <p><strong class="text-slate-400">Pilihan Kapasitas:</strong> 6 Liter, 9 Liter</p>
+              <p><strong class="text-slate-400">Masa Kadaluarsa:</strong> 2 Tahun</p>
+            </div>
+          </div>
+
+          <div class="space-y-2 pt-2">
+            <a href="/product-apar?tipe=foam" class="w-full inline-flex items-center justify-center gap-2 py-3 rounded-xl text-xs font-bold text-white bg-red-600 hover:bg-red-500 transition-colors">
+              <span>Detail & Penawaran</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </div>
+
       </div>
-    </div>
-  </div>
-</div>
 
-<div class="text-white pt-32 bg-[#0E3477]">
-  <div class="grid grid-cols-12 w-11/12 xl:w-9/12 mx-auto gap-y-11 lg:gap-y-0">
-    <div class="col-span-12 lg:col-span-6 pb-11">
-      <h3 class="font-normal mb-4 text-2xl md:text-3xl"><i class="fa-solid fa-box-open me-3"></i>Pemapi App</h3>
-      <h2 class="mb-4 text-3xl md:text-4xl">Dapatkan Pemapi <span class="font-semibold">Smart-Maintenance App</span>
-        di setiap pembelian produk <span class="font-bold">APAR Pemapi</span>
-      </h2>
-      <h4 class="font-normal mb-12 text-xl md:text-2xl">Aplikasi cerdas untuk menjaga dan merawat APAR anda</h4>
-      <a href="/pemapi-app" class="py-4 px-6 bg-[#BE2523] hover:bg-red-800 rounded-md text-white">Pelajari Lebih Lanjut</a>
     </div>
-    <div class="col-span-12 lg:col-span-6 relative h-[400px] lg:h-auto">
-      <div class="absolute bottom-0 start-1/2 -translate-x-1/2 rounded-3xl rounded-b-none w-7/12 lg:w-9/12 h-[70%] bg-[#1757C6]"></div>
-      <img src="img/pemapi-app.webp" class="absolute bottom-0 start-1/2 -translate-x-1/2 h-[100%] lg:h-[107%]">
-    </div>
-  </div>
-</div>
+  </section>
 
-<div class="py-12 lg:py-28 px-7 md:px-20 lg:px-44 bg-white">
-  <p class="mb-7 text-base md:text-xl">Bersama PEMAPI, cegah bahaya api dan kebakaran dengan solusi inovatif dan terpercaya</p>
-  <p class="font-semibold text-2xl md:text-4xl w-full xl:w-10/12">
-    <span class="text-[#0E3477]">keselamatan, keamanan, dan kesejahteraan, </span>dengan APAR yang tersedia setiap saat
-  </p>
 </div>
-

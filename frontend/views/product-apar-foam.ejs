@@ -1,51 +1,144 @@
-<div class="bg-white pt-7 pb-14 sm:pb-52 px-7 sm:px-14 xl:px-0 xl:ps-20 xl:pe-28">
-  <a class="sm:-ms-6 mb-6 block font-medium hover:translate-x-5 duration-500" href="/product#produk-kami"><i class="fa-solid fa-arrow-left me-4"></i>kembali</a>
-  <div class="grid grid-cols-12">
-    <div class="col-span-12 xl:col-span-6 bg-[#0E3477] rounded-2xl relative overflow-hidden h-100 sm:h-130 xl:h-150 xl:h-full w-11/12 sm:w-8/12 xl:w-auto mx-auto xl:mx-0 mb-11 xl:mb-0">
-      <img class="absolute start-1/2 -bottom-16 sm:-bottom-24 -translate-x-1/2 w-80 md:w-110 xl:w-140" src="img/apar-powder-6kg.webp" alt="apar pemapi co2 refill mmurah semarang">
-    </div>
-    <div class="col-span-12 xl:col-span-6 ps-0 xl:ps-8 py-4">
-      <p class="text-2xl sm:text-4xl font-semibold mb-3">
-        Tabung Pemadam Api Media Foam
-      </p>
-      <!-- <p class="text-xl sm:text-3xl font-semibold text-gray-400">
-        Rp. 333.000/Pcs
-      </p>
-      <p class="text-sm sm:text-base font-semibold text-gray-400 mb-12">
-        *Start from
-      </p> -->
-      <div class="flex flex-col mb-5 sm:mb-14 text-base sm:text-xl">
-        <div class="flex flex-col mb-8">
-          <div class="flex items-center mb-3 text-[#0E3477] font-semibold">
-            <img class="me-4 size-6" src="/img/ico/info.svg" alt="">
-            <p>Informasi APAR</p>
-          </div>
-          <p>
-            Alat pemadam kebakaran bermedia foam memiliki kandungan chemical foam atau busa yang sesuai standart Dinas Pemadam Kebakaran di Indonesia. <span class="text-red-700 font-medium">Namun media foam dapat menghantarkan listrik sehingga tidak boleh disemprotkan ke instalasi listrik.</span>
-          </p>
+<div x-data="{ activeTab: 'specs' }" class="bg-slate-950 text-slate-100 py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 text-xs font-medium text-slate-400 mb-8" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-white transition-colors">Home</a>
+      <span class="text-slate-600">/</span>
+      <a href="/product" class="hover:text-white transition-colors">Produk APAR</a>
+      <span class="text-slate-600">/</span>
+      <span class="text-teal-400 font-bold">Media Foam (AFFF)</span>
+    </nav>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <!-- Left: Product Media Card (5 Cols) -->
+      <div class="lg:col-span-5 space-y-6">
+        <div class="glass-card-dark rounded-3xl p-8 border border-white/10 relative overflow-hidden flex items-center justify-center min-h-[420px] group">
+          <div class="absolute inset-0 bg-gradient-to-tr from-teal-600/30 to-emerald-600/20 rounded-3xl blur-2xl"></div>
+          
+          <span class="absolute top-4 left-4 text-xs font-bold px-3 py-1 rounded-full bg-teal-600/20 text-teal-400 border border-teal-500/30">
+            Spesialis Bahan Bakar Cair & Padat
+          </span>
+
+          <img src="/img/apar-powder-6kg.webp" 
+               class="relative z-10 w-64 sm:w-72 h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)] transform group-hover:scale-105 transition-transform duration-500" 
+               alt="APAR Foam AFFF PEMAPI">
         </div>
-        <div class="flex flex-col mb-8">
-          <div class="flex items-center mb-3 text-[#0E3477] font-semibold">
-            <img class="me-4 size-6" src="/img/ico/fire.svg" alt="">
-            <p>Level Potensi Kebakaran</p>
+
+        <!-- Available Capacity Badges -->
+        <div class="glass-card-dark rounded-2xl p-5 border border-white/10 space-y-3">
+          <p class="text-xs font-bold text-slate-300 uppercase tracking-wider">Pilihan Kapasitas Tersedia:</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-xl bg-teal-600/20 border border-teal-500/40 text-xs font-bold text-teal-400">6 Liter (Standar)</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-bold text-slate-200">9 Liter (Kapasitas Besar)</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-bold text-slate-200">Trolley 25 - 50 Liter</span>
           </div>
-          <p>
-            Level A dan B
-          </p>
-        </div>
-        <div class="flex flex-col mb-8">
-          <div class="flex items-center mb-3 text-[#0E3477] font-semibold">
-            <img class="me-4 size-6" src="/img/ico/note.svg" alt="">
-            <p>Baik Digunakan Untuk</p>
-          </div>
-          <p>
-            Gudang kayu, Bengkel, Lahan gambut, dll
-          </p>
         </div>
       </div>
-      
-      <!-- <a class="bg-[#BE2523] hover:bg-red-800 rounded-lg text-center py-4 text-white w-full block" href="https://wa.me/628112899009?text=Hai PEMAPI tolong beri saya informasi tentang APAR media Foam.." target="_blank">Beli Sekarang</a> -->
-      <a class="bg-[#BE2523] hover:bg-red-800 rounded-lg text-center py-4 text-white w-full block" href="https://wa.me/628112899009?text=Hai PEMAPI tolong beri saya informasi tentang APAR media Foam.." target="_blank">Tanya</a>
+
+      <!-- Right: Product Information (7 Cols) -->
+      <div class="lg:col-span-7 space-y-8">
+        
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xs font-bold px-2.5 py-1 rounded bg-red-500/20 text-red-400 border border-red-500/30">Kelas A</span>
+            <span class="text-xs font-bold px-2.5 py-1 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">Kelas B</span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Tabung Pemadam Api Media Foam (AFFF)
+          </h1>
+          <p class="text-slate-400 text-sm sm:text-base mt-2 leading-relaxed">
+            Media busa kimia aqueous film forming foam yang membentuk lapisan selimut di atas permukaan cairan untuk menghentikan pasokan oksigen dan mendinginkan area kebakaran.
+          </p>
+        </div>
+
+        <!-- Warning Alert Box -->
+        <div class="glass-card-dark rounded-2xl p-4 border border-amber-500/30 bg-amber-500/10 flex items-start gap-3 text-xs text-amber-200">
+          <i class="fa-solid fa-triangle-exclamation text-amber-400 text-base mt-0.5 shrink-0"></i>
+          <span><strong>Perhatian:</strong> Karena media foam berbasis air dan bersifat konduktif, tabung ini <em>tidak boleh digunakan pada instalasi listrik bertegangan (Kelas C)</em> sebelum arus diputus.</span>
+        </div>
+
+        <!-- Key Feature Highlights Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <div class="glass-card-dark p-4 rounded-2xl border border-white/10">
+            <p class="text-[11px] text-slate-400 font-medium">Garansi Tekanan</p>
+            <p class="text-lg font-bold text-emerald-400 mt-1">1 Tahun</p>
+            <p class="text-[10px] text-slate-500">Dengan inspeksi berkala</p>
+          </div>
+          <div class="glass-card-dark p-4 rounded-2xl border border-white/10">
+            <p class="text-[11px] text-slate-400 font-medium">Masa Kadaluarsa</p>
+            <p class="text-lg font-bold text-teal-400 mt-1">2 Tahun</p>
+            <p class="text-[10px] text-slate-500">Chemical foam aktif</p>
+          </div>
+          <div class="glass-card-dark p-4 rounded-2xl border border-white/10 col-span-2 sm:col-span-1">
+            <p class="text-[11px] text-slate-400 font-medium">Kelebihan</p>
+            <p class="text-lg font-bold text-amber-400 mt-1">Cepat Padam</p>
+            <p class="text-[10px] text-slate-500">Efektif tumpahan oli</p>
+          </div>
+        </div>
+
+        <!-- Tabbed Information -->
+        <div class="space-y-4">
+          <div class="flex border-b border-white/10 gap-4 text-sm font-bold">
+            <button @click="activeTab = 'specs'" type="button" class="pb-3 border-b-2 transition-colors cursor-pointer" :class="activeTab === 'specs' ? 'border-teal-500 text-teal-400' : 'border-transparent text-slate-400 hover:text-slate-200'">
+              Spesifikasi Lengkap
+            </button>
+            <button @click="activeTab = 'usage'" type="button" class="pb-3 border-b-2 transition-colors cursor-pointer" :class="activeTab === 'usage' ? 'border-teal-500 text-teal-400' : 'border-transparent text-slate-400 hover:text-slate-200'">
+              Rekomendasi Penempatan
+            </button>
+          </div>
+
+          <div x-show="activeTab === 'specs'" x-cloak class="space-y-3 text-sm text-slate-300">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="glass-card-dark p-3.5 rounded-xl border border-white/5">
+                <span class="text-xs text-slate-400 block font-medium">Jenis Media:</span>
+                <span class="font-bold text-white">Aqueous Film Forming Foam (AFFF 6%)</span>
+              </div>
+              <div class="glass-card-dark p-3.5 rounded-xl border border-white/5">
+                <span class="text-xs text-slate-400 block font-medium">Tekanan Uji Tabung:</span>
+                <span class="font-bold text-white">25 Bar (Standar Kuat & Aman)</span>
+              </div>
+              <div class="glass-card-dark p-3.5 rounded-xl border border-white/5">
+                <span class="text-xs text-slate-400 block font-medium">Sistem Pendorong:</span>
+                <span class="font-bold text-white">Nitrogen (N2) Stored Pressure</span>
+              </div>
+              <div class="glass-card-dark p-3.5 rounded-xl border border-white/5">
+                <span class="text-xs text-slate-400 block font-medium">Lapisan Dalam:</span>
+                <span class="font-bold text-white">Anti-Corrosion Plastic Lining</span>
+              </div>
+            </div>
+          </div>
+
+          <div x-show="activeTab === 'usage'" x-cloak class="text-sm text-slate-300 space-y-2">
+            <p>Sangat ideal untuk lokasi dengan bahan bakar cair & minyak:</p>
+            <ul class="list-disc pl-5 space-y-1 text-slate-400">
+              <li>Dapur Restoran, Hotel, & Industri Makanan (Minyak Goreng)</li>
+              <li>Bengkel Mobil, SPBU, & Garasi Kendaraan</li>
+              <li>Gudang Kayu, Tekstil, & Kertas</li>
+              <li>Lahan Industri & Pengolahan Bahan Bakar</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CTA Actions -->
+        <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-4">
+          <a href="https://wa.me/628112899009?text=Halo%20PEMAPI%2C%20saya%20tertarik%20dengan%20produk%20APAR%20Media%20Foam%20AFFF.%20Mohon%20info%20harga%20dan%20ketersediaan." 
+             target="_blank" 
+             class="flex-1 inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-bold text-white bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 shadow-xl shadow-teal-600/40 transition-all transform hover:-translate-y-0.5">
+            <i class="fa-brands fa-whatsapp text-xl"></i>
+            <span>Minta Penawaran Harga (WhatsApp)</span>
+          </a>
+          
+          <a href="/product" class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-semibold text-slate-300 hover:text-white glass-card-dark border border-white/10 hover:bg-white/10 transition-all text-sm">
+            <i class="fa-solid fa-arrow-left text-xs"></i>
+            <span>Kembali ke Katalog</span>
+          </a>
+        </div>
+
+      </div>
+
     </div>
+
   </div>
 </div>

@@ -1,9 +1,108 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap');
 
-html{
-  background: #0E3477;
+:root {
+  --font-primary: 'Plus Jakarta Sans', sans-serif;
+  --color-brand-blue-dark: #071530;
+  --color-brand-blue: #0E3477;
+  --color-brand-blue-light: #1A56DB;
+  --color-brand-red: #E63946;
+  --color-brand-red-hover: #C52233;
 }
-body{
-  font-family: 'Poppins';
-  width: min(100%, 1600px);
+
+html {
+  scroll-behavior: smooth;
+  background-color: #071530;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color-scheme: light;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #FFFFFF;
+  color: #1E293B;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Custom modern scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0B1E47;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E3A8A;
+  border-radius: 6px;
+  border: 2px solid #0B1E47;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2563EB;
+}
+
+/* Glassmorphism Utilities */
+.glass-card-dark {
+  background: rgba(14, 52, 119, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-nav {
+  background: rgba(7, 21, 48, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Glow & Gradient Utilities */
+.glow-red {
+  box-shadow: 0 0 35px -5px rgba(230, 57, 70, 0.45);
+}
+
+.glow-blue {
+  box-shadow: 0 0 35px -5px rgba(37, 99, 235, 0.35);
+}
+
+.bg-mesh-dark {
+  background-color: #071530;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(30, 58, 138, 0.4) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(220, 38, 38, 0.25) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(14, 52, 119, 0.5) 0px, transparent 60%);
+}
+
+.bg-mesh-light {
+  background-color: #F8FAFC;
+  background-image: 
+    radial-gradient(at 10% 20%, rgba(219, 234, 254, 0.6) 0px, transparent 40%),
+    radial-gradient(at 90% 80%, rgba(254, 226, 226, 0.5) 0px, transparent 40%);
+}
+
+/* Animated Pulse Badge */
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.03); }
+}
+
+.animate-subtle-pulse {
+  animation: subtle-pulse 3s infinite ease-in-out;
+}
+
+/* Smooth Card Hover */
+.card-hover-effect {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 30px -10px rgba(14, 52, 119, 0.15);
 }

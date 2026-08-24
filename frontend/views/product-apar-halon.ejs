@@ -1,51 +1,140 @@
-<div class="bg-white pt-7 pb-14 sm:pb-52 px-7 sm:px-14 xl:px-0 xl:ps-20 xl:pe-28">
-  <a class="sm:-ms-6 mb-6 block font-medium hover:translate-x-5 duration-500" href="/product#produk-kami"><i class="fa-solid fa-arrow-left me-4"></i>kembali</a>
-  <div class="grid grid-cols-12">
-    <div class="col-span-12 xl:col-span-6 bg-[#0E3477] rounded-2xl relative overflow-hidden h-100 sm:h-130 xl:h-150 xl:h-full w-11/12 sm:w-8/12 xl:w-auto mx-auto xl:mx-0 mb-11 xl:mb-0">
-      <img class="absolute start-1/2 -bottom-16 sm:-bottom-24 -translate-x-1/2 w-80 md:w-110 xl:w-160" src="img/apar-powder-5kg.webp" alt="apar pemapi halon refill mmurah semarang">
-    </div>
-    <div class="col-span-12 xl:col-span-6 ps-0 xl:ps-8 py-4">
-      <p class="text-2xl sm:text-4xl font-semibold mb-3">
-        Tabung Pemadam Api HALON / Gas Clean Agent
-      </p>
-      <!-- <p class="text-xl sm:text-3xl font-semibold text-gray-400">
-        Rp. 653.000/Pcs
-      </p>
-      <p class="text-sm sm:text-base font-semibold text-gray-400 mb-12">
-        *Start from
-      </p> -->
-      <div class="flex flex-col mb-5 sm:mb-14 text-base sm:text-xl">
-        <div class="flex flex-col mb-8">
-          <div class="flex items-center mb-3 text-[#0E3477] font-semibold">
-            <img class="me-4 size-6" src="/img/ico/info.svg" alt="">
-            <p>Informasi APAR</p>
-          </div>
-          <p>
-            Alat pemadam kebakaran Halon biasanya digunakan secara spesifik untuk bangunan tertentu, seperti pada ruang yang sekiranya dipenuhi oleh benda-benda cair mudah terbakar dan benda penting yang mudah rusak / pecah. Gas Halon tergolong bersih karena tidak meninggalkan residu apa pun dan tidak membekukan, namun dapat menghasilkan gas beracun dari korosi benda yang bisa berkarat dan bisa membuat orang diruangan kekurangan oksigen
-          </p>
+<div x-data="{ activeTab: 'specs' }" class="bg-slate-950 text-slate-100 py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 text-xs font-medium text-slate-400 mb-8" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-white transition-colors">Home</a>
+      <span class="text-slate-600">/</span>
+      <a href="/product" class="hover:text-white transition-colors">Produk APAR</a>
+      <span class="text-slate-600">/</span>
+      <span class="text-purple-400 font-bold">Clean Agent (Halon Free)</span>
+    </nav>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <!-- Left: Product Media Card (5 Cols) -->
+      <div class="lg:col-span-5 space-y-6">
+        <div class="glass-card-dark rounded-3xl p-8 border border-white/10 relative overflow-hidden flex items-center justify-center min-h-[420px] group">
+          <div class="absolute inset-0 bg-gradient-to-tr from-purple-600/30 to-indigo-600/20 rounded-3xl blur-2xl"></div>
+          
+          <span class="absolute top-4 left-4 text-xs font-bold px-3 py-1 rounded-full bg-purple-600/20 text-purple-400 border border-purple-500/30">
+            Premium Eco-Clean Agent
+          </span>
+
+          <img src="/img/apar-powder-5kg.webp" 
+               class="relative z-10 w-64 sm:w-72 h-auto object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.8)] transform group-hover:scale-105 transition-transform duration-500" 
+               alt="APAR Clean Agent Halon Free PEMAPI">
         </div>
-        <div class="flex flex-col mb-8">
-          <div class="flex items-center mb-3 text-[#0E3477] font-semibold">
-            <img class="me-4 size-6" src="/img/ico/fire.svg" alt="">
-            <p>Level Potensi Kebakaran</p>
+
+        <!-- Available Capacity Badges -->
+        <div class="glass-card-dark rounded-2xl p-5 border border-white/10 space-y-3">
+          <p class="text-xs font-bold text-slate-300 uppercase tracking-wider">Pilihan Kapasitas Tersedia:</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-bold text-slate-200">2 Kg</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-bold text-slate-200">3 Kg</span>
+            <span class="px-3 py-1.5 rounded-xl bg-purple-600/20 border border-purple-500/40 text-xs font-bold text-purple-400">5 Kg (Standar Lab)</span>
+            <span class="px-3 py-1.5 rounded-xl bg-white/5 border border-white/10 text-xs font-bold text-slate-200">6 Kg</span>
           </div>
-          <p>
-            Level A, B dan C
-          </p>
-        </div>
-        <div class="flex flex-col mb-8">
-          <div class="flex items-center mb-3 text-[#0E3477] font-semibold">
-            <img class="me-4 size-6" src="/img/ico/note.svg" alt="">
-            <p>Baik Digunakan Untuk</p>
-          </div>
-          <p>
-            Ruang laboratorium, Markas militer, Interior pesawat
-          </p>
         </div>
       </div>
-      
-      <a class="bg-[#BE2523] hover:bg-red-800 rounded-lg text-center py-4 text-white w-full block" href="https://wa.me/628112899009?text=Hai PEMAPI tolong beri saya informasi tentang APAR media Halon Free.." target="_blank">Tanya</a>
-      <!-- <a class="bg-[#BE2523] hover:bg-red-800 rounded-lg text-center py-4 text-white w-full block" href="https://wa.me/628112899009?text=Hai PEMAPI tolong beri saya informasi tentang APAR media Halon Free.." target="_blank">Beli Sekarang</a> -->
+
+      <!-- Right: Product Information (7 Cols) -->
+      <div class="lg:col-span-7 space-y-8">
+        
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xs font-bold px-2.5 py-1 rounded bg-red-500/20 text-red-400 border border-red-500/30">Kelas A</span>
+            <span class="text-xs font-bold px-2.5 py-1 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">Kelas B</span>
+            <span class="text-xs font-bold px-2.5 py-1 rounded bg-blue-500/20 text-blue-400 border border-blue-500/30">Kelas C</span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Tabung Pemadam Api Gas Clean Agent (Halon Free)
+          </h1>
+          <p class="text-slate-400 text-sm sm:text-base mt-2 leading-relaxed">
+            Gas pemadam api ramah lingkungan generasi terbaru pengganti Halon 1211. Tidak meninggalkan residu, tidak merusak ozon, dan sangat aman untuk perlengkapan elektronik sensitif & ruang tertutup.
+          </p>
+        </div>
+
+        <!-- Key Feature Highlights Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <div class="glass-card-dark p-4 rounded-2xl border border-white/10">
+            <p class="text-[11px] text-slate-400 font-medium">Garansi Tekanan</p>
+            <p class="text-lg font-bold text-emerald-400 mt-1">1 Tahun</p>
+            <p class="text-[10px] text-slate-500">Dengan inspeksi berkala</p>
+          </div>
+          <div class="glass-card-dark p-4 rounded-2xl border border-white/10">
+            <p class="text-[11px] text-slate-400 font-medium">Masa Kadaluarsa</p>
+            <p class="text-lg font-bold text-purple-400 mt-1">5 Tahun</p>
+            <p class="text-[10px] text-slate-500">Gas stabil & awet</p>
+          </div>
+          <div class="glass-card-dark p-4 rounded-2xl border border-white/10 col-span-2 sm:col-span-1">
+            <p class="text-[11px] text-slate-400 font-medium">Keamanan</p>
+            <p class="text-lg font-bold text-cyan-400 mt-1">Eco-Friendly</p>
+            <p class="text-[10px] text-slate-500">Zero ODP (Ozone Safe)</p>
+          </div>
+        </div>
+
+        <!-- Tabbed Information -->
+        <div class="space-y-4">
+          <div class="flex border-b border-white/10 gap-4 text-sm font-bold">
+            <button @click="activeTab = 'specs'" type="button" class="pb-3 border-b-2 transition-colors cursor-pointer" :class="activeTab === 'specs' ? 'border-purple-500 text-purple-400' : 'border-transparent text-slate-400 hover:text-slate-200'">
+              Spesifikasi Lengkap
+            </button>
+            <button @click="activeTab = 'usage'" type="button" class="pb-3 border-b-2 transition-colors cursor-pointer" :class="activeTab === 'usage' ? 'border-purple-500 text-purple-400' : 'border-transparent text-slate-400 hover:text-slate-200'">
+              Rekomendasi Penempatan
+            </button>
+          </div>
+
+          <div x-show="activeTab === 'specs'" x-cloak class="space-y-3 text-sm text-slate-300">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div class="glass-card-dark p-3.5 rounded-xl border border-white/5">
+                <span class="text-xs text-slate-400 block font-medium">Jenis Media:</span>
+                <span class="font-bold text-white">HFC-227ea / HCFC Blend (Halon Replacement)</span>
+              </div>
+              <div class="glass-card-dark p-3.5 rounded-xl border border-white/5">
+                <span class="text-xs text-slate-400 block font-medium">Residu & Korosi:</span>
+                <span class="font-bold text-white">100% Bebas Residu & Non-Korosif</span>
+              </div>
+              <div class="glass-card-dark p-3.5 rounded-xl border border-white/5">
+                <span class="text-xs text-slate-400 block font-medium">Sifat Listrik:</span>
+                <span class="font-bold text-white">Non-Konduktif (Sangat Aman)</span>
+              </div>
+              <div class="glass-card-dark p-3.5 rounded-xl border border-white/5">
+                <span class="text-xs text-slate-400 block font-medium">Standar Uji:</span>
+                <span class="font-bold text-white">Uji Lab Damkar & Sertifikasi Lingkungan</span>
+              </div>
+            </div>
+          </div>
+
+          <div x-show="activeTab === 'usage'" x-cloak class="text-sm text-slate-300 space-y-2">
+            <p>Sangat cocok untuk ruangan berteknologi tinggi & berharga:</p>
+            <ul class="list-disc pl-5 space-y-1 text-slate-400">
+              <li>Ruang Kontrol & Server Room Kritis</li>
+              <li>Laboratorium Penelitian & Farmasi</li>
+              <li>Interior Pesawat, Kapal Pesiar, & Markas Militer</li>
+              <li>Ruang Arsip Dokumen Penting & Galeri Seni / Museum</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CTA Actions -->
+        <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row gap-4">
+          <a href="https://wa.me/628112899009?text=Halo%20PEMAPI%2C%20saya%20tertarik%20dengan%20produk%20APAR%20Clean%20Agent%20Halon%20Free.%20Mohon%20info%20harga%20dan%20ketersediaan." 
+             target="_blank" 
+             class="flex-1 inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-bold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 shadow-xl shadow-purple-600/40 transition-all transform hover:-translate-y-0.5">
+            <i class="fa-brands fa-whatsapp text-xl"></i>
+            <span>Minta Penawaran Harga (WhatsApp)</span>
+          </a>
+          
+          <a href="/product" class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl font-semibold text-slate-300 hover:text-white glass-card-dark border border-white/10 hover:bg-white/10 transition-all text-sm">
+            <i class="fa-solid fa-arrow-left text-xs"></i>
+            <span>Kembali ke Katalog</span>
+          </a>
+        </div>
+
+      </div>
+
     </div>
+
   </div>
 </div>

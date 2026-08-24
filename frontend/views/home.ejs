@@ -1,297 +1,885 @@
-<!-- <script>
-    tailwind.config = {
-        theme: {
-            extend: {
-                container: {
-                    screens: {
-                        sm: '640px',
-                        md: '768px',
-                        lg: '1024px',
-                        // xl: '1590px',
-                        xl: '1590px',
-                        '2xl': '1736px',
-                    },
-                },
-                colors: { 
-                  customBlue: '#0E3477'
-                },
-            },
-        },
-    };
-</script> -->
+<div x-data="aparQuiz()" class="overflow-hidden bg-slate-950 text-slate-100">
 
-<div class="relative bg-customBlue md:h-[500px] lg:h-[764px] overflow-hidden">
-  <div class="grid grid-cols-12 text-white h-full">
-    <div class="col-span-full md:col-span-8 lg:col-span-7 pt-16 px-8 md:px-0 md:ps-16 z-10">
-      <p class="text-2xl md:text-4xl lg:text-6xl xl:text-[67px] md:leading-none font-medium">Karena Semua Berhak <span class="font-bold"> Merasa Aman</span></p>
-      <p class="mt-7 w-full md:w-4/6 lg:w-9/12 text-base md:text-[20px] lg:pe-3 font-medium" style="color: #A59F9F;">
-        Yakinkan keamanan, keselamatan, dan kecintaanmu pada sekitar dengan APAR yang tersedia setiap saat
-      </p>
-    </div>
-    <div class="relative col-span-full md:col-span-4 lg:col-span-5 h-[330px] md:h-full">
-      <div class="absolute h-full w-full md:w-[145%] lg:w-[115%] md:right-8 lg:right-0">
-        <div class="absolute bottom-0 left-[70px] md:left-0 h-[49vw] md:h-[30vw] max-h-[480px] w-[50%] bg-[#1757C6] "></div>
-        <div class="absolute bottom-[32px] left-[37%] md:left-[46%] h-[34vw] md:h-[23vw] max-h-[370px] w-[46%] bg-[#1757C6]"></div>
-        <img class="absolute bottom-0 left-9 md:-left-11 w-[50%] md:w-[61%]" src="img/pemapi-boys.webp" alt="">
-        <img class="absolute bottom-0 right-7 md:right-0 w-[70%] md:w-[76%]" src="img/pemapi-girl.webp" alt="">
-      </div>
-    </div>
-    <!-- button quiz -->
-    <div class="absolute bottom-5 lg:bottom-14 left-[50%] lg:left-16 -translate-x-1/2 lg:-translate-x-0 z-40 w-[91%] md:w-max" >
-      <div class="bg-white rounded-md px-3 py-2 font-medium flex flex-wrap md:flex-nowrap justify-center md:justify-start items-center text-center">
-        <p class="text-sm md:text-base text-black">cari tahu apar yang cocok dengan kebutuhanmu!</p>
-        <a href="" class="bg-[#DC3545] text-sm md:text-base text-center rounded-md px-3 py-2 mt-2 md:mt-0 ms-0 md:ms-3 w-full md:w-fit">Quiz Kebutuhan APAR-Mu</a>
-      </div>
-    </div>
-    <!-- / button quiz -->
-    <!-- 2 reqtangle in left side -->
-    <div class="absolute left-0 top-[200px] md:top-[287px] -z-0">
-      <div class="absolute top-0 left-[-30px] size-[60px] lg:size-[100px] bg-[#13469F]"></div>
-      <div class="absolute top-[60px] lg:top-[100px] left-[30px] lg:left-[70px] size-[60px] lg:size-[100px] bg-[#13469F]"></div>
-    </div>
-    <!-- / 2 reqtangle in left side -->
-  </div>
-</div>
+  <!-- ── 1. HERO SECTION ── -->
+  <section class="relative min-h-[90vh] flex items-center bg-mesh-dark pt-12 pb-20 lg:py-24 overflow-hidden">
+    
+    <!-- Ambient glowing orbs -->
+    <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-blue-600/15 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute bottom-10 right-10 w-[450px] h-[450px] bg-red-600/15 rounded-full blur-[100px] pointer-events-none"></div>
 
-<div class="bg-white pt-11 pb-6">
-  <div class="flex justify-center gap-3 md:gap-5 px-5 md:px-0">
-    <div class="w-[210px]">
-      <p class="text-center text-white bg-[#0E3477] font-medium text-xl py-1 rounded-sm">1000+ kasus</p>
-      <p class="text-center text-sm pt-2">kebakaran di Indonesia</p>
-    </div>
-    <div class="w-[210px]">
-      <p class="text-center text-white bg-[#0E3477] font-medium text-xl py-1 rounded-sm">489 kasus</p>
-      <p class="text-center text-sm pt-2">kebakaran di Kota Semarang</p>
-    </div>
-  </div>
-  <h1 class="capitalize text-center font-semibold text-[#0E3477] w-5/6 md:w-3/6 lg:w-full text-3xl md:text-4xl xl:text-5xl my-16 mx-auto" >jangan khawatir! <span class="text-[#BE2523]">pemapi</span> hadir disini!</h1>
-  <div class="grid grid-cols-12">
-    <div class="col-span-full lg:col-span-6  pb-14 pe-0 lg:pe-7">
-      <div class="w-full flex justify-center lg:justify-end items-center xl:items-start h-full">
-        <img class="block w-5/6 md:w-3/6 lg:w-5/6 xl:w-[70%]" src="/img/pemapi-girl2.webp" alt="">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Hero Content (7 Cols) -->
+        <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+          
+          <!-- Badge Pill -->
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card-dark border border-white/10 text-xs sm:text-sm font-medium text-slate-200 shadow-xl">
+            <span class="flex h-2 w-2 rounded-full bg-red-500 animate-ping"></span>
+            <span class="text-red-400 font-bold">#1 Smart Fire Safety</span>
+            <span class="text-slate-500">•</span>
+            <span>Solusi APAR & Smart Maintenance</span>
+          </div>
+
+          <!-- Hero Headline -->
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
+            Karena Semua Berhak <br class="hidden sm:inline">
+            <span class="bg-gradient-to-r from-red-500 via-rose-400 to-amber-400 bg-clip-text text-transparent">
+              Merasa Aman & Terlindungi
+            </span>
+          </h1>
+
+          <!-- Hero Subtitle -->
+          <p class="text-base sm:text-lg lg:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+            Proteksi aset dan bisnis Anda dari bahaya kebakaran dengan tabung APAR bersertifikasi, refill cepat, dan sistem inspeksi digital <strong class="text-white">Aplikasi PEMAPI</strong>.
+          </p>
+
+          <!-- Dual CTA Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <button @click="openQuiz()" 
+                    type="button"
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-bold text-white bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 shadow-xl shadow-red-600/30 hover:shadow-red-600/50 transition-all duration-300 transform hover:-translate-y-1 active:scale-95 border border-red-400/30 text-base cursor-pointer">
+              <i class="fa-solid fa-wand-magic-sparkles text-amber-300"></i>
+              <span>Kuis Kebutuhan APAR</span>
+            </button>
+
+            <a href="#produk-kami" 
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-semibold text-slate-200 hover:text-white glass-card-dark hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 text-base">
+              <i class="fa-solid fa-fire-extinguisher text-slate-400"></i>
+              <span>Katalog Produk</span>
+            </a>
+          </div>
+
+          <!-- Live Trust Pills -->
+          <div class="pt-6 border-t border-white/10 grid grid-cols-3 gap-4 text-center lg:text-left">
+            <div>
+              <p class="text-xl sm:text-2xl font-extrabold text-white">SNI & Damkar</p>
+              <p class="text-xs text-slate-400 mt-0.5">Standar Kualitas Uji</p>
+            </div>
+            <div>
+              <p class="text-xl sm:text-2xl font-extrabold text-emerald-400">100% Gratis</p>
+              <p class="text-xs text-slate-400 mt-0.5">Aplikasi Pemapi App</p>
+            </div>
+            <div>
+              <p class="text-xl sm:text-2xl font-extrabold text-amber-400">1 - 3 Tahun</p>
+              <p class="text-xs text-slate-400 mt-0.5">Garansi & Expired</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Hero Visual Showcase (5 Cols) -->
+        <div class="lg:col-span-5 relative flex justify-center items-center">
+          
+          <!-- Background geometric glow badge -->
+          <div class="relative w-full max-w-md lg:max-w-none">
+            <div class="absolute inset-0 bg-gradient-to-tr from-blue-600/30 to-red-600/20 rounded-3xl blur-2xl transform rotate-3"></div>
+            
+            <div class="relative glass-card-dark rounded-3xl p-6 sm:p-8 border border-white/15 shadow-2xl overflow-hidden">
+              
+              <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
+                <div class="flex items-center gap-2">
+                  <span class="size-3 rounded-full bg-emerald-400 animate-pulse"></span>
+                  <span class="text-xs font-bold uppercase tracking-wider text-slate-300">Siap Siaga 24/7</span>
+                </div>
+                <span class="text-xs font-semibold px-2.5 py-1 rounded-lg bg-blue-500/20 text-blue-300 border border-blue-500/30">PEMAPI Tech</span>
+              </div>
+
+              <!-- Extinguisher Floating Visual -->
+              <div class="relative py-4 flex justify-center">
+                <img class="w-48 sm:w-56 h-auto drop-shadow-[0_20px_35px_rgba(0,0,0,0.6)] transform hover:scale-105 transition-transform duration-500" 
+                     src="/img/apar-powder-3kg.webp" 
+                     alt="Tabung APAR PEMAPI Dry Chemical Powder">
+              </div>
+
+              <!-- Floating Live Card 1 -->
+              <div class="mt-4 glass-card-dark rounded-2xl p-4 border border-white/10 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="size-10 rounded-xl bg-red-600/20 border border-red-500/30 flex items-center justify-center text-red-400">
+                    <i class="fa-solid fa-qrcode text-lg"></i>
+                  </div>
+                  <div>
+                    <p class="text-xs font-bold text-white">Smart QR Code Tag</p>
+                    <p class="text-[11px] text-slate-400">Scan via Android untuk cek riwayat</p>
+                  </div>
+                </div>
+                <span class="text-xs font-bold text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded">Aktif</span>
+              </div>
+
+              <!-- Floating Live Card 2 -->
+              <div class="mt-3 glass-card-dark rounded-2xl p-3 border border-white/10 flex items-center justify-between text-xs">
+                <span class="text-slate-300 flex items-center gap-2">
+                  <i class="fa-solid fa-shield-halved text-blue-400"></i>
+                  Garansi Tekanan 1 Tahun
+                </span>
+                <span class="text-amber-400 font-semibold">Tersertifikasi</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </div>
-    <div class="col-span-full lg:col-span-6 flex items-center px-4 lg:px-0 lg:ps-5 lg:pe-10 xl:pe-28">
-      <div class=" md:w-5/6 lg:w-full mx-auto">
-        <h3 class="font-semibold text-xl md:text-2xl lg:text-3xl mb-4 text-[#0E3477]">Investasi berupa perlindungan pada aset dan bisnis dari resiko kebakaran.</h3>
-        <div class="mb-4 flex items-center mt-8">
-          <i class="fa-solid fa-square me-3 text-3xl text-[#BE2523]"></i>
-          <p class="text-base md:text-xl font-light">PEMAPI menawarkan solusi pemadam kebakaran inovatif dengan produk APAR berkualitas yang terintegrasi dengan <span class="font-semibold text-customBlue">aplikasi PEMAPI.</span>
+
+  </section>
+
+  <!-- ── 2. AWARENESS & FIRE STATS BAR ── -->
+  <section class="bg-slate-900 border-y border-white/10 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="glass-card-dark rounded-2xl p-6 border border-white/10 flex items-start gap-4">
+          <div class="size-12 rounded-2xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-400 shrink-0 text-xl">
+            <i class="fa-solid fa-fire"></i>
+          </div>
+          <div>
+            <p class="text-2xl sm:text-3xl font-extrabold text-white">1.000+</p>
+            <p class="text-xs text-red-400 font-semibold uppercase tracking-wider mt-0.5">Kasus Kebakaran / Tahun</p>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">Terjadi di berbagai wilayah Indonesia karena kelalaian dan korsleting listrik.</p>
+          </div>
+        </div>
+
+        <div class="glass-card-dark rounded-2xl p-6 border border-white/10 flex items-start gap-4">
+          <div class="size-12 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 shrink-0 text-xl">
+            <i class="fa-solid fa-city"></i>
+          </div>
+          <div>
+            <p class="text-2xl sm:text-3xl font-extrabold text-white">489+ Kasus</p>
+            <p class="text-xs text-blue-400 font-semibold uppercase tracking-wider mt-0.5">Tercatat di Semarang</p>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">Menimpa bangunan industri, ruko, restoran, dan pemukiman warga.</p>
+          </div>
+        </div>
+
+        <div class="glass-card-dark rounded-2xl p-6 border border-white/10 flex items-start gap-4">
+          <div class="size-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0 text-xl">
+            <i class="fa-solid fa-shield-heart"></i>
+          </div>
+          <div>
+            <p class="text-2xl sm:text-3xl font-extrabold text-white">95% Aman</p>
+            <p class="text-xs text-emerald-400 font-semibold uppercase tracking-wider mt-0.5">Dengan APAR Siaga</p>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed">Api awal dapat dipadamkan dalam hitungan detik sebelum membesar.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 3. KENAPA PEMAPI? (BENTO GRID) ── -->
+  <section class="py-20 lg:py-28 bg-slate-950 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full bg-red-600/20 text-red-400 border border-red-500/30 inline-block">
+          Keunggulan Utama
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+          Solusi Proteksi Lengkap, <br>
+          <span class="bg-gradient-to-r from-blue-400 via-indigo-300 to-red-400 bg-clip-text text-transparent">
+            Tanpa Ribet dan Terpantau
+          </span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base">
+          Dirancang untuk semua sektor bisnis, mulai dari UMKM, perhotelan, perbankan, hingga kawasan pabrik profesional.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Bento Card 1 -->
+        <div class="glass-card-dark rounded-3xl p-8 border border-white/10 hover:border-blue-500/40 transition-all duration-300 card-hover-effect flex flex-col justify-between">
+          <div>
+            <div class="size-14 rounded-2xl bg-gradient-to-br from-red-500 to-rose-600 flex items-center justify-center text-white text-2xl shadow-lg shadow-red-500/30 mb-6">
+              <i class="fa-solid fa-award"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">APAR Berkualitas Tinggi</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Produk bersertifikasi resmi, material tabung kokoh, tekanan presisi, dan media pemadam api berdaya padam optimal.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-xs font-semibold text-red-400 flex items-center gap-1.5">
+            <span>Standar Damkar RI</span>
+            <i class="fa-solid fa-check text-xs"></i>
+          </div>
+        </div>
+
+        <!-- Bento Card 2 -->
+        <div class="glass-card-dark rounded-3xl p-8 border border-white/10 hover:border-emerald-500/40 transition-all duration-300 card-hover-effect flex flex-col justify-between">
+          <div>
+            <div class="size-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-2xl shadow-lg shadow-emerald-500/30 mb-6">
+              <i class="fa-solid fa-mobile-screen"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Pemapi Smart App</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Terintegrasi dengan aplikasi pintar untuk monitoring inventaris, denah lokasi APAR, dan reminder jadwal inspeksi.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-xs font-semibold text-emerald-400 flex items-center gap-1.5">
+            <span>Free Access Play Store</span>
+            <i class="fa-solid fa-check text-xs"></i>
+          </div>
+        </div>
+
+        <!-- Bento Card 3 -->
+        <div class="glass-card-dark rounded-3xl p-8 border border-white/10 hover:border-blue-500/40 transition-all duration-300 card-hover-effect flex flex-col justify-between">
+          <div>
+            <div class="size-14 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white text-2xl shadow-lg shadow-blue-500/30 mb-6">
+              <i class="fa-solid fa-arrows-rotate"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Layanan Refill Cepat</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Melayani pengisian ulang (refill) semua jenis media APAR tanpa perlu beli tabung baru, cepat dan terstandar.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-xs font-semibold text-blue-400 flex items-center gap-1.5">
+            <span>Layanan Jemput Tabung</span>
+            <i class="fa-solid fa-check text-xs"></i>
+          </div>
+        </div>
+
+        <!-- Bento Card 4 -->
+        <div class="glass-card-dark rounded-3xl p-8 border border-white/10 hover:border-amber-500/40 transition-all duration-300 card-hover-effect flex flex-col justify-between">
+          <div>
+            <div class="size-14 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-white text-2xl shadow-lg shadow-amber-500/30 mb-6">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">Konsultasi Siaga</h3>
+            <p class="text-sm text-slate-400 leading-relaxed">
+              Konsultasikan potensi bahaya kebakaran dan perhitungan kebutuhan APAR dengan tim spesialis keselamatan kami.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-white/10 text-xs font-semibold text-amber-400 flex items-center gap-1.5">
+            <span>Respon Cepat 24 Jam</span>
+            <i class="fa-solid fa-check text-xs"></i>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 4. PRODUK KAMI SHOWCASE ── -->
+  <section id="produk-kami" class="py-20 lg:py-28 bg-slate-900 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full bg-blue-600/20 text-blue-400 border border-blue-500/30 inline-block mb-3">
+            Katalog Unggulan
+          </span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+            Pilihan Produk APAR PEMAPI
+          </h2>
+          <p class="text-slate-400 text-sm sm:text-base mt-2">
+            Pilih media pemadam kebakaran yang tepat sesuai kelas potensi risiko di tempat Anda.
           </p>
         </div>
-        <div class="flex items-center mt-8">
-          <i class="fa-solid fa-square me-3 text-3xl text-[#BE2523]" style="color: #BE2523;"></i>
-          <p class="text-base md:text-xl font-light">Produk PEMAPI dirancang untuk semua kalangan, mulai dari pengusaha UMKM, restoran, perkantoran, instansi pemerintah, hingga pabrik dan sektor profesional lainnya. Solusi pemadam kebakaran kami menjamin keamanan dan efisiensi untuk setiap lingkungan, memastikan perlindungan maksimal bagi aset dan bisnis Anda.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<div id="produk-kami" class="relative bg-customBlue text-white py-16 lg:py-36 px-4 md:px-24 lg:px-5 xl:px-32">
-  <div class="mb-12">
-    <h3 class="font-medium text-3xl"><i class="fa-solid fa-box-open me-3"></i>Produk Kami</h3>
-    <p class="mt-2">Memberikan yang terbaik, untuk keselamatan dan keamanan</p>
-  </div>
-  <div class="grid grid-cols-12 gap-6 lg:gap-1 xl:gap-10 mt-14 lg:mt-6 z-10">
-    <div class="col-span-12 md:col-span-6 lg:col-span-3 w-full max-w-[300px] sm:max-w-full mx-auto z-20">
-      <div class="rounded-2xl bg-white text-black">
-        <div class="p-2">
-          <div class="relative rounded-2xl mb-2 h-[125px] overflow-hidden bg-[#1757C6]">
-            <img class="absolute start-1/2 bottom-[-30px] -translate-x-1/2 w-[107px]" src="img/apar-powder-3kg.webp" alt="" >
-          </div>
-          <p class="font-semibold">Tabung Pemadam Api Dry Chemical Powder</p>
-          <p class="text-sm py-4">Potensi kebakaran kelas A, B, dan C.</p>
-          <a href="/product-apar?tipe=powder" class="bg-[#BE2523] hover:bg-red-800 py-2 w-full block text-white text-center rounded-2xl">Lihat Detail</a>
-        </div>
+        <button @click="openQuiz()" 
+                type="button" 
+                class="inline-flex items-center gap-2 text-sm font-bold text-amber-400 hover:text-amber-300 transition-colors bg-amber-400/10 border border-amber-400/20 px-4 py-2.5 rounded-xl cursor-pointer">
+          <i class="fa-solid fa-calculator"></i>
+          <span>Bingung Memilih? Coba Kuis Rekomendasi</span>
+        </button>
       </div>
-    </div>
-    <div class="col-span-12 md:col-span-6 lg:col-span-3 w-full max-w-[300px] sm:max-w-full mx-auto z-20">
-      <div class="rounded-2xl bg-white text-black h-full">
-        <div class="p-2 h-full flex flex-col">
-          <div class="relative rounded-2xl mb-2 h-[125px] overflow-hidden bg-[#417EE9]">
-            <img class="absolute start-1/2 bottom-[-30px] -translate-x-1/2 w-[107px]" src="img/apar-CO-6kg.webp" alt="" >
-          </div>
-          <p class="font-semibold">Tabung Pemadam Api Dry Carbon Dioxide</p>
-          <p class="text-sm block mb-4 mt-4 md:mt-auto">Potensi kebakaran kelas B dan C.</p>
-          <a href="/product-apar?tipe=co2" class="bg-[#BE2523] hover:bg-red-800 py-2 w-full block text-white text-center rounded-2xl">Lihat Detail</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-span-12 md:col-span-6 lg:col-span-3 w-full max-w-[300px] sm:max-w-full mx-auto z-20">
-      <div class="rounded-2xl bg-white text-black">
-        <div class="p-2">
-          <div class="relative rounded-2xl mb-2 h-[125px] overflow-hidden bg-[#D0DFF9]">
-            <img class="absolute start-1/2 bottom-[-30px] -translate-x-1/2 w-[107px]" src="img/apar-powder-5kg.webp" alt="" >
-          </div>
-          <p class="font-semibold">Tabung Pemadam Api HALON / Gas Clean Agent</p>
-          <p class="text-sm py-4">Potensi kebakaran kelas A, B, dan C.</p>
-          <a href="/product-apar?tipe=halon" class="bg-[#BE2523] hover:bg-red-800 py-2 w-full block text-white text-center rounded-2xl">Lihat Detail</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-span-12 md:col-span-6 lg:col-span-3 w-full max-w-[300px] sm:max-w-full mx-auto z-20">
-      <div class="rounded-2xl bg-white text-black h-full">
-        <div class="p-2 h-full flex flex-col">
-          <div class="relative rounded-2xl mb-2 h-[125px] overflow-hidden bg-[#ABC6F5]">
-            <img class="absolute start-1/2 bottom-[-30px] -translate-x-1/2 w-[107px]" src="img/apar-powder-6kg.webp" alt="" >
-          </div>
-          <p class="font-semibold">Tabung Pemadam Api Foam</p>
-          <p class="text-sm mt-4 md:mt-auto mb-3">Potensi kebakaran kelas A, dan B</p>
-          <a href="/product-apar?tipe=foam" class="bg-[#BE2523] hover:bg-red-800 py-2 w-full block text-white text-center rounded-2xl">Lihat Detail</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="absolute bottom-0 start-1/2 -translate-x-1/2 bg-[#1757C6] w-[65%] lg:w-[35%] h-[300px] z-0">
-  </div>
-</div>
+      <!-- Product Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Product 1: Powder -->
+        <div class="glass-card-dark rounded-3xl p-6 border border-white/10 hover:border-red-500/40 transition-all duration-300 card-hover-effect flex flex-col justify-between">
+          <div>
+            <div class="relative bg-gradient-to-b from-blue-900/40 to-slate-900/60 rounded-2xl p-6 mb-5 h-56 flex items-center justify-center overflow-hidden border border-white/5">
+              <span class="absolute top-3 left-3 text-[10px] font-bold px-2 py-0.5 rounded bg-red-600 text-white uppercase">Best Seller</span>
+              <img src="/img/apar-powder-3kg.webp" class="h-44 w-auto object-contain drop-shadow-xl transform hover:scale-110 transition-transform duration-300" alt="APAR Dry Chemical Powder">
+            </div>
+            
+            <div class="flex items-center gap-1.5 mb-2">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-red-500/20 text-red-400 border border-red-500/30">Kelas A</span>
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">Kelas B</span>
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 border border-blue-500/30">Kelas C</span>
+            </div>
 
-<div class="bg-white py-16">
-  <div class="w-11/12 xl:w-9/12 mx-auto">
-    <div class="mb-12">
-      <h3 class="font-medium text-3xl"><i class="fa-solid fa-check-double me-3"></i></i>Kenapa Kami?</h3>
-      <p class="mt-3">Pilihan terbaik dengan berbagai macam keuntungan untuk melayani pengguna</p>
-    </div>
-    <div class="mt-5">
-      <div class="grid grid-cols-12 gap-5 w-9/12 lg:w-full mx-auto">
-        <div class="col-span-12 md:col-span-6 lg:col-span-3 shadow-xl rounded-md">
-          <div class="p-3 text-black">
-            <h3 class="mb-3 bg-black flex items-center justify-center w-[50px] h-[50px] rounded-lg">
-              <!-- <i class="fa-solid fa-box-open me-3 text-3xl"></i> -->
-               <img src="img/ico/Vector.png" alt="">
-            </h3>
-            <div>
-              <p class="font-bold">APAR Kualitas Tinggi</p>
-              <p class="mt-2">APAR yang kami berikan untukmu merupakan APAR bersertifikasi yang terjamin kualitas, kekuatan, dan keamanannya</p>
-            </div>
+            <h3 class="text-lg font-bold text-white mb-2 leading-snug">Dry Chemical Powder</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              Serbuk kimia serbaguna untuk memadamkan api kelas padat (kayu/kain), cairan (bensin/minyak), dan korsleting listrik.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-white/10 space-y-2">
+            <a href="/product-apar?tipe=powder" class="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold text-white bg-red-600 hover:bg-red-500 transition-colors">
+              <span>Lihat Detail Spesifikasi</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
           </div>
         </div>
-        <div class="col-span-12 md:col-span-6 lg:col-span-3 shadow-xl rounded-md">
-          <div class="p-3 text-black">
-            <h3 class="mb-3 bg-black flex items-center justify-center w-[50px] h-[50px] rounded-lg">
-              <!-- <i class="fa-solid fa-box-open me-3 text-3xl"></i> -->
-              <img src="img/ico/Vector (1).png" alt="">
-            </h3>
-            <div>
-              <p class="font-bold">Layanan Konsultasi</p>
-              <p class="mt-2">Kami akan selalu tersedia untukmu apabila ingin bertanya mengenai APAR, Kebakaran, Api hingga Keselamatan dan Keamanan lingkungan</p>
+
+        <!-- Product 2: CO2 -->
+        <div class="glass-card-dark rounded-3xl p-6 border border-white/10 hover:border-blue-500/40 transition-all duration-300 card-hover-effect flex flex-col justify-between">
+          <div>
+            <div class="relative bg-gradient-to-b from-blue-900/40 to-slate-900/60 rounded-2xl p-6 mb-5 h-56 flex items-center justify-center overflow-hidden border border-white/5">
+              <span class="absolute top-3 left-3 text-[10px] font-bold px-2 py-0.5 rounded bg-blue-600 text-white uppercase">Clean Agent</span>
+              <img src="/img/apar-CO-6kg.webp" class="h-44 w-auto object-contain drop-shadow-xl transform hover:scale-110 transition-transform duration-300" alt="APAR Carbon Dioxide CO2">
             </div>
+            
+            <div class="flex items-center gap-1.5 mb-2">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">Kelas B</span>
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 border border-blue-500/30">Kelas C</span>
+            </div>
+
+            <h3 class="text-lg font-bold text-white mb-2 leading-snug">Carbon Dioxide (CO2)</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              Gas dingin tanpa residu. Sangat aman dan ideal untuk ruang server, data center, panel listrik bertegangan tinggi.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-white/10 space-y-2">
+            <a href="/product-apar?tipe=co2" class="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold text-white bg-red-600 hover:bg-red-500 transition-colors">
+              <span>Lihat Detail Spesifikasi</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
           </div>
         </div>
-        <div class="col-span-12 md:col-span-6 lg:col-span-3 shadow-xl rounded-md">
-          <div class="p-3 text-black">
-            <h3 class="mb-3 bg-black flex items-center justify-center w-[50px] h-[50px] rounded-lg">
-              <img src="img/ico/Vector (2).png" alt="">
-            </h3>
-            <div>
-              <p class="font-bold">Layanan Refill</p>
-              <p class="mt-2">Kami akan tersedia untuk melayani refill APAR, tanpa harus membeli APAR lagi, cukup hubungi dan kontak kami!</p>
+
+        <!-- Product 3: Halon / Clean Agent -->
+        <div class="glass-card-dark rounded-3xl p-6 border border-white/10 hover:border-purple-500/40 transition-all duration-300 card-hover-effect flex flex-col justify-between">
+          <div>
+            <div class="relative bg-gradient-to-b from-blue-900/40 to-slate-900/60 rounded-2xl p-6 mb-5 h-56 flex items-center justify-center overflow-hidden border border-white/5">
+              <span class="absolute top-3 left-3 text-[10px] font-bold px-2 py-0.5 rounded bg-purple-600 text-white uppercase">Premium</span>
+              <img src="/img/apar-powder-5kg.webp" class="h-44 w-auto object-contain drop-shadow-xl transform hover:scale-110 transition-transform duration-300" alt="APAR Clean Agent Halon">
             </div>
+            
+            <div class="flex items-center gap-1.5 mb-2">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-red-500/20 text-red-400 border border-red-500/30">Kelas A</span>
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">Kelas B</span>
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 border border-blue-500/30">Kelas C</span>
+            </div>
+
+            <h3 class="text-lg font-bold text-white mb-2 leading-snug">Clean Agent Gas (Halon)</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              Gas pemadam ramah alat elektronik, tidak merusak komponen sensitif, tidak berbekas, dan tidak menghantarkan listrik.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-white/10 space-y-2">
+            <a href="/product-apar?tipe=halon" class="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold text-white bg-red-600 hover:bg-red-500 transition-colors">
+              <span>Lihat Detail Spesifikasi</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
           </div>
         </div>
-        <div class="col-span-12 md:col-span-6 lg:col-span-3 shadow-xl rounded-md">
-          <div class="p-3 text-black">
-            <h3 class="mb-3 bg-black flex items-center justify-center w-[50px] h-[50px] rounded-lg">
-              <img src="img/ico/Vector (3).png" alt="">
-            </h3>
-            <div>
-              <p class="font-bold">Pembelian Cepat</p>
-              <p class="mt-2">Tidak perlu banyak proses, cukup cari tahu APAR yang sesuai untukmu, dan hubungi kami untuk membelinya!</p>
+
+        <!-- Product 4: Foam -->
+        <div class="glass-card-dark rounded-3xl p-6 border border-white/10 hover:border-emerald-500/40 transition-all duration-300 card-hover-effect flex flex-col justify-between">
+          <div>
+            <div class="relative bg-gradient-to-b from-blue-900/40 to-slate-900/60 rounded-2xl p-6 mb-5 h-56 flex items-center justify-center overflow-hidden border border-white/5">
+              <span class="absolute top-3 left-3 text-[10px] font-bold px-2 py-0.5 rounded bg-teal-600 text-white uppercase">AFFF Busa</span>
+              <img src="/img/apar-powder-6kg.webp" class="h-44 w-auto object-contain drop-shadow-xl transform hover:scale-110 transition-transform duration-300" alt="APAR Media Foam AFFF">
             </div>
+            
+            <div class="flex items-center gap-1.5 mb-2">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-red-500/20 text-red-400 border border-red-500/30">Kelas A</span>
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 border border-amber-500/30">Kelas B</span>
+            </div>
+
+            <h3 class="text-lg font-bold text-white mb-2 leading-snug">Media Foam (Busa AFFF)</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              Membentuk lapisan film busa pencegah oksigen. Sangat efektif untuk tumpahan bahan bakar cair, dapur industri & gudang kayu.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-white/10 space-y-2">
+            <a href="/product-apar?tipe=foam" class="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold text-white bg-red-600 hover:bg-red-500 transition-colors">
+              <span>Lihat Detail Spesifikasi</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
           </div>
         </div>
+
       </div>
-    </div>
-  </div>
-</div>
 
-<div class="text-white pt-32 bg-[#0E3477]">
-  <div class="grid grid-cols-12 w-11/12 xl:w-9/12 mx-auto gap-y-11 lg:gap-y-0">
-    <div class="col-span-12 lg:col-span-6 pb-11">
-      <h1 class="font-normal mb-7 text-2xl md:text-3xl"><i class="fa-solid fa-box-open me-3"></i>Pemapi App</h3>
-      <p class="mb-8 text-3xl md:text-4xl">Dapatkan Pemapi <span class="font-semibold">Smart-Maintenance App</span>
-        di setiap pembelian produk <span class="font-bold">APAR Pemapi</span>
+    </div>
+  </section>
+
+  <!-- ── 5. SMART MAINTENANCE APP SHOWCASE ── -->
+  <section class="py-20 lg:py-28 bg-mesh-dark relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Text (7 Cols) -->
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 inline-block">
+            Teknologi Smart Maintenance
+          </span>
+
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.2]">
+            Inspeksi APAR Kini <br>
+            <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
+              Cepat, Rapi & Paperless
+            </span>
+          </h2>
+
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+            Tinggalkan kartu gantung kertas yang mudah robek dan hilang. Dengan <strong>PEMAPI App</strong>, setiap tabung dilengkapi QR Code pintar untuk monitoring berkala dari ponsel Android Anda.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            
+            <div class="glass-card-dark rounded-2xl p-4 border border-white/10 flex items-start gap-3">
+              <div class="size-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-map-location-dot"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Pemetaan Denah</h4>
+                <p class="text-xs text-slate-400 mt-0.5">Petakan titik tabung di setiap lantai & ruangan.</p>
+              </div>
+            </div>
+
+            <div class="glass-card-dark rounded-2xl p-4 border border-white/10 flex items-start gap-3">
+              <div class="size-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                <i class="fa-regular fa-bell"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Notifikasi Otomatis</h4>
+                <p class="text-xs text-slate-400 mt-0.5">Pengingat jadwal inspeksi & masa kadaluarsa.</p>
+              </div>
+            </div>
+
+            <div class="glass-card-dark rounded-2xl p-4 border border-white/10 flex items-start gap-3">
+              <div class="size-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-clipboard-check"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Checklist Digital</h4>
+                <p class="text-xs text-slate-400 mt-0.5">Catatan visual dan kondisi tabung realtime.</p>
+              </div>
+            </div>
+
+            <div class="glass-card-dark rounded-2xl p-4 border border-white/10 flex items-start gap-3">
+              <div class="size-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-file-pdf"></i>
+              </div>
+              <div>
+                <h4 class="text-sm font-bold text-white">Laporan Siap Cetak</h4>
+                <p class="text-xs text-slate-400 mt-0.5">Ekspor riwayat kepatuhan K3 & audit gedung.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="pt-4 flex flex-wrap items-center gap-4">
+            <a href="https://play.google.com/store/apps/details?id=com.coco.pemapi" 
+               target="_blank"
+               class="inline-flex items-center gap-3 px-6 py-3.5 rounded-2xl font-bold text-white bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 shadow-xl shadow-emerald-950/50 transition-all transform hover:-translate-y-0.5">
+              <i class="fa-brands fa-google-play text-xl"></i>
+              <span>Download di Google Play</span>
+            </a>
+            
+            <a href="/pemapi-app" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-300 hover:text-white px-5 py-3.5 rounded-2xl glass-card-dark border border-white/10 hover:bg-white/10 transition-all">
+              <span>Pelajari Fitur Lengkap</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Phone Mockup (5 Cols) -->
+        <div class="lg:col-span-5 relative flex justify-center">
+          <div class="relative w-full max-w-sm">
+            <div class="absolute inset-0 bg-emerald-500/20 rounded-full blur-3xl"></div>
+            <img src="/img/pemapi-app.webp" 
+                 class="relative z-10 w-full h-auto drop-shadow-[0_25px_50px_rgba(0,0,0,0.7)] transform hover:scale-105 transition-transform duration-500" 
+                 alt="PEMAPI Smart App Mobile UI">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 6. KLIEN KAMI (TRUSTED BY TOP BRANDS) ── -->
+  <section class="py-20 bg-slate-900 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14 space-y-3">
+        <span class="text-xs font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-full bg-slate-800 text-slate-300 border border-slate-700 inline-block">
+          Kemitraan Terpercaya
+        </span>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight">
+          Dipercaya oleh Berbagai Institusi & Bisnis
+        </h2>
+        <p class="text-slate-400 text-sm">
+          Menjaga keselamatan dan kepatuhan fasilitas publik, universitas, mall, hingga perbankan.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-6">
+        
+        <div class="bg-white rounded-2xl p-4 sm:p-6 flex items-center justify-center h-24 sm:h-28 shadow-lg hover:shadow-xl transition-shadow">
+          <img src="/img/logo/the-park.jpg" class="max-h-12 w-auto object-contain" alt="The Park Mall">
+        </div>
+
+        <div class="bg-white rounded-2xl p-4 sm:p-6 flex items-center justify-center h-24 sm:h-28 shadow-lg hover:shadow-xl transition-shadow">
+          <img src="/img/logo/undip.png" class="max-h-12 w-auto object-contain" alt="Universitas Diponegoro">
+        </div>
+
+        <div class="bg-white rounded-2xl p-4 sm:p-6 flex items-center justify-center h-24 sm:h-28 shadow-lg hover:shadow-xl transition-shadow">
+          <img src="/img/logo/astra-world.png" class="max-h-12 w-auto object-contain" alt="Astra World">
+        </div>
+
+        <div class="bg-white rounded-2xl p-4 sm:p-6 flex items-center justify-center h-24 sm:h-28 shadow-lg hover:shadow-xl transition-shadow">
+          <img src="/img/logo/cimb-niaga-digital-lounge.jpg" class="max-h-12 w-auto object-contain" alt="CIMB Niaga">
+        </div>
+
+        <div class="bg-white rounded-2xl p-4 sm:p-6 flex items-center justify-center h-24 sm:h-28 shadow-lg hover:shadow-xl transition-shadow">
+          <img src="/img/logo/mothercare-logo.webp" class="max-h-12 w-auto object-contain" alt="Mothercare">
+        </div>
+
+        <div class="bg-white rounded-2xl p-4 sm:p-6 flex items-center justify-center h-24 sm:h-28 shadow-lg hover:shadow-xl transition-shadow">
+          <img src="/img/logo/minoshe.png" class="max-h-12 w-auto object-contain" alt="Minoshe">
+        </div>
+
+        <div class="bg-white rounded-2xl p-4 sm:p-6 flex items-center justify-center h-24 sm:h-28 shadow-lg hover:shadow-xl transition-shadow">
+          <img src="/img/logo/wei-kang.png" class="max-h-12 w-auto object-contain" alt="Wei Kang">
+        </div>
+
+        <div class="bg-white rounded-2xl p-4 sm:p-6 flex items-center justify-center h-24 sm:h-28 shadow-lg hover:shadow-xl transition-shadow">
+          <img src="/img/logo/logo-pt-sumber-usaha-jaya.jpg" class="max-h-12 w-auto object-contain" alt="PT Sumber Usaha Jaya">
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 7. CLOSING BANNER CTA ── -->
+  <section class="py-16 bg-gradient-to-r from-red-700 via-red-600 to-rose-700 relative overflow-hidden text-white">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/15 via-transparent to-transparent pointer-events-none"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-6">
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+        Lindungi Aset dan Tempat Usaha Anda Hari Ini
+      </h2>
+      <p class="text-base sm:text-lg text-red-100 max-w-2xl mx-auto leading-relaxed">
+        Jangan biarkan risiko kebakaran mengancam kelangsungan bisnis Anda. Dapatkan penawaran APAR dan survei kebutuhan keselamatan dari tim ahli PEMAPI.
       </p>
-      <p class="font-normal mb-12 text-xl md:text-2xl">Aplikasi cerdas untuk menjaga dan merawat APAR anda</p>
-      <a href="/pemapi-app" class="py-4 px-6 bg-[#BE2523] hover:bg-red-800 rounded-md text-white">Pelajari Lebih Lanjut</a>
-    </div>
-    <div class="col-span-12 lg:col-span-6 relative h-[400px] lg:h-auto">
-      <div class="absolute bottom-0 start-1/2 -translate-x-1/2 rounded-3xl rounded-b-none w-7/12 lg:w-9/12 h-[70%] bg-[#1757C6]"></div>
-      <img src="img/pemapi-app.webp" class="absolute bottom-0 start-1/2 -translate-x-1/2 h-[100%] lg:h-[107%]" alt="refill apar pemapi apar baru semarang">
-    </div>
-  </div>
-</div>
-
-<div class="py-16 bg-white">
-  <div class="w-11/12 lg:w-9/12 mx-auto">
-    <h3 class="font-medium capitalize text-3xl mb-6"><i class="fa-regular fa-comment me-3"></i>layanan konsultasi</h3>
-    <p class="mt-4 mb-5 text-xl">jangan biarkan keraguanmu menghalangi peluangmu meningkatkan keamanan dan keselamatan</p>
-    <h2 class="font-medium text-2xl lg:text-3xl mb-10 w-full xl:w-11/12">
-      Masih memiliki masalah? Ingin bertanya dengan profesional? <span class="text-[#0E3477] font-bold">Hubungi kami sekarang</span>
-    </h2>
-    <!-- button -->
-    <a href="/contact-us" class="py-4 w-full lg:w-5/12 block text-center bg-[#BE2523] hover:bg-red-800 text-white rounded-md">Hubungi Kami!</a>
-  </div>
-</div>
-
-<div class="py-12 relative text-white bg-[#0E3477]">
-  <div class="mx-auto w-11/12 xl:w-9/12">
-    <h3 class="font-medium text-capitalize text-2xl md:text-3xl mb-4"><i class="fa-solid fa-briefcase me-3"></i>klien kami</h3>
-    <p class="mb-7">Mereka yang telah mempercayai keamanan mereka dengan <span class="font-bold">PEMAPI</span></p>
-    <div class="px-0 lg:px-5 w-full md:w-11/12 mx-auto z-10">
-      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-12 gap-y-6 z-20">
-        <div class="col-auto z-30">
-          <div class="p-3 bg-white rounded-md flex items-center justify-center h-[130px]">
-            <img src="/img/logo/the-park.jpg" class="w-full h-auto" alt="">
-          </div>
-        </div>
-        <div class="col-auto z-30">
-          <div class="p-3 bg-white rounded-md flex items-center justify-center h-[130px]">
-            <img src="/img/logo/undip.png" class="w-full h-auto" alt="">
-          </div>
-        </div>
-        <div class="col-auto z-30">
-          <div class="p-3 bg-white rounded-md flex items-center justify-center h-[130px]">
-            <img src="/img/logo/astra-world.png" class="w-full h-auto" alt="">
-          </div>
-        </div>
-        <div class="col-auto z-30">
-          <div class="p-3 bg-white rounded-md flex items-center justify-center h-[130px]">
-            <img src="/img/logo/wei-kang.png" class="w-full h-auto" alt="">
-          </div>
-        </div>
-        <div class="col-auto z-30">
-          <div class="p-3 bg-white rounded-md flex items-center justify-center h-[130px]">
-            <img src="/img/logo/logo-pt-sumber-usaha-jaya.jpg" class="w-full h-auto" alt="">
-          </div>
-        </div>
-        <div class="col-auto z-30 lg:col-start-2">
-          <div class="p-3 bg-white rounded-md flex items-center justify-center h-[130px]">
-            <img src="img/logo/mothercare-logo.webp" class="h-full w-auto" alt="">
-          </div>
-        </div>
-        <div class="col-auto z-30">
-          <div class="p-3 bg-white rounded-md flex items-center justify-center h-[130px]">
-            <img src="img/logo/minoshe.png" class="w-full h-auto" alt="">
-          </div>
-        </div>
-        <div class="col-auto z-30">
-          <div class="p-3 bg-white rounded-md flex items-center justify-center h-[130px]">
-            <img src="img/logo/cimb-niaga-digital-lounge.jpg" class="h-full" alt="">
-          </div>
-        </div>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+        <a href="https://wa.me/628112899009?text=Halo%20PEMAPI%2C%20saya%20ingin%20minta%20penawaran%20pengadaan%20APAR" 
+           target="_blank" 
+           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-extrabold text-red-700 bg-white hover:bg-slate-100 shadow-2xl transition-all transform hover:-translate-y-0.5 text-base">
+          <i class="fa-brands fa-whatsapp text-xl text-emerald-600"></i>
+          <span>Konsultasi Cepat via WhatsApp</span>
+        </a>
+        <a href="/contact-us" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-semibold text-white bg-red-900/40 hover:bg-red-900/60 border border-white/20 transition-all text-base">
+          <i class="fa-solid fa-envelope"></i>
+          <span>Kirim Form Pesan</span>
+        </a>
       </div>
     </div>
+  </section>
+
+  <!-- ── 8. INTERACTIVE APAR QUIZ MODAL (ALPINE.JS) ── -->
+  <div x-show="quizOpen" 
+       x-cloak
+       class="fixed inset-0 z-50 overflow-y-auto" 
+       aria-labelledby="modal-quiz-title" 
+       role="dialog" 
+       aria-modal="true">
+    
+    <!-- Backdrop -->
+    <div x-show="quizOpen"
+         x-transition:enter="ease-out duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         @click="quizOpen = false"
+         class="fixed inset-0 bg-slate-950/80 backdrop-blur-md transition-opacity"></div>
+
+    <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+      
+      <div x-show="quizOpen"
+           x-transition:enter="ease-out duration-300"
+           x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+           x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+           x-transition:leave="ease-in duration-200"
+           x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+           x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+           class="relative transform overflow-hidden rounded-3xl bg-slate-900 border border-white/15 text-left shadow-2xl transition-all sm:my-8 w-full sm:max-w-2xl">
+        
+        <!-- Modal Header -->
+        <div class="bg-gradient-to-r from-red-600 to-rose-600 px-6 py-5 flex items-center justify-between text-white">
+          <div class="flex items-center gap-3">
+            <div class="size-10 rounded-xl bg-white/20 flex items-center justify-center text-lg">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold" id="modal-quiz-title">Kuis Rekomendasi APAR</h3>
+              <p class="text-xs text-red-100">Temukan tipe APAR yang tepat dalam 3 langkah mudah</p>
+            </div>
+          </div>
+          <button @click="quizOpen = false" type="button" class="text-white/80 hover:text-white p-2 rounded-xl hover:bg-white/10 transition-colors">
+            <i class="fa-solid fa-xmark text-xl"></i>
+          </button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="p-6 sm:p-8 space-y-6 text-slate-200">
+          
+          <!-- Progress Bar -->
+          <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
+            <div class="bg-gradient-to-r from-red-500 to-rose-400 h-2 transition-all duration-300" :style="'width: ' + (step * 33.33) + '%'"></div>
+          </div>
+
+          <!-- STEP 1: LOKASI RUANGAN -->
+          <div x-show="step === 1" class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-red-400">Langkah 1 dari 3</span>
+              <span class="text-xs text-slate-400">Pilih Lokasi Penempatan</span>
+            </div>
+            <h4 class="text-xl font-extrabold text-white">Untuk lokasi manakah APAR ini akan dipasang?</h4>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <button @click="roomType = 'rumah'; nextStep()" type="button" class="p-4 rounded-2xl border text-left transition-all flex items-center gap-3 cursor-pointer" :class="roomType === 'rumah' ? 'border-red-500 bg-red-500/10 text-white' : 'border-white/10 hover:border-white/30 bg-white/5 text-slate-300'">
+                <i class="fa-solid fa-house text-red-400 text-lg"></i>
+                <div>
+                  <p class="text-sm font-bold">Rumah Tinggal / Hunian</p>
+                  <p class="text-xs text-slate-400">Ruang tamu, kamar, garasi</p>
+                </div>
+              </button>
+
+              <button @click="roomType = 'restoran'; nextStep()" type="button" class="p-4 rounded-2xl border text-left transition-all flex items-center gap-3 cursor-pointer" :class="roomType === 'restoran' ? 'border-red-500 bg-red-500/10 text-white' : 'border-white/10 hover:border-white/30 bg-white/5 text-slate-300'">
+                <i class="fa-solid fa-utensils text-amber-400 text-lg"></i>
+                <div>
+                  <p class="text-sm font-bold">Restoran / Dapur / Cafe</p>
+                  <p class="text-xs text-slate-400">Minyak goreng, gas elpiji</p>
+                </div>
+              </button>
+
+              <button @click="roomType = 'kantor'; nextStep()" type="button" class="p-4 rounded-2xl border text-left transition-all flex items-center gap-3 cursor-pointer" :class="roomType === 'kantor' ? 'border-red-500 bg-red-500/10 text-white' : 'border-white/10 hover:border-white/30 bg-white/5 text-slate-300'">
+                <i class="fa-solid fa-building text-blue-400 text-lg"></i>
+                <div>
+                  <p class="text-sm font-bold">Kantor / Ruko / Toko</p>
+                  <p class="text-xs text-slate-400">Kertas, komputer, furnitur</p>
+                </div>
+              </button>
+
+              <button @click="roomType = 'server'; nextStep()" type="button" class="p-4 rounded-2xl border text-left transition-all flex items-center gap-3 cursor-pointer" :class="roomType === 'server' ? 'border-red-500 bg-red-500/10 text-white' : 'border-white/10 hover:border-white/30 bg-white/5 text-slate-300'">
+                <i class="fa-solid fa-server text-purple-400 text-lg"></i>
+                <div>
+                  <p class="text-sm font-bold">Ruang Server / Panel Listrik</p>
+                  <p class="text-xs text-slate-400">Alat elektronik sensitif, data center</p>
+                </div>
+              </button>
+
+              <button @click="roomType = 'pabrik'; nextStep()" type="button" class="p-4 rounded-2xl border text-left transition-all flex items-center gap-3 cursor-pointer" :class="roomType === 'pabrik' ? 'border-red-500 bg-red-500/10 text-white' : 'border-white/10 hover:border-white/30 bg-white/5 text-slate-300'">
+                <i class="fa-solid fa-industry text-emerald-400 text-lg"></i>
+                <div>
+                  <p class="text-sm font-bold">Gudang / Pabrik / Industri</p>
+                  <p class="text-xs text-slate-400">Bahan baku, mesin, area luas</p>
+                </div>
+              </button>
+
+              <button @click="roomType = 'mobil'; nextStep()" type="button" class="p-4 rounded-2xl border text-left transition-all flex items-center gap-3 cursor-pointer" :class="roomType === 'mobil' ? 'border-red-500 bg-red-500/10 text-white' : 'border-white/10 hover:border-white/30 bg-white/5 text-slate-300'">
+                <i class="fa-solid fa-car text-cyan-400 text-lg"></i>
+                <div>
+                  <p class="text-sm font-bold">Kendaraan / Mobil Pribadi</p>
+                  <p class="text-xs text-slate-400">Kabin mobil, bagasi, truk</p>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 2: RISIKO UTAMA -->
+          <div x-show="step === 2" class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-red-400">Langkah 2 dari 3</span>
+              <span class="text-xs text-slate-400">Pilih Potensi Risiko Terbesar</span>
+            </div>
+            <h4 class="text-xl font-extrabold text-white">Apa potensi sumber bahaya utama di ruangan tersebut?</h4>
+            
+            <div class="grid grid-cols-1 gap-3 pt-2">
+              <button @click="hazardType = 'general'; nextStep()" type="button" class="p-4 rounded-2xl border text-left transition-all flex items-center gap-3 cursor-pointer" :class="hazardType === 'general' ? 'border-red-500 bg-red-500/10 text-white' : 'border-white/10 hover:border-white/30 bg-white/5 text-slate-300'">
+                <i class="fa-solid fa-box text-amber-400 text-xl"></i>
+                <div>
+                  <p class="text-sm font-bold">Bahan Padat & Umum (Kayu, Kain, Plastik, Kertas)</p>
+                  <p class="text-xs text-slate-400">Kelas A: Bahaya umum ruangan tinggal & perkantoran.</p>
+                </div>
+              </button>
+
+              <button @click="hazardType = 'liquid_gas'; nextStep()" type="button" class="p-4 rounded-2xl border text-left transition-all flex items-center gap-3 cursor-pointer" :class="hazardType === 'liquid_gas' ? 'border-red-500 bg-red-500/10 text-white' : 'border-white/10 hover:border-white/30 bg-white/5 text-slate-300'">
+                <i class="fa-solid fa-gas-pump text-rose-400 text-xl"></i>
+                <div>
+                  <p class="text-sm font-bold">Cairan Mudah Terbakar & Gas (Bensin, Oli, Alkohol, LPG)</p>
+                  <p class="text-xs text-slate-400">Kelas B: Bahaya dapur, bengkel, lab kimia, genset.</p>
+                </div>
+              </button>
+
+              <button @click="hazardType = 'electrical'; nextStep()" type="button" class="p-4 rounded-2xl border text-left transition-all flex items-center gap-3 cursor-pointer" :class="hazardType === 'electrical' ? 'border-red-500 bg-red-500/10 text-white' : 'border-white/10 hover:border-white/30 bg-white/5 text-slate-300'">
+                <i class="fa-solid fa-bolt text-yellow-400 text-xl"></i>
+                <div>
+                  <p class="text-sm font-bold">Kelistrikan & Komputer (Arus Pendek, Panel, Server)</p>
+                  <p class="text-xs text-slate-400">Kelas C: Membutuhkan media non-konduktif dan tanpa residu.</p>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <!-- STEP 3: ESTIMASI LUAS -->
+          <div x-show="step === 3" class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-red-400">Langkah 3 dari 3</span>
+              <span class="text-xs text-slate-400">Estimasi Luas Area</span>
+            </div>
+            <h4 class="text-xl font-extrabold text-white">Berapa perkiraan luas area yang ingin dilindungi?</h4>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+              <button @click="areaSize = 'small'; calculateResult()" type="button" class="p-5 rounded-2xl border text-center transition-all cursor-pointer" :class="areaSize === 'small' ? 'border-red-500 bg-red-500/10 text-white' : 'border-white/10 hover:border-white/30 bg-white/5 text-slate-300'">
+                <i class="fa-solid fa-compress text-blue-400 text-2xl mb-2"></i>
+                <p class="text-sm font-bold">&lt; 50 m²</p>
+                <p class="text-xs text-slate-400 mt-1">Kecil / Mobil / Kamar</p>
+              </button>
+
+              <button @click="areaSize = 'medium'; calculateResult()" type="button" class="p-5 rounded-2xl border text-center transition-all cursor-pointer" :class="areaSize === 'medium' ? 'border-red-500 bg-red-500/10 text-white' : 'border-white/10 hover:border-white/30 bg-white/5 text-slate-300'">
+                <i class="fa-solid fa-vector-square text-amber-400 text-2xl mb-2"></i>
+                <p class="text-sm font-bold">50 - 150 m²</p>
+                <p class="text-xs text-slate-400 mt-1">Sedang / Ruko / Kantor</p>
+              </button>
+
+              <button @click="areaSize = 'large'; calculateResult()" type="button" class="p-5 rounded-2xl border text-center transition-all cursor-pointer" :class="areaSize === 'large' ? 'border-red-500 bg-red-500/10 text-white' : 'border-white/10 hover:border-white/30 bg-white/5 text-slate-300'">
+                <i class="fa-solid fa-expand text-emerald-400 text-2xl mb-2"></i>
+                <p class="text-sm font-bold">&gt; 150 m²</p>
+                <p class="text-xs text-slate-400 mt-1">Besar / Gudang / Pabrik</p>
+              </button>
+            </div>
+          </div>
+
+          <!-- RESULT STEP -->
+          <div x-show="step === 4" class="space-y-6">
+            <div class="text-center space-y-2">
+              <span class="size-12 rounded-full bg-emerald-500/20 text-emerald-400 inline-flex items-center justify-center text-xl">
+                <i class="fa-solid fa-circle-check"></i>
+              </span>
+              <h4 class="text-2xl font-extrabold text-white">Rekomendasi APAR Terbaik untuk Anda:</h4>
+              <p class="text-xs text-slate-400">Hasil perhitungan otomatis berdasarkan parameter lokasi dan risiko bahaya.</p>
+            </div>
+
+            <div class="glass-card-dark rounded-3xl p-6 border border-emerald-500/30 space-y-4">
+              <div class="flex flex-col sm:flex-row items-center gap-6">
+                <img :src="result.image" class="w-32 h-auto object-contain drop-shadow-xl" alt="Rekomendasi APAR">
+                <div class="space-y-2 text-center sm:text-left">
+                  <span class="text-xs font-bold px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 inline-block" x-text="result.badge"></span>
+                  <h5 class="text-xl font-bold text-white" x-text="result.name"></h5>
+                  <p class="text-xs text-slate-300 leading-relaxed" x-text="result.desc"></p>
+                  <p class="text-xs text-amber-400 font-semibold flex items-center justify-center sm:justify-start gap-1">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span x-text="'Saran Kapasitas: ' + result.capacity"></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+              <a :href="result.waLink" 
+                 target="_blank" 
+                 class="w-full sm:flex-1 inline-flex items-center justify-center gap-2 py-4 px-6 rounded-2xl font-bold text-white bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-500 shadow-xl shadow-emerald-950/40 transition-all text-sm">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Pesan / Minta Penawaran (WhatsApp)</span>
+              </a>
+              <button @click="resetQuiz()" type="button" class="py-4 px-6 rounded-2xl font-semibold text-slate-300 hover:text-white glass-card-dark border border-white/10 hover:bg-white/10 transition-all text-sm cursor-pointer">
+                Ulangi Kuis
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Modal Navigation Footer -->
+        <div x-show="step > 1 && step < 4" class="bg-slate-950/60 px-6 py-4 border-t border-white/10 flex justify-between items-center">
+          <button @click="step--" type="button" class="text-xs font-bold text-slate-400 hover:text-white flex items-center gap-1.5 cursor-pointer">
+            <i class="fa-solid fa-arrow-left"></i>
+            <span>Kembali</span>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
-  <!-- kotak biru -->
-  <div class="absolute rounded-t-3xl bottom-0 start-1/2 -translate-x-1/2 -z-0 bg-[#1757C6] h-[300px] w-[60%] md:w-[45%] max-w-[400px]"></div>
+
 </div>
 
-<div class="bg-white text-black mx-auto py-24">
-  <div class="w-11/12 lg:w-9/12 mx-auto">
-    <p class="text-xl mb-6">Bersama PEMAPI, cegah bahaya api dan kebakaran dengan solusi inovatif dan terpercaya</p>
-    <h1 class="text-3xl lg:text-4xl font-medium"><span class="font-semibold text-[#0E3477]">keselamatan, keamanan, dan kesejahteraan,</span> dengan APAR yang tersedia setiap saat</h1>
-  </div>
-</div>
+<script>
+  function aparQuiz() {
+    return {
+      quizOpen: false,
+      step: 1,
+      roomType: 'rumah',
+      hazardType: 'general',
+      areaSize: 'small',
+      result: {
+        name: 'Dry Chemical Powder 3kg',
+        badge: 'Rekomendasi Utama',
+        desc: 'Sangat cocok untuk proteksi kebakaran serbaguna kelas A, B, dan C.',
+        capacity: '1 Unit Tabung 3 Kg',
+        image: '/img/apar-powder-3kg.webp',
+        waLink: '#'
+      },
+      openQuiz() {
+        this.quizOpen = true;
+        this.step = 1;
+      },
+      nextStep() {
+        this.step++;
+      },
+      resetQuiz() {
+        this.step = 1;
+      },
+      calculateResult() {
+        this.step = 4;
+        let aparName = 'Dry Chemical Powder 3kg';
+        let capacity = '1 Unit 3 Kg';
+        let img = '/img/apar-powder-3kg.webp';
+        let desc = 'Sangat serbaguna untuk memadamkan kebakaran kayu, cairan, dan korsleting listrik.';
+
+        if (this.roomType === 'server' || this.hazardType === 'electrical') {
+          aparName = 'Carbon Dioxide (CO2) 6kg';
+          capacity = this.areaSize === 'large' ? '2-3 Unit 6 Kg' : '1 Unit 6 Kg';
+          img = '/img/apar-CO-6kg.webp';
+          desc = 'Gas bersih tanpa residu, tidak menghantarkan listrik dan tidak merusak server/peralatan elektronik.';
+        } else if (this.roomType === 'restoran' || this.hazardType === 'liquid_gas') {
+          aparName = 'Media Foam (Busa AFFF) 6kg';
+          capacity = this.areaSize === 'large' ? '2 Unit 6 Kg' : '1 Unit 6 Kg';
+          img = '/img/apar-powder-6kg.webp';
+          desc = 'Membentuk lapisan film pendingin di atas cairan/minyak panas untuk mencegah oksigen menyulut api kembali.';
+        } else if (this.roomType === 'mobil') {
+          aparName = 'Dry Chemical Powder 1kg - 2kg';
+          capacity = '1 Unit 1-2 Kg Portable';
+          img = '/img/apar-powder-3kg.webp';
+          desc = 'Ukuran ringkas mudah ditempatkan di bawah kursi pengemudi atau bagasi kendaraan.';
+        } else if (this.areaSize === 'large') {
+          aparName = 'Dry Chemical Powder 6kg / 9kg';
+          capacity = 'Minimal 2-4 Unit 6 Kg (Interval tiap 15 meter)';
+          img = '/img/apar-powder-5kg.webp';
+          desc = 'Kapasitas serbuk besar untuk jangkauan radius proteksi luas di gudang/pabrik.';
+        }
+
+        this.result = {
+          name: aparName,
+          badge: 'Sesuai Rekomendasi K3',
+          desc: desc,
+          capacity: capacity,
+          image: img,
+          waLink: 'https://wa.me/628112899009?text=' + encodeURIComponent('Halo PEMAPI, hasil Kuis Rekomendasi menyarankan: ' + aparName + ' (' + capacity + ') untuk ' + this.roomType + ' dengan luas ' + this.areaSize + '. Tolong kirimkan penawaran harga terbaik.')
+        };
+      }
+    };
+  }
+</script>

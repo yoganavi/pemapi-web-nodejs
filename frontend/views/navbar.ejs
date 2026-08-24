@@ -1,127 +1,132 @@
-<nav x-data="{ isOpen: false, isOpen2: false }" class="bg-[#0E3477]">
-  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-    <div class="relative flex h-20 items-center justify-between">
-      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-        <!-- Mobile menu button-->
-        <button @click="isOpen2 = !isOpen2" type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false">
-          <span class="absolute -inset-0.5"></span>
-          <span class="sr-only">Open main menu</span>
-          <!--
-            Icon when menu is closed.
+<nav x-data="{ mobileMenuOpen: false }" class="sticky top-0 z-40 w-full glass-nav backdrop-blur-xl border-b border-white/10 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      
+      <!-- Brand Logo -->
+      <div class="flex items-center gap-3">
+        <a href="/" class="flex items-center gap-3 group">
+          <img class="h-10 sm:h-12 w-auto transition-transform duration-300 group-hover:scale-105" src="/img/pemapi-logo.png" alt="Logo PEMAPI Semarang">
+          <div class="flex flex-col">
+            <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-white flex items-center gap-1.5">
+              PEMAPI
+              <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-red-600/20 text-red-400 border border-red-500/30 hidden sm:inline-block">Smart Fire Safety</span>
+            </span>
+            <span class="text-[10px] text-slate-400 font-medium tracking-wider uppercase hidden md:inline-block">PT. Coco Profire Indonesia</span>
+          </div>
+        </a>
+      </div>
 
-            Menu open: "hidden", Menu closed: "block"
-          -->
-          <svg :class="{'hidden': isOpen2, 'block': !isOpen2 }" class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+      <!-- Desktop Navigation Menu -->
+      <div class="hidden lg:flex items-center gap-1 nav-menu-items">
+        <a href="/" class="nav-link px-4 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all duration-200">
+          Home
+        </a>
+        <a href="/pemapi-app" class="nav-link px-4 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all duration-200 flex items-center gap-1.5">
+          <span class="size-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          Pemapi App
+        </a>
+        <a href="/product" class="nav-link px-4 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all duration-200">
+          Produk APAR
+        </a>
+        <a href="/contact-us" class="nav-link px-4 py-2 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all duration-200">
+          Hubungi Kami
+        </a>
+      </div>
+
+      <!-- Desktop Actions -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="https://wa.me/628112899009?text=Halo%20PEMAPI%2C%20saya%20ingin%20konsultasi%20mengenai%20pemilihan%20APAR" 
+           target="_blank"
+           class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 shadow-lg shadow-red-600/30 hover:shadow-red-600/50 transition-all duration-300 transform hover:-translate-y-0.5 active:scale-95 border border-red-400/20">
+          <i class="fa-solid fa-fire-extinguisher text-sm"></i>
+          <span>Konsultasi APAR</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="flex lg:hidden">
+        <button @click="mobileMenuOpen = !mobileMenuOpen" 
+                type="button" 
+                class="inline-flex items-center justify-center p-2.5 rounded-xl text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-red-500/50 transition-colors" 
+                aria-controls="mobile-menu" 
+                :aria-expanded="mobileMenuOpen">
+          <span class="sr-only">Buka Menu</span>
+          <svg x-show="!mobileMenuOpen" class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
-          <!--
-            Icon when menu is open.
-
-            Menu open: "block", Menu closed: "hidden"
-          -->
-          <svg :class="{'block': isOpen2, 'hidden': !isOpen2 }" class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+          <svg x-show="mobileMenuOpen" x-cloak class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
-      <div class="flex flex-1 items-center justify-center sm:justify-start">
-        <div class="flex shrink-0 items-center">
-          <img class="h-12 w-auto" src="img/pemapi-logo.png" alt="refill apar pemapi apar baru semarang">
-        </div>
-        <div class="hidden sm:ml-6 sm:block">
-          <div class="flex space-x-4 userClass-btn-menu">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="/" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
-            <a href="/pemapi-app" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white" aria-current="page">Pemapi App</a>
-            <a href="/product" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Product</a>
-            <a href="/contact-us" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact us</a>
-            <!-- <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 bg-[#BE2623] hover:bg-red-800 hover:text-white">Apar Untukmu</a> -->
-          </div>
-        </div>
-      </div>
-      <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-        <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
-          <span class="absolute -inset-1.5"></span>
-          <span class="sr-only">View notifications</span>
-          <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
-          </svg>
-        </button>
 
-        <!-- Profile dropdown -->
-        <div class="relative ml-3 hidden">
-          <div>
-            <button @click="isOpen = !isOpen" type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-              <span class="absolute -inset-1.5"></span>
-              <span class="sr-only">Open user menu</span>
-              <img class="size-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-            </button>
-          </div>
-
-          <!--
-            Dropdown menu, show/hide based on menu state.
-
-            Entering: "transition ease-out duration-100"
-              From: "transform opacity-0 scale-95"
-              To: "transform opacity-100 scale-100"
-            Leaving: "transition ease-in duration-75"
-              From: "transform opacity-100 scale-100"
-              To: "transform opacity-0 scale-95"
-          -->
-          <div
-            x-show="isOpen"
-            x-transition:enter="transition ease-out duration-100 transform"
-            x-transition:enter-start="opacity-0 scale-95"
-            x-transition:enter-end="opacity-100 scale-100"
-            x-transition:leave="transition ease-in duration-75 transform"
-            x-transition:leave-start="opacity-100 scale-100"
-            x-transition:leave-end="opacity-0 scale-95" 
-            class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 ring-1 shadow-lg ring-black/5 focus:outline-hidden z-40" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-            <!-- Active: "bg-gray-100 outline-hidden", Not Active: "" -->
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 
-  <!-- Mobile menu, show/hide based on menu state. -->
-  <div 
-    x-show="isOpen2"
-    x-transition:enter="transition ease-out duration-200 transform"
-    x-transition:enter-start="opacity-0 scale-95"
-    x-transition:enter-end="opacity-100 scale-100"
-    x-transition:leave="transition ease-in duration-250 transform"
-    x-transition:leave-start="opacity-100 scale-100"
-    x-transition:leave-end="opacity-0 scale-95"  
-    class="sm:hidden" id="mobile-menu">
-    <div class="space-y-1 px-2 pt-2 pb-3 userClass-btn-menu">
-      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-      <!-- <a href="/" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Dashboard</a>
-      <a href="/" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a> -->
-
-      <a href="/" class="block rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
-      <a href="/pemapi-app" class="block rounded-md px-3 py-2 text-sm font-medium text-gray-300" aria-current="page">Pemapi App</a>
-      <a href="/product" class="block rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Product</a>
-      <a href="/contact-us" class="block rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact us</a>
-      <!-- <a href="/#" class="block rounded-md px-3 py-2 text-sm font-medium text-gray-300 bg-[#BE2623] hover:bg-red-800 hover:text-white">Apar Untukmu</a> -->
+  <!-- Mobile Drawer Menu -->
+  <div x-show="mobileMenuOpen" 
+       x-cloak
+       x-transition:enter="transition ease-out duration-300"
+       x-transition:enter-start="opacity-0 -translate-y-4"
+       x-transition:enter-end="opacity-100 translate-y-0"
+       x-transition:leave="transition ease-in duration-200"
+       x-transition:leave-start="opacity-100 translate-y-0"
+       x-transition:leave-end="opacity-0 -translate-y-4"
+       class="lg:hidden glass-nav border-t border-white/10 px-4 pt-3 pb-6 space-y-2" 
+       id="mobile-menu">
+    
+    <div class="space-y-1 nav-menu-items">
+      <a href="/" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-white/10 hover:text-white transition-all">
+        <i class="fa-solid fa-house text-blue-400 w-5 text-center"></i>
+        <span>Home</span>
+      </a>
+      <a href="/pemapi-app" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-white/10 hover:text-white transition-all">
+        <i class="fa-solid fa-mobile-screen-button text-emerald-400 w-5 text-center"></i>
+        <span>Pemapi App</span>
+        <span class="ml-auto text-xs bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full border border-emerald-500/30">Smart App</span>
+      </a>
+      <a href="/product" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-white/10 hover:text-white transition-all">
+        <i class="fa-solid fa-fire-flame-curved text-amber-400 w-5 text-center"></i>
+        <span>Katalog Produk APAR</span>
+      </a>
+      <a href="/contact-us" class="nav-link flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-white/10 hover:text-white transition-all">
+        <i class="fa-solid fa-headset text-rose-400 w-5 text-center"></i>
+        <span>Hubungi Kami</span>
+      </a>
     </div>
+
+    <!-- Mobile Call to Action -->
+    <div class="pt-4 border-t border-white/10 space-y-2">
+      <a href="https://wa.me/628112899009?text=Halo%20PEMAPI%2C%20saya%20butuh%20bantuan%20APAR" 
+         target="_blank" 
+         class="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 shadow-lg shadow-red-600/30">
+        <i class="fa-brands fa-whatsapp text-lg"></i>
+        <span>Chat Ahli APAR (WhatsApp)</span>
+      </a>
+      <a href="tel:08112899009" 
+         class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10">
+        <i class="fa-solid fa-phone"></i>
+        <span>Telepon: 0811-2899-009</span>
+      </a>
+    </div>
+
   </div>
 </nav>
 
 <script>
-  let path = window.location.pathname
-  let btnMenu = document.querySelectorAll('.userClass-btn-menu a')
+  document.addEventListener('DOMContentLoaded', () => {
+    const currentPath = window.location.pathname;
+    const links = document.querySelectorAll('.nav-menu-items .nav-link');
 
-  btnMenu.forEach(el => {
-    if(el.pathname == path){
-      el.classList.remove('text-gray-300', 'hover:bg-gray-700', 'hover:text-white')
-      el.classList.add('bg-gray-900', 'text-white')
-    }
+    links.forEach(link => {
+      const linkPath = link.getAttribute('href');
+      const isMatch = (currentPath === '/' && linkPath === '/') || 
+                      (linkPath !== '/' && currentPath.startsWith(linkPath));
+
+      if (isMatch) {
+        link.classList.remove('text-slate-300', 'text-slate-200');
+        link.classList.add('bg-blue-600/20', 'text-white', 'border', 'border-blue-500/30', 'font-semibold');
+      }
+    });
   });
 </script>

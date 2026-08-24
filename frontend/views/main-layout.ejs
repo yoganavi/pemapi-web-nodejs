@@ -1,48 +1,67 @@
 <!doctype html>
-<html lang="en">
+<html lang="id" class="scroll-smooth">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#071530">
+    <meta name="description" content="PEMAPI - Solusi Proteksi Pemadam Api Ringan (APAR) Berkualitas & Smart Maintenance App oleh PT. Coco Profire Indonesia.">
 
-     <!-- Import Google Icon Font-->
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>PEMAPI | Smart Fire Safety & APAR Management System</title>
+    <link rel="icon" href="/img/pemapi-logo.png" type="image/x-icon">
 
-    <title>APAR | PEMAPI | COCO PROFIRE INDONESIA</title>
-    <link rel = "icon" href = "img/pemapi-logo.png" type = "image/x-icon">
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
-    <!-- user css -->
-    <link rel="stylesheet" type="text/css" href="css/main-layout.css?001">
-    <!-- fontawesome -->
-    <script src="https://kit.fontawesome.com/ce27987ac1.js" crossorigin="anonymous"></script>
-    <!-- daisy css -->
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-    <!-- tailwind cdn-->
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Tailwind CSS Browser CDN (v4) -->
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <!-- tailwind css cli -->
-    <!-- <link rel="stylesheet" type="text/css" href="css/final.css"> -->
-    <!-- socket io -->
-    <!-- <script src="/socket.io/socket.io.js"></script>
-    <script>
-      var socket = io();
-      socket.on('refreshPage', function(){
-        console.log('refresh ok');
-        location.reload();
-      });
-    </script> -->
-    <!-- alpine js -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  </head>
-  <body class="mx-auto">
-    <!-- navbar -->
-     <%- include('navbar') %>
-    <!-- / navbar -->
 
-    <%- body %> 
+    <!-- Custom Modern Styling -->
+    <link rel="stylesheet" type="text/css" href="/css/main-layout.css?v=2.0">
+
+    <!-- Alpine.js for Micro-interactions -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.3/dist/cdn.min.js"></script>
+  </head>
+  <body class="bg-slate-900 text-slate-100 antialiased selection:bg-red-500 selection:text-white flex flex-col min-h-screen">
     
-    <!-- footer -->
-     <%- include('footer') %>
-    <!-- / footer -->
+    <!-- Navbar -->
+    <%- include('navbar') %>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+      <%- body %> 
+    </main>
+    
+    <!-- Footer -->
+    <%- include('footer') %>
+
+    <!-- Floating Quick WhatsApp Button -->
+    <aside class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 pointer-events-auto">
+      <a href="https://wa.me/628112899009?text=Halo%20PEMAPI%2C%20saya%20ingin%20konsultasi%20mengenai%20kebutuhan%20APAR%20dan%20aplikasi%20smart-maintenance." 
+         target="_blank" 
+         rel="noopener noreferrer"
+         aria-label="Konsultasi via WhatsApp"
+         class="group relative flex items-center gap-3 bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-400 text-white px-4 py-3.5 rounded-full shadow-2xl shadow-emerald-950/60 hover:shadow-emerald-500/40 transition-all duration-300 transform hover:-translate-y-1 active:scale-95 border border-emerald-400/30">
+        
+        <!-- Live status pulse -->
+        <span class="relative flex h-3 w-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+        </span>
+        
+        <span class="hidden sm:inline-block font-semibold text-sm tracking-wide">Konsultasi Siaga</span>
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+
+        <!-- Tooltip on mobile -->
+        <span class="absolute -top-10 right-0 bg-slate-900/90 text-slate-200 text-xs px-2.5 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap border border-slate-700 pointer-events-none sm:hidden">
+          Chat WhatsApp
+        </span>
+      </a>
+    </aside>
+
   </body>
 </html>
