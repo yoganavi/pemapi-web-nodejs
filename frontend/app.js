@@ -88,6 +88,17 @@ app.get('/warranty-policy', async(req,res)=>{
   })
 });
 
+app.get('/kebijakan-mutu', async(req,res)=>{
+  res.render('kebijakan-mutu-2',{
+    layout: 'main-layout2',
+    title: 'Kebijakan Mutu | PEMAPI',
+  })
+});
+
+app.get('/quality-policy', async(req,res)=>{
+  res.redirect('/kebijakan-mutu');
+});
+
 app.use('/', (req, res) => {
   console.log(`app.use/ page not found`);
   res.status(404)
