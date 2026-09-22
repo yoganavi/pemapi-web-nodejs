@@ -22,10 +22,10 @@ app.use(express.static('public'));
 // use url-encoded middleware
 app.use(express.urlencoded({ extended: true }));
 // konfigurasi flash
-app.use(cookieParser('secret'));
+app.use(cookieParser(process.env.COOKIE_SECRET || 'jkgUtyh2673jh*'));
 app.use(
   session({
-    secret: 'jkgUtyh2673jh*',
+    secret: process.env.SESSION_SECRET || 'jkgUtyh2673jh*',
     resave: false,
     saveUninitialized: true,
   })
@@ -35,15 +35,12 @@ app.use(flash());
 app.use(bodyParser.json())
 
 app.use('/', (req, res, next) => {
-  let path = req.path
-  if(path == '/favicon.ico') return
-  if(path == '/sitemap_index.xml') return res.send('./public/sitemap_index.xml')
-  if(path == '/index.html') return res.redirect('/')
-  if(req.get('host') == "www.pemapi.com") res.send(`<script>window.location.href = "https://pemapi.com"</script>`)
-
-  // console.log("🚀 ~ file: app.js:36 ~ app.use ~ path:", path)
-  next()
-})
+  if (req.get('host') === 'www.pemapi.com') {
+    return res.redirect(301, `https://pemapi.com${req.originalUrl}`);
+  }
+  if (req.path === '/index.html') return res.redirect(301, '/');
+  next();
+});
 
 app.use('/' , routerHome);
 
