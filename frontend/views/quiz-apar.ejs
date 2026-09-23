@@ -132,6 +132,7 @@ function renderQuiz() {
   body.querySelectorAll('label').forEach(label => {
     label.addEventListener('click', () => {
       const val = JSON.parse(label.dataset.val);
+      if (Object.keys(state.answers).length === 0) pemapiTrack('quiz_start');
       state.answers[q.key] = val;
       renderQuiz();
     });
@@ -186,6 +187,14 @@ function computeRecommendation() {
 
 function renderResult() {
   const r = computeRecommendation();
+  pemapiTrack('quiz_complete', {
+    recommended_type: r.type,
+    capacity: r.capacity,
+    quantity: r.quantity,
+    uncertain: r.uncertain,
+    area: state.answers.area,
+    timing: state.answers.timing,
+  });
   const waMsg = encodeURIComponent(`Halo PEMAPI, saya baru selesai Quiz APAR dan mendapat rekomendasi: ${r.type} ${r.capacity}, ${r.quantity} unit. Mohon konsultasi untuk validasi rekomendasi ini. Terima kasih.`);
   document.getElementById('quiz-progress-wrap').style.display = 'none';
   document.getElementById('quiz-body').innerHTML = `

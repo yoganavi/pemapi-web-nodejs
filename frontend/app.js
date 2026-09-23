@@ -15,6 +15,9 @@ import { buildSeo } from './data/seo.js';
 
 const app=express()
 const PORT = process.env.PORT || 3011
+// GA only runs on the production domain (or when overridden via env), so local dev never pollutes analytics
+const GA_ID_PRODUCTION = 'G-SSF8XKZ4ET';
+const GA_ID_ENV = /^G-[A-Z0-9]+$/.test(process.env.GA_MEASUREMENT_ID || '') ? process.env.GA_MEASUREMENT_ID : '';
 
 // use ejs as view engine
 app.set('view engine', 'ejs');
@@ -51,6 +54,7 @@ app.use((req, res, next) => {
   res.locals.WA_PHONE_DISPLAY = WA_PHONE_DISPLAY;
   res.locals.WA_PHONE_INTL = WA_PHONE_INTL;
   res.locals.seo = buildSeo(req);
+  res.locals.GA_ID = GA_ID_ENV || (req.hostname === 'pemapi.com' ? GA_ID_PRODUCTION : '');
   next();
 });
 

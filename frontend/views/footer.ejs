@@ -94,6 +94,9 @@
       <div class="flex flex-wrap gap-4">
         <a href="/warranty-policy" class="hover:text-white transition">Garansi</a>
         <a href="/privacy-policy" class="hover:text-white transition">Privasi</a>
+        <% if (GA_ID) { %>
+        <button type="button" onclick="window.pemapiOpenConsent && pemapiOpenConsent()" class="hover:text-white transition cursor-pointer">Pengaturan Cookie</button>
+        <% } %>
       </div>
     </div>
   </div>

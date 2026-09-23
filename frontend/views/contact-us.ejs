@@ -18,6 +18,9 @@
       <div class="mb-6 rounded-lg border-l-4 p-4 text-sm <%= alert === 'success' ? 'bg-emerald-50 border-emerald-500 text-emerald-900' : 'bg-red-50 border-red-500 text-red-900' %>">
         <% if (alert === 'success') { %>
           <strong>✓ Pesan Terkirim!</strong> Terima kasih. Tim PEMAPI akan menghubungi Anda dalam 1x24 jam kerja.
+          <% if (typeof leadType !== 'undefined' && leadType) { %>
+            <script>pemapiTrack('generate_lead', { form: 'contact', lead_type: <%- JSON.stringify(leadType).replace(/</g, '\\u003c') %> });</script>
+          <% } %>
         <% } else { %>
           <strong>⚠️ Pesan gagal terkirim.</strong> Periksa kembali isian form Anda dan coba lagi. Atau hubungi kami langsung via WhatsApp.
         <% } %>

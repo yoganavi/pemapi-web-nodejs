@@ -1,5 +1,13 @@
 import axios from "axios";
 
+const KEBUTUHAN_OPTIONS = [
+  'Konsultasi & Pemilihan APAR',
+  'Beli APAR',
+  'Refill & Maintenance',
+  'Manajemen APAR Digital',
+  'Lainnya',
+];
+
 const GOOGLE_SHEET_WEBHOOK = 'https://script.google.com/macros/s/AKfycbw4lpVVgxYmsEOKamdTgPa38gPs76Gg-gAh8ihTCiDRvOsr-0fCD3mIbpOXfqlf9KJH/exec';
 
 export default async function submitForm(req, res) {
@@ -19,7 +27,7 @@ export default async function submitForm(req, res) {
   const pesan = (body.pesan || '').trim();
   const kebutuhan = (body.kebutuhan || '').trim();
 
-  if (nama.length < 2 || phone.length < 10 || pesan.length < 10 || !kebutuhan) {
+  if (nama.length < 2 || phone.length < 10 || pesan.length < 10 || !KEBUTUHAN_OPTIONS.includes(kebutuhan)) {
     req.flash('alert', 'error');
     return res.redirect('/contact-us');
   }
@@ -51,6 +59,7 @@ export default async function submitForm(req, res) {
     });
     const result = response?.data?.result === 'success' ? 'success' : 'error';
     req.flash('alert', result);
+    if (result === 'success') req.flash('leadType', kebutuhan);
   } catch (err) {
     console.error('[contact-form] submission failed:', err.message);
     req.flash('alert', 'error');

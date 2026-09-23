@@ -1,0 +1,124 @@
+    <script>
+      // No-op until analytics is loaded (after consent), so pages can call pemapiTrack() unconditionally
+      window.pemapiTrack = function (name, params) {
+        if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
+      };
+    </script>
+<% if (GA_ID) { %>
+    <style>
+      .pmc-banner{position:fixed;left:16px;bottom:16px;z-index:2147483000;max-width:420px;background:#fff;color:#1e293b;border:1px solid #e2e8f0;border-radius:14px;box-shadow:0 12px 40px rgba(11,18,32,.22);padding:20px;font-family:inherit;font-size:14px;line-height:1.55}
+      .pmc-banner[hidden]{display:none}
+      .pmc-title{margin:0 0 6px;font-size:16px;font-weight:700;color:#0f172a}
+      .pmc-text{margin:0 0 14px;color:#475569}
+      .pmc-text a{color:#0E3477;font-weight:600;text-decoration:underline}
+      .pmc-actions{display:flex;gap:8px}
+      .pmc-btn{flex:1;min-height:44px;padding:10px 16px;border-radius:8px;font:inherit;font-weight:600;cursor:pointer;border:2px solid #0E3477;transition:background-color .15s,color .15s}
+      .pmc-btn-reject{background:#fff;color:#0E3477}
+      .pmc-btn-reject:hover{background:#eef2fb}
+      .pmc-btn-accept{background:#0E3477;color:#fff}
+      .pmc-btn-accept:hover{background:#092653;border-color:#092653}
+      .pmc-btn:focus-visible{outline:3px solid #F59E0B;outline-offset:2px}
+      @media (max-width:640px){.pmc-banner{left:8px;right:8px;bottom:8px;max-width:none;padding:16px}}
+    </style>
+    <script>
+      (function () {
+        var GA_ID = '<%= GA_ID %>';
+        var KEY = 'pemapi_cookie_consent';
+        var loaded = false;
+
+        function getChoice() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+        function setChoice(v) { try { localStorage.setItem(KEY, v); } catch (e) {} }
+
+        function loadGA() {
+          if (loaded) return;
+          loaded = true;
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function () { dataLayer.push(arguments); };
+          gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+          gtag('js', new Date());
+          gtag('config', GA_ID);
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+          document.head.appendChild(s);
+        }
+
+        function stopGA() {
+          if (typeof window.gtag === 'function') window.gtag('consent', 'update', { analytics_storage: 'denied' });
+          window.gtag = undefined;
+          var host = location.hostname;
+          var domains = ['', host, '.' + host, '.' + host.replace(/^www\./, '')];
+          document.cookie.split(';').forEach(function (c) {
+            var name = c.split('=')[0].trim();
+            if (name === '_ga' || name.indexOf('_ga_') === 0) {
+              domains.forEach(function (d) {
+                document.cookie = name + '=; Max-Age=0; path=/' + (d ? '; domain=' + d : '');
+              });
+            }
+          });
+        }
+
+        var banner;
+        function buildBanner() {
+          banner = document.createElement('div');
+          banner.className = 'pmc-banner';
+          banner.setAttribute('role', 'dialog');
+          banner.setAttribute('aria-labelledby', 'pmc-title');
+          banner.setAttribute('aria-describedby', 'pmc-text');
+          banner.hidden = true;
+          banner.innerHTML =
+            '<p class="pmc-title" id="pmc-title">Kami menghargai privasi Anda</p>' +
+            '<p class="pmc-text" id="pmc-text">Dengan persetujuan Anda, kami menggunakan cookie analitik (Google Analytics) untuk memahami cara website ini digunakan dan meningkatkan layanan kami. Tanpa persetujuan, cookie ini tidak aktif. Pilihan dapat diubah kapan saja melalui “Pengaturan Cookie”. <a href="/privacy-policy#website">Kebijakan Privasi</a></p>' +
+            '<div class="pmc-actions">' +
+              '<button type="button" class="pmc-btn pmc-btn-reject" data-choice="denied">Tolak</button>' +
+              '<button type="button" class="pmc-btn pmc-btn-accept" data-choice="granted">Terima</button>' +
+            '</div>';
+          banner.addEventListener('click', function (e) {
+            var choice = e.target.getAttribute && e.target.getAttribute('data-choice');
+            if (!choice) return;
+            setChoice(choice);
+            if (choice === 'granted') loadGA(); else stopGA();
+            banner.hidden = true;
+          });
+          document.body.appendChild(banner);
+        }
+
+        function showBanner(focus) {
+          if (!banner) buildBanner();
+          banner.hidden = false;
+          if (focus) banner.querySelector('.pmc-btn-reject').focus();
+        }
+
+        window.pemapiOpenConsent = function () { showBanner(true); };
+
+        var choice = getChoice();
+        if (choice === 'granted') loadGA();
+        else if (!choice) {
+          if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { showBanner(false); });
+          else showBanner(false);
+        }
+
+        document.addEventListener('click', function (e) {
+          var a = e.target.closest && e.target.closest('a[href]');
+          if (!a) return;
+          var href = a.getAttribute('href') || '';
+          var text = (a.innerText || a.getAttribute('aria-label') || '').trim().slice(0, 60);
+          var base = { page_path: location.pathname, link_text: text };
+
+          if (href.indexOf('wa.me/') !== -1) {
+            pemapiTrack('whatsapp_click', Object.assign({ placement: a.classList.contains('fixed') ? 'floating_button' : 'inline' }, base));
+          } else if (href.indexOf('play.google.com') !== -1) {
+            pemapiTrack('app_download_click', base);
+          } else if (href.indexOf('mailto:') === 0) {
+            pemapiTrack('contact_click', Object.assign({ method: 'email' }, base));
+          } else if (href.indexOf('tel:') === 0) {
+            pemapiTrack('contact_click', Object.assign({ method: 'phone' }, base));
+          } else if (/^\/(hubungi-kami|contact-us)\/?$/.test(href)) {
+            pemapiTrack('cta_konsultasi_click', base);
+          } else if (/^\/quiz-apar\/?$/.test(href)) {
+            pemapiTrack('cta_quiz_click', base);
+          }
+        });
+      })();
+    </script>
+<% } %>
