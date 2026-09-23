@@ -1,0 +1,29 @@
+    <title><%= seo.title %></title>
+    <meta name="description" content="<%= seo.description %>">
+    <% if (seo.canonical) { %>
+    <link rel="canonical" href="<%= seo.canonical %>">
+    <% } %>
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0E3477">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="<%= seo.siteName %>">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:title" content="<%= seo.title %>">
+    <meta property="og:description" content="<%= seo.description %>">
+    <% if (seo.canonical) { %>
+    <meta property="og:url" content="<%= seo.canonical %>">
+    <% } %>
+    <meta property="og:image" content="<%= seo.image %>">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="<%= seo.title %>">
+    <meta name="twitter:description" content="<%= seo.description %>">
+    <meta name="twitter:image" content="<%= seo.image %>">
+
+    <!-- Structured data -->
+    <% seo.jsonLd.forEach(function(json) { %>
+    <script type="application/ld+json"><%- json %></script>
+    <% }); %>

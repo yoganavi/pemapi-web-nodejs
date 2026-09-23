@@ -1,14 +1,14 @@
 import express from "express";
+import { solusiList, industriList } from "../data/content.js";
+
 const routerHome = express.Router();
 
-// import getAgenEdit, {submitAgenEdit} from "../actions/agen/editAgen.js";
-
-routerHome.get('/', (req,res)=>{
-  res.render('home',{
+routerHome.get('/', (req, res) => {
+  res.render('home', {
     layout: 'main-layout',
-  })
+    solusiList,
+    industriList,
+  });
 });
 
-export {
-    routerHome
-};
+export { routerHome };

@@ -1,0 +1,34 @@
+<!-- Hero -->
+<section class="bg-gradient-to-br from-[#0B1220] via-[#0E2040] to-[#0E3477] text-white py-16">
+  <div class="mx-auto w-11/12 xl:w-9/12">
+    <div class="max-w-3xl">
+      <div class="text-xs uppercase tracking-widest text-white/60 mb-3">Solusi Per Industri</div>
+      <h1 class="text-3xl md:text-5xl font-bold leading-tight mb-4">Setiap Industri Punya Risiko Berbeda</h1>
+      <p class="text-lg text-white/80">PEMAPI melayani berbagai sektor dengan pendekatan yang disesuaikan — risiko kebakaran perkantoran tidak sama dengan pabrik, restoran, atau rumah sakit.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Industri Grid -->
+<section class="bg-slate-50 py-16">
+  <div class="mx-auto w-11/12 xl:w-9/12">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <% industriList.forEach(function(ind) { %>
+      <a href="/industri/<%= ind.slug %>" class="group bg-white rounded-2xl border border-slate-200 p-5 md:p-6 hover:border-[#0E3477] hover:shadow-lg transition-all">
+        <div class="text-4xl mb-3"><%= ind.icon %></div>
+        <h2 class="text-base md:text-lg font-bold text-[#0F172A] mb-1 group-hover:text-[#0E3477] transition"><%= ind.title %></h2>
+        <p class="text-xs md:text-sm text-slate-600 line-clamp-2"><%= ind.tagline %></p>
+      </a>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="bg-white py-14">
+  <div class="mx-auto w-11/12 xl:w-9/12 max-w-3xl text-center">
+    <h2 class="text-2xl md:text-3xl font-bold text-[#0F172A] mb-3">Industri Anda tidak ada di daftar?</h2>
+    <p class="text-slate-600 mb-6">Kami sudah melayani berbagai industri lain juga. Ceritakan kebutuhan Anda dan tim kami akan bantu petakan solusi yang tepat.</p>
+    <a href="/hubungi-kami" class="inline-flex items-center gap-2 bg-[#E63946] hover:bg-[#C1272D] text-white px-6 py-3 rounded-md font-semibold transition">Konsultasi Gratis →</a>
+  </div>
+</section>

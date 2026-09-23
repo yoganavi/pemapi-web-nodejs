@@ -1,31 +1,89 @@
-<div class="text-white bg-[#0E3477] pt-9 pb-14 lg:pb-5 relative">
-  <div class="flex flex-col lg:flex-row justify-center lg:justify-start z-10">
-    <div class="px-0 lg:px-16 xl:px-32 py-12 lg:py-5 flex flex-col justify-center items-center z-20">
-      <img class="w-[190px]" src="img/logo/logo-pemapi.png" alt="">
-      <p class="mt-4 mb-4">PT. COCO PROFIRE INDONESIA</p>
-      <p class="">Jalan Puspanjolo dalam 5 no. 10, RT 011, RW 001,</p>
-      <p class="">Semarang, Jawa Tengah, 5014</p>
+<footer class="bg-[#0B1220] text-white pt-14 pb-6">
+  <div class="mx-auto w-11/12 xl:w-9/12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+      <!-- Brand + address -->
+      <div class="lg:col-span-1">
+        <img src="/img/pemapi-logo.png" alt="PEMAPI" class="w-32 mb-4">
+        <div class="text-sm text-white/70 leading-relaxed">
+          <div class="font-semibold text-white mb-1">PT. Coco Profire Indonesia</div>
+          Jl. Puspanjolo Dalam 5 No. 10<br>
+          RT 011 / RW 001, Cabean<br>
+          Kec. Semarang Barat<br>
+          Kota Semarang, Jawa Tengah 50141
+        </div>
+      </div>
+
+      <!-- Produk -->
+      <div>
+        <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Produk</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="/product-apar?tipe=powder" class="hover:text-white transition">APAR Powder</a></li>
+          <li><a href="/product-apar?tipe=co2" class="hover:text-white transition">APAR CO2</a></li>
+          <li><a href="/product-apar?tipe=foam" class="hover:text-white transition">APAR Foam</a></li>
+          <li><a href="/product-apar?tipe=halon" class="hover:text-white transition">APAR Clean Agent</a></li>
+          <li><a href="/product" class="hover:text-white transition font-semibold">Semua Produk →</a></li>
+        </ul>
+      </div>
+
+      <!-- Solusi + Perusahaan -->
+      <div>
+        <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Solusi</h4>
+        <ul class="space-y-2 text-sm text-white/70">
+          <li><a href="/solusi/konsultasi" class="hover:text-white transition">Konsultasi</a></li>
+          <li><a href="/solusi/penempatan" class="hover:text-white transition">Penempatan APAR</a></li>
+          <li><a href="/solusi/refill-maintenance" class="hover:text-white transition">Refill & Maintenance</a></li>
+          <li><a href="/solusi/manajemen-digital" class="hover:text-white transition">Manajemen Digital</a></li>
+          <li><a href="/pemapi-app" class="hover:text-white transition">PEMAPI App</a></li>
+        </ul>
+      </div>
+
+      <!-- Kontak -->
+      <div>
+        <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-4">Kontak</h4>
+        <ul class="space-y-3 text-sm text-white/70">
+          <li>
+            <a href="<%= waLink('general') %>" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-white transition">
+              <i class="fa-brands fa-whatsapp text-emerald-400"></i>
+              <span><%= WA_PHONE_DISPLAY %></span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:cocoprofire@gmail.com?subject=Penawaran%20APAR" class="flex items-center gap-2 hover:text-white transition">
+              <i class="fa-solid fa-envelope text-blue-400"></i>
+              <span>cocoprofire@gmail.com</span>
+            </a>
+          </li>
+          <li class="flex items-start gap-2 pt-1">
+            <i class="fa-regular fa-clock text-white/50 mt-1"></i>
+            <div class="text-xs leading-relaxed">
+              Sen–Jum 09.00–16.00<br>
+              Sabtu 09.00–13.00<br>
+              <span class="text-white/40">Minggu / Tgl merah libur</span>
+            </div>
+          </li>
+        </ul>
+        <div class="flex gap-3 mt-5">
+          <a href="https://www.instagram.com/pemapi.indonesia/" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/aparpemapi/" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="<%= waLink('general') %>" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-emerald-500 hover:bg-emerald-600 flex items-center justify-center transition" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
     </div>
-    <!-- divider -->
-    <div class="flex justify-center items-center">
-      <div class="w-10/12 md:w-[40%] lg:w-[3px] h-[4px] lg:h-[90%] bg-white"></div>
-    </div>
-    <!-- <div class="col-10 col-md-5 mx-auto d-flex justify-content-center d-lg-none mb-5">
-      <div class="" style="height: 1.5px; width: 100%;background: white;"></div>
-    </div> -->
-    <!-- / divider -->
-    <div class="flex flex-col w-10/12 md:w-9/12 lg:w-auto mx-auto lg:mx-0 pt-20 lg:pt-0 ps-0 lg:ps-16 justify-center gap-y-6">
-      <a class="text-white text-decoration-none hover:text-red-300 transition-colors" href="mailto:pemapi.adm@gmail.com?subject=Penawaran APAR">Kontak Email</a>
-      <a class="text-white text-decoration-none hover:text-red-300 transition-colors" href="https://wa.me/628112899009?text=" target="_blank">Nomor Telepon</a>
-      <a class="text-white text-decoration-none hover:text-red-300 transition-colors" href="https://www.instagram.com/pemapi.indonesia/?hl=en" target="_blank">Instagram</a>
-      <a class="text-white text-decoration-none hover:text-red-300 transition-colors" href="https://www.facebook.com/aparpemapi/" target="_blank">Facebook</a>
-      <a class="text-white text-decoration-none hover:text-red-300 transition-colors" href="/kebijakan-mutu">Kebijakan Mutu</a>
-      <a class="text-white text-decoration-none hover:text-red-300 transition-colors" href="/warranty-policy" target="_blank">Ketentuan Garansi</a>
-      <a class="text-white text-decoration-none hover:text-red-300 transition-colors" href="/privacy-policy" target="_blank">Privacy Policy</a>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-white/10 pt-5 flex flex-col md:flex-row justify-between gap-3 text-xs text-white/50">
+      <div>© <%= new Date().getFullYear() %> PT. Coco Profire Indonesia. Semua hak dilindungi.</div>
+      <div class="flex flex-wrap gap-4">
+        <a href="/kebijakan-mutu" class="hover:text-white transition">Kebijakan Mutu</a>
+        <a href="/warranty-policy" class="hover:text-white transition">Garansi</a>
+        <a href="/privacy-policy" class="hover:text-white transition">Privasi</a>
+      </div>
     </div>
   </div>
-  <!-- 2 reqtangle in right side -->
-  <div class="absolute -z-0 bg-[#13469F] w-[60px] md:w-[90px] h-[60px] md:h-[90px] top-[25px] right-[95px] md:right-[115px]"></div>
-  <div class="absolute -z-0 bg-[#13469F] w-[60px] md:w-[90px] h-[60px] md:h-[90px] top-[85px] md:top-[115px] right-[35px] md:right-[25px]"></div>
-  <!-- / 2 reqtangle in right side -->
-</div>
+</footer>

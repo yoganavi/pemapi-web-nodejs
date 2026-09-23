@@ -1,115 +1,119 @@
-<nav x-data="{ isOpen: false, isOpen2: false }" class="bg-[#0E3477]">
-  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+<nav x-data="{ mobileOpen: false, openDropdown: null }" class="bg-[#0E3477] relative z-40">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="relative flex h-20 items-center justify-between">
-      <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-        <!-- Mobile menu button-->
-        <button @click="isOpen2 = !isOpen2" type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false">
-          <span class="absolute -inset-0.5"></span>
-          <span class="sr-only">Open main menu</span>
-          <!--
-            Icon when menu is closed.
-
-            Menu open: "hidden", Menu closed: "block"
-          -->
-          <svg :class="{'hidden': isOpen2, 'block': !isOpen2 }" class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+      <!-- Mobile menu button -->
+      <div class="flex items-center lg:hidden">
+        <button @click="mobileOpen = !mobileOpen" type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-300 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-none" aria-controls="mobile-menu">
+          <span class="sr-only">Buka menu</span>
+          <svg :class="{'hidden': mobileOpen, 'block': !mobileOpen}" class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
           </svg>
-          <!--
-            Icon when menu is open.
-
-            Menu open: "block", Menu closed: "hidden"
-          -->
-          <svg :class="{'block': isOpen2, 'hidden': !isOpen2 }" class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+          <svg :class="{'block': mobileOpen, 'hidden': !mobileOpen}" class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
-      <div class="flex flex-1 items-center justify-center sm:justify-start">
-        <div class="flex shrink-0 items-center">
-          <img class="h-12 w-auto" src="img/pemapi-logo.png" alt="refill apar pemapi apar baru semarang">
-        </div>
-        <div class="hidden sm:ml-6 sm:block">
-          <div class="flex space-x-4 userClass-btn-menu">
-            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="/" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
-            <a href="/pemapi-app" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white" aria-current="page">Pemapi App</a>
-            <a href="/product" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Product</a>
-            <a href="/contact-us" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact us</a>
-            <!-- <a href="#" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 bg-[#BE2623] hover:bg-red-800 hover:text-white">Apar Untukmu</a> -->
+
+      <!-- Logo -->
+      <div class="flex flex-1 items-center justify-center lg:justify-start">
+        <a href="/" class="flex shrink-0 items-center">
+          <img class="h-12 w-auto" src="/img/pemapi-logo.png" alt="PEMAPI — solusi APAR & fire protection Semarang">
+        </a>
+
+        <!-- Desktop menu -->
+        <div class="hidden lg:ml-8 lg:block">
+          <div class="flex items-center space-x-1 userClass-btn-menu">
+            <a href="/" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white transition">Beranda</a>
+
+            <!-- Produk dropdown -->
+            <div class="relative" @mouseenter="openDropdown = 'produk'" @mouseleave="openDropdown = null">
+              <button class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white transition flex items-center gap-1">
+                Produk
+                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              </button>
+              <div x-show="openDropdown === 'produk'" x-transition class="absolute left-0 top-full pt-1 min-w-[220px]">
+                <div class="bg-white rounded-md shadow-lg py-2 ring-1 ring-black/5">
+                  <a href="/product" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0E3477] font-medium">Semua Produk APAR</a>
+                  <div class="border-t border-gray-100 my-1"></div>
+                  <a href="/product-apar?tipe=powder" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0E3477]">APAR Powder</a>
+                  <a href="/product-apar?tipe=co2" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0E3477]">APAR CO2</a>
+                  <a href="/product-apar?tipe=foam" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0E3477]">APAR Foam</a>
+                  <a href="/product-apar?tipe=halon" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0E3477]">APAR Clean Agent</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Solusi dropdown -->
+            <div class="relative" @mouseenter="openDropdown = 'solusi'" @mouseleave="openDropdown = null">
+              <button class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white transition flex items-center gap-1">
+                Solusi
+                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              </button>
+              <div x-show="openDropdown === 'solusi'" x-transition class="absolute left-0 top-full pt-1 min-w-[240px]">
+                <div class="bg-white rounded-md shadow-lg py-2 ring-1 ring-black/5">
+                  <a href="/solusi" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0E3477] font-medium">Semua Solusi</a>
+                  <div class="border-t border-gray-100 my-1"></div>
+                  <a href="/solusi/konsultasi" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0E3477]">Konsultasi Profesional</a>
+                  <a href="/solusi/penempatan" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0E3477]">Penempatan APAR</a>
+                  <a href="/solusi/refill-maintenance" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0E3477]">Refill & Maintenance</a>
+                  <a href="/solusi/manajemen-digital" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0E3477]">Manajemen APAR Digital</a>
+                </div>
+              </div>
+            </div>
+
+            <a href="/pemapi-app" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white transition">PEMAPI App</a>
+
+            <!-- Industri dropdown -->
+            <div class="relative" @mouseenter="openDropdown = 'industri'" @mouseleave="openDropdown = null">
+              <button class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white transition flex items-center gap-1">
+                Industri
+                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+              </button>
+              <div x-show="openDropdown === 'industri'" x-transition class="absolute left-0 top-full pt-1 min-w-[260px]">
+                <div class="bg-white rounded-md shadow-lg py-2 ring-1 ring-black/5">
+                  <a href="/industri" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0E3477] font-medium">Semua Industri</a>
+                  <div class="border-t border-gray-100 my-1"></div>
+                  <div class="grid grid-cols-2 gap-x-2">
+                    <a href="/industri/perkantoran" class="block px-4 py-1.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0E3477]">Perkantoran</a>
+                    <a href="/industri/pabrik" class="block px-4 py-1.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0E3477]">Pabrik</a>
+                    <a href="/industri/hotel" class="block px-4 py-1.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0E3477]">Hotel</a>
+                    <a href="/industri/restoran" class="block px-4 py-1.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0E3477]">Restoran</a>
+                    <a href="/industri/gudang" class="block px-4 py-1.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0E3477]">Gudang</a>
+                    <a href="/industri/retail" class="block px-4 py-1.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0E3477]">Retail</a>
+                    <a href="/industri/rumah-sakit" class="block px-4 py-1.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0E3477]">Rumah Sakit</a>
+                    <a href="/industri/pendidikan" class="block px-4 py-1.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0E3477]">Pendidikan</a>
+                    <a href="/industri/pemerintahan" class="block px-4 py-1.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0E3477]">Pemerintahan</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a href="/tentang-kami" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white transition">Tentang</a>
+            <a href="/hubungi-kami" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white transition">Hubungi</a>
           </div>
         </div>
       </div>
-      <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-        <button type="button" class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
-          <span class="absolute -inset-1.5"></span>
-          <span class="sr-only">View notifications</span>
-          <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
-          </svg>
-        </button>
 
-        <!-- Profile dropdown -->
-        <div class="relative ml-3 hidden">
-          <div>
-            <button @click="isOpen = !isOpen" type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-              <span class="absolute -inset-1.5"></span>
-              <span class="sr-only">Open user menu</span>
-              <img class="size-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-            </button>
-          </div>
-
-          <!--
-            Dropdown menu, show/hide based on menu state.
-
-            Entering: "transition ease-out duration-100"
-              From: "transform opacity-0 scale-95"
-              To: "transform opacity-100 scale-100"
-            Leaving: "transition ease-in duration-75"
-              From: "transform opacity-100 scale-100"
-              To: "transform opacity-0 scale-95"
-          -->
-          <div
-            x-show="isOpen"
-            x-transition:enter="transition ease-out duration-100 transform"
-            x-transition:enter-start="opacity-0 scale-95"
-            x-transition:enter-end="opacity-100 scale-100"
-            x-transition:leave="transition ease-in duration-75 transform"
-            x-transition:leave-start="opacity-100 scale-100"
-            x-transition:leave-end="opacity-0 scale-95" 
-            class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 ring-1 shadow-lg ring-black/5 focus:outline-hidden z-40" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-            <!-- Active: "bg-gray-100 outline-hidden", Not Active: "" -->
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
-          </div>
-        </div>
+      <!-- CTA Konsultasi -->
+      <div class="hidden lg:flex items-center gap-2">
+        <a href="/quiz-apar" class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white transition">🔥 Quiz APAR</a>
+        <a href="/hubungi-kami" class="rounded-md px-4 py-2 text-sm font-semibold bg-[#E63946] hover:bg-[#C1272D] text-white transition shadow-sm hover:shadow-md">Konsultasi Gratis</a>
       </div>
     </div>
   </div>
 
-  <!-- Mobile menu, show/hide based on menu state. -->
-  <div 
-    x-show="isOpen2"
-    x-transition:enter="transition ease-out duration-200 transform"
-    x-transition:enter-start="opacity-0 scale-95"
-    x-transition:enter-end="opacity-100 scale-100"
-    x-transition:leave="transition ease-in duration-250 transform"
-    x-transition:leave-start="opacity-100 scale-100"
-    x-transition:leave-end="opacity-0 scale-95"  
-    class="sm:hidden" id="mobile-menu">
-    <div class="space-y-1 px-2 pt-2 pb-3 userClass-btn-menu">
-      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-      <!-- <a href="/" class="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Dashboard</a>
-      <a href="/" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Team</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Projects</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a>
-      <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Calendar</a> -->
-
-      <a href="/" class="block rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
-      <a href="/pemapi-app" class="block rounded-md px-3 py-2 text-sm font-medium text-gray-300" aria-current="page">Pemapi App</a>
-      <a href="/product" class="block rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Product</a>
-      <a href="/contact-us" class="block rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact us</a>
-      <!-- <a href="/#" class="block rounded-md px-3 py-2 text-sm font-medium text-gray-300 bg-[#BE2623] hover:bg-red-800 hover:text-white">Apar Untukmu</a> -->
+  <!-- Mobile menu -->
+  <div x-show="mobileOpen" x-transition class="lg:hidden border-t border-white/10" id="mobile-menu">
+    <div class="space-y-1 px-3 pt-3 pb-4 userClass-btn-menu">
+      <a href="/" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Beranda</a>
+      <a href="/product" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Produk APAR</a>
+      <a href="/solusi" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Solusi</a>
+      <a href="/pemapi-app" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">PEMAPI App</a>
+      <a href="/industri" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Industri</a>
+      <a href="/tentang-kami" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Tentang</a>
+      <a href="/hubungi-kami" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Hubungi</a>
+      <a href="/quiz-apar" class="block rounded-md px-3 py-2 text-base font-medium text-[#F59E0B] hover:bg-gray-700">🔥 Quiz APAR</a>
+      <a href="/hubungi-kami" class="block rounded-md px-3 py-2 mt-2 text-base font-semibold bg-[#E63946] hover:bg-[#C1272D] text-white text-center">Konsultasi Gratis</a>
     </div>
   </div>
 </nav>
@@ -117,7 +121,6 @@
 <script>
   let path = window.location.pathname
   let btnMenu = document.querySelectorAll('.userClass-btn-menu a')
-
   btnMenu.forEach(el => {
     if(el.pathname == path){
       el.classList.remove('text-gray-300', 'hover:bg-gray-700', 'hover:text-white')

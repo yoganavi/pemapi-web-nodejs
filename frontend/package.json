@@ -6,8 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js -e ejs,js,html,css",
-    "dev": "npx @tailwindcss/cli -i ./public/css/input.css -o ./public/css/output.css --watch",
+    "prestart": "npm run build",
+    "start": "nodemon app.js -e ejs,js,html",
+    "dev:css": "npx @tailwindcss/cli -i ./public/css/input.css -o ./public/css/final.css --watch",
     "build": "npx @tailwindcss/cli -i ./public/css/input.css -o ./public/css/final.css --minify"
   },
   "keywords": [],

@@ -1,0 +1,98 @@
+<!-- Breadcrumb -->
+<div class="bg-white border-b border-slate-100">
+  <div class="mx-auto w-11/12 xl:w-9/12 py-3 text-xs text-slate-500">
+    <a href="/" class="hover:text-[#0E3477]">Beranda</a>
+    <span class="mx-2">→</span>
+    <a href="/industri" class="hover:text-[#0E3477]">Industri</a>
+    <span class="mx-2">→</span>
+    <span class="text-slate-800"><%= industri.title %></span>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="bg-white py-14">
+  <div class="mx-auto w-11/12 xl:w-9/12">
+    <div class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <div class="text-5xl mb-4"><%= industri.icon %></div>
+        <h1 class="text-3xl md:text-4xl font-bold text-[#0F172A] leading-tight mb-3">APAR untuk <%= industri.title %></h1>
+        <p class="text-lg text-slate-600 mb-6"><%= industri.heroDesc %></p>
+        <a href="/hubungi-kami" class="inline-flex items-center gap-2 bg-[#E63946] hover:bg-[#C1272D] text-white px-6 py-3 rounded-md font-semibold transition">Konsultasi untuk <%= industri.title %> →</a>
+      </div>
+      <div class="bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl aspect-video flex items-center justify-center">
+        <div class="text-slate-400 text-sm">Foto <%= industri.title %></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Risks -->
+<section class="bg-slate-50 py-14">
+  <div class="mx-auto w-11/12 xl:w-9/12 max-w-4xl">
+    <div class="text-xs uppercase tracking-widest text-red-600 font-semibold mb-2">⚠️ Risiko Kebakaran</div>
+    <h2 class="text-2xl md:text-3xl font-bold text-[#0F172A] mb-6">Karakteristik Risiko di <%= industri.title %></h2>
+    <div class="grid md:grid-cols-2 gap-3">
+      <% industri.risks.forEach(function(risk) { %>
+      <div class="flex items-start gap-3 bg-white rounded-lg border border-slate-200 p-4">
+        <i class="fa-solid fa-fire text-red-500 mt-1 shrink-0"></i>
+        <span class="text-slate-700 text-sm md:text-base"><%= risk %></span>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<!-- Solution -->
+<section class="bg-white py-14">
+  <div class="mx-auto w-11/12 xl:w-9/12 max-w-4xl">
+    <div class="bg-slate-50 rounded-2xl border-l-4 border-[#0E3477] p-6 md:p-8">
+      <div class="text-xs uppercase tracking-widest text-[#0E3477] font-semibold mb-2">✓ Solusi PEMAPI</div>
+      <p class="text-lg text-slate-700"><%= industri.solution %></p>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="bg-slate-50 py-14">
+  <div class="mx-auto w-11/12 xl:w-9/12">
+    <div class="text-center mb-8">
+      <h2 class="text-2xl md:text-3xl font-bold text-[#0F172A] mb-3">Produk yang Direkomendasikan</h2>
+      <p class="text-slate-600">Kombinasi APAR yang paling tepat untuk industri <%= industri.title.toLowerCase() %>.</p>
+    </div>
+    <div class="grid md:grid-cols-<%= Math.min(industri.products.length, 3) %> gap-4 max-w-4xl mx-auto">
+      <% industri.products.forEach(function(p) { %>
+      <a href="/product-apar?tipe=<%= p.slug %>" class="group bg-white rounded-xl border border-slate-200 p-5 hover:border-[#0E3477] hover:shadow-lg transition">
+        <div class="aspect-video bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg mb-4 flex items-center justify-center text-slate-400 text-sm">Foto <%= p.name %></div>
+        <h3 class="font-bold text-[#0F172A] group-hover:text-[#0E3477] transition"><%= p.name %></h3>
+        <p class="text-sm text-slate-600 mt-1"><%= p.desc %></p>
+        <div class="text-xs text-[#0E3477] font-semibold mt-3 group-hover:underline">Lihat Detail →</div>
+      </a>
+      <% }); %>
+    </div>
+  </div>
+</section>
+
+<!-- Client examples -->
+<% if (industri.clientExamples && industri.clientExamples !== 'Tersedia atas permintaan') { %>
+<section class="bg-white py-14">
+  <div class="mx-auto w-11/12 xl:w-9/12 max-w-4xl text-center">
+    <div class="text-xs uppercase tracking-widest text-slate-500 font-semibold mb-2">🤝 Mitra di Industri Ini</div>
+    <h2 class="text-xl md:text-2xl font-bold text-[#0F172A] mb-3">Beberapa Klien Kami di <%= industri.title %></h2>
+    <p class="text-slate-700"><%= industri.clientExamples %></p>
+  </div>
+</section>
+<% } %>
+
+<!-- CTA -->
+<section class="bg-[#0B1220] py-14 text-center text-white">
+  <div class="mx-auto w-11/12 xl:w-9/12">
+    <h2 class="text-2xl md:text-3xl font-bold mb-3">Butuh solusi untuk <%= industri.title.toLowerCase() %>?</h2>
+    <p class="text-white/70 mb-6">Konsultasikan kebutuhan spesifik industri Anda dengan tim PEMAPI.</p>
+    <div class="flex flex-wrap justify-center gap-3">
+      <a href="/hubungi-kami" class="inline-flex items-center gap-2 bg-[#E63946] hover:bg-[#C1272D] text-white px-6 py-3 rounded-md font-semibold transition">Konsultasi untuk <%= industri.title %> →</a>
+      <a href="<%= waLink('industri', industri.title) %>" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1DA851] text-white px-6 py-3 rounded-md font-semibold transition">
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+  </div>
+</section>

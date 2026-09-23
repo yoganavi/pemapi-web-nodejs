@@ -8,6 +8,9 @@ import axios from 'axios';
 import { routerHome } from './routes/routerHome.js';
 import { routerContactUs } from './routes/routerContactUs.js';
 import fs from 'fs';
+import { solusiList, industriList, getSolusi, getIndustri } from './data/content.js';
+import { waLink, WA_PHONE_DISPLAY, WA_PHONE_INTL } from './utils/whatsapp.js';
+import { buildSeo } from './data/seo.js';
 
 
 const app=express()
@@ -42,6 +45,48 @@ app.use('/', (req, res, next) => {
   next();
 });
 
+// Expose WhatsApp helper + phone constants to all views
+app.use((req, res, next) => {
+  res.locals.waLink = waLink;
+  res.locals.WA_PHONE_DISPLAY = WA_PHONE_DISPLAY;
+  res.locals.WA_PHONE_INTL = WA_PHONE_INTL;
+  res.locals.seo = buildSeo(req);
+  next();
+});
+
+// Dynamic sitemap — generated from data + static routes
+const buildSitemap = () => {
+  const base = 'https://pemapi.com';
+  const now = new Date().toISOString().split('T')[0];
+  const urls = [
+    { loc: '/', priority: '1.00', changefreq: 'monthly' },
+    { loc: '/tentang-kami', priority: '0.80', changefreq: 'yearly' },
+    { loc: '/pemapi-app', priority: '0.90', changefreq: 'monthly' },
+    { loc: '/quiz-apar', priority: '0.90', changefreq: 'yearly' },
+    { loc: '/product', priority: '0.90', changefreq: 'monthly' },
+    { loc: '/product-apar?tipe=powder', priority: '0.80', changefreq: 'monthly' },
+    { loc: '/product-apar?tipe=co2', priority: '0.80', changefreq: 'monthly' },
+    { loc: '/product-apar?tipe=foam', priority: '0.80', changefreq: 'monthly' },
+    { loc: '/product-apar?tipe=halon', priority: '0.80', changefreq: 'monthly' },
+    { loc: '/solusi', priority: '0.90', changefreq: 'yearly' },
+    ...solusiList.map(s => ({ loc: `/solusi/${s.slug}`, priority: '0.80', changefreq: 'yearly' })),
+    { loc: '/industri', priority: '0.90', changefreq: 'yearly' },
+    ...industriList.map(i => ({ loc: `/industri/${i.slug}`, priority: '0.70', changefreq: 'yearly' })),
+    { loc: '/contact-us', priority: '0.80', changefreq: 'yearly' },
+    { loc: '/kebijakan-mutu', priority: '0.30', changefreq: 'yearly' },
+    { loc: '/privacy-policy', priority: '0.30', changefreq: 'yearly' },
+    { loc: '/warranty-policy', priority: '0.30', changefreq: 'yearly' },
+  ];
+  const entries = urls.map(u =>
+    `  <url>\n    <loc>${base}${u.loc}</loc>\n    <lastmod>${now}</lastmod>\n    <changefreq>${u.changefreq}</changefreq>\n    <priority>${u.priority}</priority>\n  </url>`
+  ).join('\n');
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries}\n</urlset>\n`;
+};
+
+app.get(['/sitemap.xml', '/sitemap_index.xml'], (req, res) => {
+  res.type('application/xml').send(buildSitemap());
+});
+
 app.use('/' , routerHome);
 
 app.get('/pemapi-app', async(req,res)=>{
@@ -72,6 +117,36 @@ app.get('/product-apar', async(req,res)=>{
 });
 
 app.use('/contact-us', routerContactUs);
+// Indonesian alias for contact page
+app.get('/hubungi-kami', (req, res) => res.redirect(301, '/contact-us'));
+
+app.get('/tentang-kami', (req, res) => {
+  res.render('tentang-kami', { layout: 'main-layout' });
+});
+
+app.get('/quiz-apar', (req, res) => {
+  res.render('quiz-apar', { layout: 'main-layout' });
+});
+
+app.get('/solusi', (req, res) => {
+  res.render('solusi', { layout: 'main-layout', solusiList });
+});
+
+app.get('/solusi/:slug', (req, res) => {
+  const solusi = getSolusi(req.params.slug);
+  if (!solusi) return res.status(404).send('<h1>Solusi tidak ditemukan</h1>');
+  res.render('solusi-detail', { layout: 'main-layout', solusi });
+});
+
+app.get('/industri', (req, res) => {
+  res.render('industri', { layout: 'main-layout', industriList });
+});
+
+app.get('/industri/:slug', (req, res) => {
+  const industri = getIndustri(req.params.slug);
+  if (!industri) return res.status(404).send('<h1>Industri tidak ditemukan</h1>');
+  res.render('industri-detail', { layout: 'main-layout', industri });
+});
 
 app.get('/privacy-policy', async(req,res)=>{
   res.render('privacy-policy',{
@@ -86,10 +161,7 @@ app.get('/warranty-policy', async(req,res)=>{
 });
 
 app.get('/kebijakan-mutu', async(req,res)=>{
-  res.render('kebijakan-mutu-2',{
-    layout: 'main-layout2',
-    title: 'Kebijakan Mutu | PEMAPI',
-  })
+  res.render('kebijakan-mutu-2', { layout: false });
 });
 
 app.get('/quality-policy', async(req,res)=>{
